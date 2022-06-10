@@ -1,0 +1,215 @@
+{% extends "layout.html" %}
+{% block title %}
+Home
+{% endblock %}
+{% block content %}
+<form action="/data" method = "POST">
+    <p>Name <input type = "text" name = "Name" /></p>
+    <p>City <input type = "text" name = "City" /></p>
+    <p>Country <input type = "text" name = "Country" /></p>
+    <p><input type = "submit" value = "Submit" /></p>
+
+    </br>
+	<table class="calc" >
+        <tr>
+            <td colspan="2" class="separator">Batch Data</td>
+        </tr>
+        <tr>
+            <th>1.&nbsp;Water&nbsp;Volume&nbsp;(total):</th>
+            <td><input type="number" step="any" min="0" name="txtmashvolume" value="7" maxlength="6" style="width: 50px" onChange="javascript: updateAll();" />
+            &nbsp;
+            <label>
+                <input type="radio" name="units" value="gallons" Checked style="background: #eeeeee; border: none;" onChange="javascript: updateAll();" />&nbsp;Gallons
+            </label>
+            &nbsp;&nbsp;
+
+            <label>
+                <input type="radio" name="units" value="quarts" style="background: #eeeeee; border: none;" onChange="javascript: updateAll();" />&nbsp;Quarts
+            </label>
+            &nbsp;&nbsp;
+
+            <label>
+                <input type="radio" name="units" value="liters" style="background: #eeeeee; border: none;" onChange="javascript: updateAll();" />&nbsp;Liters
+            </label>
+
+            </td>
+        </tr>
+        <tr>
+            <th>2. Percent Dilution:</th>
+            <td><input type="number" step="any" min="0" name="txtdilute" value="0" maxlength="3" style="width: 50px" onChange="javascript: updateAll();" />
+                <br/>
+                <i>Dilute with distilled water to lower source ion concentrations.</i>
+            </td>
+        </tr>
+        <tr>
+            <th>3. Target Profile:</th>
+            <td>
+                <select name="targetprofile">
+                    <option>---</option>
+                </select><br/><br/>
+                <input type="button" name="btnchangeTarget" onClick="javascript: changeTarget();" style="padding: 1px 3px 1px 3px; font-size: 15px;" value="Update Target" />
+            </td>
+        </tr>
+    </table>
+    <br/>
+    <table class="calc waterchemistrycalc" style="tableLayout: auto;">
+        <tr>
+            <td colspan="8" class="separator">Water Chemistry - Ion Levels (ppm or mg/L)</td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+            <th><div class="ionname">Ca<sup>+2</sup></div></th>
+            <th><div class="ionname">Mg<sup>+2</sup></div></th>
+            <th><div class="ionname">SO<sub>4</sub><sup>-2</sup></div></th>
+            <th><div class="ionname">Na<sup>+</sup></div></th>
+            <th><div class="ionname">Cl<sup>-</sup></div></th>
+            <th><div class="ionname">HCO<sub>3</sub><sup>-</sup></div></th>
+            <th><div class="ionname">Alkalinity<sup>&nbsp;</sup></div></th>
+        </tr>
+        <tr>
+            <th>4. Source Minerals:</th>
+            <td><input type="number" step="any" min="0" name="source0" value="0" maxlength="5" style="width: 50px" onChange="javascript: updateAll();" /></td>
+            <td><input type="number" step="any" min="0" name="source1" value="0" maxlength="5" style="width: 50px" onChange="javascript: updateAll();" /></td>
+            <td><input type="number" step="any" min="0" name="source2" value="0" maxlength="5" style="width: 50px" onChange="javascript: updateAll();" /></td>
+            <td><input type="number" step="any" min="0" name="source3" value="0" maxlength="5" style="width: 50px" onChange="javascript: updateAll();" /></td>
+            <td><input type="number" step="any" min="0" name="source4" value="0" maxlength="5" style="width: 50px" onChange="javascript: updateAll();" /></td>
+            <td><input type="number" step="any" min="0" name="source5" value="0" maxlength="5" style="width: 50px" onChange="javascript: updateAll();" /></td>
+            <td><div id="source6" class="infodiv">-</div></td>
+        </tr>
+        <tr>
+            <th>4a. Diluted Levels:</th>
+            <td><div id="diluted0" class="infodiv">-</div></td>
+            <td><div id="diluted1" class="infodiv">-</div></td>
+            <td><div id="diluted2" class="infodiv">-</div></td>
+            <td><div id="diluted3" class="infodiv">-</div></td>
+            <td><div id="diluted4" class="infodiv">-</div></td>
+            <td><div id="diluted5" class="infodiv">-</div></td>
+            <td><div id="diluted6" class="infodiv">-</div></td>
+        </tr>
+        <tr>
+            <th>5. Target Minerals:</th>
+            <td><input type="number" step="any" min="0" name="target0" value="0" maxlength="4" style="width: 50px" onChange="javascript: updateAll();" /></td>
+            <td><input type="number" step="any" min="0" name="target1" value="0" maxlength="4" style="width: 50px" onChange="javascript: updateAll();" /></td>
+            <td><input type="number" step="any" min="0" name="target2" value="0" maxlength="4" style="width: 50px" onChange="javascript: updateAll();" /></td>
+            <td><input type="number" step="any" min="0" name="target3" value="0" maxlength="4" style="width: 50px" onChange="javascript: updateAll();" /></td>
+            <td><input type="number" step="any" min="0" name="target4" value="0" maxlength="4" style="width: 50px" onChange="javascript: updateAll();" /></td>
+            <td><input type="number" step="any" min="0" name="target5" value="0" maxlength="4" style="width: 50px" onChange="javascript: updateAll();" /></td>
+            <td><div id="target6" class="infodiv">-</div></td>
+
+        </tr>
+        <tr>
+            <th>6. Adjustments From Salts:</th>
+            <td><div id="salts0" class="infodiv">-</div></td>
+            <td><div id="salts1" class="infodiv">-</div></td>
+            <td><div id="salts2" class="infodiv">-</div></td>
+            <td><div id="salts3" class="infodiv">-</div></td>
+            <td><div id="salts4" class="infodiv">-</div></td>
+            <td><div id="salts5" class="infodiv">-</div></td>
+            <td><div id="salts6" class="infodiv">-</div></td>
+        </tr>
+        <tr>
+            <th>7. Adjusted Water:</th>
+            <td><div id="adjusted0" class="infodiv">-</div></td>
+            <td><div id="adjusted1" class="infodiv">-</div></td>
+            <td><div id="adjusted2" class="infodiv">-</div></td>
+            <td><div id="adjusted3" class="infodiv">-</div></td>
+            <td><div id="adjusted4" class="infodiv">-</div></td>
+            <td><div id="adjusted5" class="infodiv">-</div></td>
+            <td><div id="adjusted6" class="infodiv">-</div></td>
+        </tr>
+        <tr>
+            <th>8. Difference:</th>
+            <td><div id="result0" class="infodiv">-</div></td>
+            <td><div id="result1" class="infodiv">-</div></td>
+            <td><div id="result2" class="infodiv">-</div></td>
+            <td><div id="result3" class="infodiv">-</div></td>
+            <td><div id="result4" class="infodiv">-</div></td>
+            <td><div id="result5" class="infodiv">-</div></td>
+            <td><div id="result6" class="infodiv">-</div></td>
+        </tr>
+
+
+        <tr>
+            <td colspan="8" class="separator">Brewing Salt Additions</td>
+        </tr>
+        <tr>
+            <th>Chalk CaCO<sub>3</sub></th>
+            <td colspan="2"><input type="number" step="any" min="0" name="txtCaCO3" value="0" maxlength="3" style="width: 50px" onChange="javascript: updateAll();" /> grams</td>
+            <td colspan="5"><div id="divCaCO3_tsp" class="infodiv">- (tsp)</div></td>
+        </tr>
+
+        <tr>
+            <th>Baking Soda NaHCO<sub>3</sub></th>
+            <td colspan="2"><input type="number" step="any" min="0" name="txtNaHCO3" value="0" maxlength="3" style="width: 50px" onChange="javascript: updateAll();" /> grams</td>
+            <td colspan="5"><div id="divNaHCO3_tsp" class="infodiv">- (tsp)</div></td>
+        </tr>
+
+        <tr>
+            <th>Gypsum CaSO<sub>4</sub></th>
+            <td colspan="2"><input type="number" step="any" min="0" name="txtCaSO4" value="0" maxlength="3" style="width: 50px" onChange="javascript: updateAll();" /> grams</td>
+            <td colspan="5"><div id="divCaSO4_tsp" class="infodiv">- (tsp)</div></td>
+        </tr>
+        <tr>
+            <th>Calcium Chloride CaCl<sub>2</sub></th>
+            <td colspan="2"><input type="number" step="any" min="0" name="txtCaCl2" value="0" maxlength="3" style="width: 50px" onChange="javascript: updateAll();" /> grams</td>
+            <td colspan="5"><div id="divCaCl2_tsp" class="infodiv">- (tsp)</div></td>
+        </tr>
+
+        <tr>
+            <th>Epsom Salt MgSO<sub>4</sub></th>
+            <td colspan="2"><input type="number" step="any" min="0" name="txtMgSO4" value="0" maxlength="3" style="width: 50px" onChange="javascript: updateAll();" /> grams</td>
+            <td colspan="5"><div id="divMgSO4_tsp" class="infodiv">- (tsp)</div></td>
+        </tr>
+        <tr>
+            <th>Canning Salt NaCl</th>
+            <td colspan="2"><input type="number" step="any" min="0" name="txtNaCl" value="0" maxlength="3" style="width: 50px" onChange="javascript: updateAll();" /> grams</td>
+            <td colspan="5"><div id="divNaCl_tsp" class="infodiv">- (tsp)</div></td>
+        </tr>
+        <tr>
+            <td colspan="8" class="separator">Ion Levels (based on <i>Adjusted Water</i> above)</td>
+        </tr>
+        <tr>
+            <td></td>
+            <th><div class="ionname">Ca<sup>+2</sup></div></th>
+            <th><div class="ionname">Mg<sup>+2</sup></div></th>
+            <th><div class="ionname">SO<sub>4</sub><sup>-2</sup></div></th>
+            <th><div class="ionname">Na<sup>+</sup></div></th>
+            <th><div class="ionname">Cl<sup>-</sup></div></th>
+            <th>&nbsp;</th>
+            <th>&nbsp;</th>
+        </tr>
+
+        <tr>
+            <th>9. Ion Level Report:</th>
+            <td><div id="divCa_balance" class="ionindicator">-</div></td>
+            <td><div id="divMg_balance" class="ionindicator">-</div></td>
+            <td><div id="divSO4_balance" class="ionindicator">-</div></td>
+            <td><div id="divNa_balance" class="ionindicator">-</div></td>
+            <td><div id="divCl_balance" class="ionindicator">-</div></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td colspan="8" class="separator">Ion Balance for Flavor, Color and pH (based on <i>Adjusted Water</i> above)</td>
+        </tr>
+        <tr>
+            <th>Sulphate : Chloride ratio</th>
+            <td colspan="7"><div id="divSO4Cl_balance" class="infodivsm"></div></td>
+        </tr>
+        <tr>
+            <th>Alkalinity and SRM</th>
+            <td colspan="7"><div id="divAlkalinity_balance" class="infodivsm"></div></td>
+        </tr>
+        <tr>
+            <td colspan="8">
+                <div align="center">
+                    <br/>
+                    <input type="button" name="update" value="Update" onClick="javascript: updateAll();" style="margin-bottom: 6px; padding: 5px;" />
+                    <input type="button" name="resetbtn" value="Reset" onClick="javascript: resetform();" style="margin-bottom: 6px; padding: 5px;" />
+                    <br/>
+                </div>
+            </td>
+        </tr>
+    </table>
+</form>
+{% endblock %}
