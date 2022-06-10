@@ -5,9 +5,9 @@ Home
 {% block content %}
 
 <form action="/data" method = "POST">
-	<table class="calc" >
+	<table class="calc">
 			<tr>
-				<td colspan="2" class="separator">Batch Data</td>
+				<td colspan="2" class="separator"><h2>Batch Data</h2></td>
 			</tr>
 			<tr>
 				<th>Water Volume (total):</th>
@@ -50,9 +50,9 @@ Home
 	</table>
 	<br/>
     <hr/>
-	<table class="calc waterchemistrycalc" style="tableLayout: auto;">
+	<table class="calc waterchemistrycalc">
 		<tr>
-			<td colspan="8" class="separator">Water Chemistry - Ion Levels (ppm or mg/L)</td>
+			<td colspan="8" class="separator"><h2>Water Chemistry - Ion Levels (ppm or mg/L)</h2></td>
 		</tr>
 		<tr>
 			<td>&nbsp;</td>
@@ -127,43 +127,37 @@ Home
     </table>
     <br/>
     <hr/>
-    <table class="calc saltadditions" style="tableLayout: auto;">
+    <table class="tableLayout">
 
 		<tr>
-			<td colspan="8" class="separator">Brewing Salt Additions</td>
+			<td colspan="8" class="separator"><h2>Brewing Salt Additions</h2></td>
 		</tr>
 		<tr>
 			<th>Chalk CaCO<sub>3</sub></th>
 			<td colspan="2"><input type="number" step="any" min="0" name="txtCaCO3" value="0" maxlength="3" style="width: 50px" onChange="javascript: updateAll();" /> grams</td>
-			<td colspan="5"><div id="divCaCO3_tsp" class="infodiv">- (tsp)</div></td>
 		</tr>
 
 		<tr>
 			<th>Baking Soda NaHCO<sub>3</sub></th>
 			<td colspan="2"><input type="number" step="any" min="0" name="txtNaHCO3" value="0" maxlength="3" style="width: 50px" onChange="javascript: updateAll();" /> grams</td>
-			<td colspan="5"><div id="divNaHCO3_tsp" class="infodiv">- (tsp)</div></td>
 		</tr>
 
 		<tr>
 			<th>Gypsum CaSO<sub>4</sub></th>
 			<td colspan="2"><input type="number" step="any" min="0" name="txtCaSO4" value="0" maxlength="3" style="width: 50px" onChange="javascript: updateAll();" /> grams</td>
-			<td colspan="5"><div id="divCaSO4_tsp" class="infodiv">- (tsp)</div></td>
 		</tr>
 		<tr>
 			<th>Calcium Chloride CaCl<sub>2</sub></th>
 			<td colspan="2"><input type="number" step="any" min="0" name="txtCaCl2" value="0" maxlength="3" style="width: 50px" onChange="javascript: updateAll();" /> grams</td>
-			<td colspan="5"><div id="divCaCl2_tsp" class="infodiv">- (tsp)</div></td>
 		</tr>
 
 		<tr>
 			<th>Epsom Salt MgSO<sub>4</sub></th>
 			<td colspan="2"><input type="number" step="any" min="0" name="txtMgSO4" value="0" maxlength="3" style="width: 50px" onChange="javascript: updateAll();" /> grams</td>
-			<td colspan="5"><div id="divMgSO4_tsp" class="infodiv">- (tsp)</div></td>
 		</tr>
 		<tr>
 			<th>Canning Salt NaCl</th>
 			<td colspan="2"><input type="number" step="any" min="0" name="txtNaCl" value="0" maxlength="3" style="width: 50px" onChange="javascript: updateAll();" /> grams</td>
-			<td colspan="5"><div id="divNaCl_tsp" class="infodiv">- (tsp)</div></td>
 		</tr>
 	</table>
 
