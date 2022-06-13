@@ -28,11 +28,10 @@ def calculateSalts(target_Ca, target_Mg, target_SO4, target_Na, target_Cl, targe
 
     # only positive values from a non-linear approximation
     answer_array, residual = nnls(A, B)
-    # print("answer array: ", answer_array)
-    # print("residual: ", residual)
-
     # get individual salts from the returned array
     CaCO3, NaHCO3, CaSO4, CaCl2, MgSO4, NaCl = answer_array
+    # print("answer array: ", answer_array)
+    # print("residual: ", residual)
 
     return CaCO3, NaHCO3, CaSO4, CaCl2, MgSO4, NaCl, residual
 
