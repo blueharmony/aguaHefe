@@ -37,16 +37,18 @@ Home
 					<i>Dilute with distilled water to lower source ion concentrations.</i>
 				</td>
 			</tr>
+            -->
 			<tr>
-				<th>3. Target Profile:</th>
+				<th>Target Profile:</th>
 				<td>
 					<select name="targetprofile">
-						<option>---</option>
+                        {% for style in styles %}
+                            <option value="{{ style.Style }}">{{ style.Style }}</option>
+                        {% endfor %}
 					</select><br/><br/>
 					<input type="button" name="btnchangeTarget" onClick="javascript: changeTarget();" style="padding: 1px 3px 1px 3px; font-size: 15px;" value="Update Target" />
 				</td>
 			</tr>
-            -->
 	</table>
 	<br/>
     <hr/>

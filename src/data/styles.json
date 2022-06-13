@@ -1,0 +1,202 @@
+[
+ {
+   "Style": "Altbier (BF)",
+   "Ca": 90,
+   "Mg": 12,
+   "SO4": 65,
+   "Na": 45,
+   "Cl": 82,
+   "HCO3": 223,
+   "Ak": null
+},
+ {
+   "Style": "Amber (Hetrick)",
+   "Ca": 52,
+   "Mg": 7,
+   "SO4": 99,
+   "Na": 27,
+   "Cl": 61,
+   "HCO3": 32,
+   "Ak": null
+},
+ {
+   "Style": "Balanced Profile II (BF)",
+   "Ca": 150,
+   "Mg": 10,
+   "SO4": 160,
+   "Na": 80,
+   "Cl": 150,
+   "HCO3": 220,
+   "Ak": 180
+},
+ {
+   "Style": "Brittish Bitter (Palmer)",
+   "Ca": 52,
+   "Mg": 32,
+   "SO4": 104,
+   "Na": 86,
+   "Cl": 34,
+   "HCO3": 104,
+   "Ak": null
+},
+ {
+   "Style": "Export Lager (Palmer)",
+   "Ca": 225,
+   "Mg": 40,
+   "SO4": 220,
+   "Na": 60,
+   "Cl": 60,
+   "HCO3": 220,
+   "Ak": null
+},
+ {
+   "Style": "IPA",
+   "Ca": 325,
+   "Mg": 24,
+   "SO4": 320,
+   "Na": 44,
+   "Cl": 16,
+   "HCO3": 320,
+   "Ak": null
+},
+ {
+   "Style": "IPA  ",
+   "Ca": 74,
+   "Mg": 5,
+   "SO4": 139,
+   "Na": 0,
+   "Cl": 43,
+   "HCO3": 0,
+   "Ak": 0
+},
+ {
+   "Style": "IPA (Rosa)",
+   "Ca": 50,
+   "Mg": 3,
+   "SO4": 84,
+   "Na": 0,
+   "Cl": 25,
+   "HCO3": 16,
+   "Ak": 13
+},
+ {
+   "Style": "IPA (Rosa)",
+   "Ca": 79,
+   "Mg": 0,
+   "SO4": 103,
+   "Na": 0,
+   "Cl": 64,
+   "HCO3": 0,
+   "Ak": 0
+},
+ {
+   "Style": "IPA Black",
+   "Ca": 76,
+   "Mg": 5,
+   "SO4": 139,
+   "Na": 0,
+   "Cl": 43,
+   "HCO3": 8,
+   "Ak": 7
+},
+ {
+   "Style": "Irish Red",
+   "Ca": 54,
+   "Mg": 7,
+   "SO4": 79,
+   "Na": 27,
+   "Cl": 80,
+   "HCO3": 32,
+   "Ak": null
+},
+ {
+   "Style": "Pale Lager",
+   "Ca": 260,
+   "Mg": 23,
+   "SO4": 283,
+   "Na": 69,
+   "Cl": 106,
+   "HCO3": 540,
+   "Ak": null
+},
+ {
+   "Style": "Stout (Dark Lord)(Dan)",
+   "Ca": 42,
+   "Mg": 0,
+   "SO4": 22,
+   "Na": 0,
+   "Cl": 57,
+   "HCO3": 0,
+   "Ak": null
+},
+ {
+   "Style": "Stout Porter",
+   "Ca": 80,
+   "Mg": 19,
+   "SO4": 5,
+   "Na": 1,
+   "Cl": 1,
+   "HCO3": 328,
+   "Ak": null
+},
+ {
+   "Style": "Stout Porter",
+   "Ca": 90,
+   "Mg": 4,
+   "SO4": 58,
+   "Na": 24,
+   "Cl": 18,
+   "HCO3": 246,
+   "Ak": null
+},
+ {
+   "Style": "Stout Porter (BF)",
+   "Ca": 110,
+   "Mg": 4,
+   "SO4": 53,
+   "Na": 12,
+   "Cl": 19,
+   "HCO3": 280,
+   "Ak": null
+},
+ {
+   "Style": "Stout Porter (BF)",
+   "Ca": 100,
+   "Mg": 5,
+   "SO4": 50,
+   "Na": 35,
+   "Cl": 60,
+   "HCO3": 265,
+   "Ak": null
+},
+ {
+   "Style": "Stout Porter (Palmer)",
+   "Ca": 118,
+   "Mg": 4,
+   "SO4": 319,
+   "Na": 12,
+   "Cl": 19,
+   "HCO3": 319,
+   "Ak": null
+},
+ {
+   "Style": "Tripel",
+   "Ca": 48,
+   "Mg": 7,
+   "SO4": 55,
+   "Na": 16,
+   "Cl": 49,
+   "HCO3": 64,
+   "Ak": 52
+},
+ {
+   "Style": "White IPA",
+   "Ca": 40,
+   "Mg": 6,
+   "SO4": 74,
+   "Na": 6,
+   "Cl": 41,
+   "HCO3": 0,
+   "Ak": 0
+}
+]
