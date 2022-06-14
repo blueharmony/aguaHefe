@@ -16,7 +16,27 @@ Home
     }
 </script>
 
-<form action="/data" method = "POST">
+<script>
+    function updateAll() {
+        console.log("updateAll:")
+        console.log(form_data)
+        document.getElementById("targetCa").value = form_data.targetCa;
+        document.getElementById("targetMg").value = form_data.targetMg;
+        document.getElementById("targetSO4").value = form_data.targetSO4;
+        document.getElementById("targetNa").value = form_data.targetNa;
+        document.getElementById("targetCl").value = form_data.targetCl;
+        document.getElementById("targetHCO3").value = form_data.targetHCO3;
+        
+        document.getElementById("txtCaCO3").value = form_data.txtCaCO3;
+        document.getElementById("txtNaHCO3").value = form_data.txtNaHCO3;
+        document.getElementById("txtCaSO4").value = form_data.txtCaSO4;
+        document.getElementById("txtCaCl2").value = form_data.txtCaCl2;
+        document.getElementById("txtMgSO4").value = form_data.txtMgSO4;
+        document.getElementById("txtNaCl").value = form_data.txtNaCl;
+    }
+</script>
+
+<form action="/" method = "POST">
 	<table class="calc">
 			<tr>
 				<td colspan="2" class="separator"><h2>Batch Data</h2></td>
@@ -175,7 +195,7 @@ Home
 		</tr>
 	</table>
 
-    <p><input type = "submit" value = "Submit" /></p>
+    <p>&nbsp;&nbsp;&nbsp;<input type = "submit" value = "Calculate" /></p>
 </form>
 
 {% endblock %}
