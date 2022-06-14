@@ -42,9 +42,16 @@ def hello_there(name=None):
 
 
 # load the beer styles into memory
-cwd = os.getcwd()
-with open("./src/data/styles.json", "r") as f:
-    styles_data = json.load(f)
+# cwd = os.getcwd()
+try:
+    with open("./src/data/styles.json", "r") as f:
+        styles_data = json.load(f)
+except FileNotFoundError:
+    try:
+        with open("./data/styles.json", "r") as f:
+            styles_data = json.load(f)
+    except FileNotFoundError:
+        print("Error: could not find .../data/styles.json!")
 
 '''
 if __name__ == "__main__":
