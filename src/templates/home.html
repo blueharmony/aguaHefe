@@ -5,14 +5,19 @@ Home
 {% block content %}
 
 <script>
-    function changeTarget(targetValues) {
-        var targetArray = targetValues.split(' ');
-        document.getElementById("targetCa").value = targetArray[0];
-        document.getElementById("targetMg").value = targetArray[1];
-        document.getElementById("targetSO4").value = targetArray[2];
-        document.getElementById("targetNa").value = targetArray[3];
-        document.getElementById("targetCl").value = targetArray[4];
-        document.getElementById("targetHCO3").value = targetArray[5];
+    function changeTarget(target) {
+        // convert single quotes to JSON double quotes
+        target = target.replaceAll("'", "\"")
+        // convert string to JSON
+        var targetjson = JSON.parse(target);
+
+        document.getElementById("selectedProfile").value = targetjson.Style;
+        document.getElementById("targetCa").value = targetjson.Ca;
+        document.getElementById("targetMg").value = targetjson.Mg;
+        document.getElementById("targetSO4").value = targetjson.SO4;
+        document.getElementById("targetNa").value = targetjson.Na;
+        document.getElementById("targetCl").value = targetjson.Cl;
+        document.getElementById("targetHCO3").value = targetjson.HCO3;
     }
 </script>
 
@@ -75,8 +80,9 @@ Home
 				<td>
 					<select name="targetprofile">
                         {% for style in styles %}
-                            <option value="{{ style.Ca }} {{ style.Mg }} {{ style.SO4 }} {{ style.Na }} {{ style.Cl }} {{ style.HCO3 }}">{{ style.Style }}</option>
-                        {% endfor %}
+                            <!-- <option value="{{ style.Style }} {{ style.Ca }} {{ style.Mg }} {{ style.SO4 }} {{ style.Na }} {{ style.Cl }} {{ style.HCO3 }}">{{ style.Style }}</option> -->
+                            <option value="{{ style }}">{{ style.Style }}</option>
+                            {% endfor %}
 					</select><br/><br/>
 					<input type="button" name="btnchangeTarget" onClick="javascript: changeTarget(targetprofile.value);" style="padding: 1px 3px 1px 3px; font-size: 15px;" value="Update Target" />
 				</td>
@@ -88,6 +94,10 @@ Home
 		<tr>
 			<td colspan="8" class="separator"><h2>Water Chemistry - Ion Levels (ppm or mg/L)</h2></td>
 		</tr>
+        <tr>
+            <td class="ionname" value=""><h3>Target Profile</h3></td>
+            <td colspan="3"><input type="text" id="selectedProfile" name="selectedProfile" value="" style="width: 200px" /></td>
+        </tr>
 		<tr>
 			<td>&nbsp;</td>
 			<th><div class="ionname">Ca<sup>+2</sup></div></th>
@@ -168,30 +178,30 @@ Home
 		</tr>
 		<tr>
 			<th>Chalk CaCO<sub>3</sub></th>
-			<td colspan="2"><input type="number" step="any" min="0" name="txtCaCO3" value="0" maxlength="3" style="width: 50px" onChange="javascript: updateAll();" /> grams</td>
+			<td colspan="2"><input type="number" step="any" min="0" name="txtCaCO3" value="{{ calc_results.txtCaCO3 }}" maxlength="3" style="width: 50px" onChange="javascript: updateAll();" /> grams</td>
 		</tr>
 
 		<tr>
 			<th>Baking Soda NaHCO<sub>3</sub></th>
-			<td colspan="2"><input type="number" step="any" min="0" name="txtNaHCO3" value="0" maxlength="3" style="width: 50px" onChange="javascript: updateAll();" /> grams</td>
+			<td colspan="2"><input type="number" step="any" min="0" name="txtNaHCO3" value="{{ calc_results.txtNaHCO3 }}" maxlength="3" style="width: 50px" onChange="javascript: updateAll();" /> grams</td>
 		</tr>
 
 		<tr>
 			<th>Gypsum CaSO<sub>4</sub></th>
-			<td colspan="2"><input type="number" step="any" min="0" name="txtCaSO4" value="0" maxlength="3" style="width: 50px" onChange="javascript: updateAll();" /> grams</td>
+			<td colspan="2"><input type="number" step="any" min="0" name="txtCaSO4" value="{{ calc_results.txtCaSO4 }}" maxlength="3" style="width: 50px" onChange="javascript: updateAll();" /> grams</td>
 		</tr>
 		<tr>
 			<th>Calcium Chloride CaCl<sub>2</sub></th>
-			<td colspan="2"><input type="number" step="any" min="0" name="txtCaCl2" value="0" maxlength="3" style="width: 50px" onChange="javascript: updateAll();" /> grams</td>
+			<td colspan="2"><input type="number" step="any" min="0" name="txtCaCl2" value="{{ calc_results.txtCaCl2 }}" maxlength="3" style="width: 50px" onChange="javascript: updateAll();" /> grams</td>
 		</tr>
 
 		<tr>
 			<th>Epsom Salt MgSO<sub>4</sub></th>
-			<td colspan="2"><input type="number" step="any" min="0" name="txtMgSO4" value="0" maxlength="3" style="width: 50px" onChange="javascript: updateAll();" /> grams</td>
+			<td colspan="2"><input type="number" step="any" min="0" name="txtMgSO4" value="{{ calc_results.txtMgSO4 }}" maxlength="3" style="width: 50px" onChange="javascript: updateAll();" /> grams</td>
 		</tr>
 		<tr>
 			<th>Canning Salt NaCl</th>
-			<td colspan="2"><input type="number" step="any" min="0" name="txtNaCl" value="0" maxlength="3" style="width: 50px" onChange="javascript: updateAll();" /> grams</td>
+			<td colspan="2"><input type="number" step="any" min="0" name="txtNaCl" value="{{ calc_results.txtNaCl }}" maxlength="3" style="width: 50px" onChange="javascript: updateAll();" /> grams</td>
 		</tr>
 	</table>
 

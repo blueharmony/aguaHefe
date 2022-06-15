@@ -21,6 +21,19 @@ class aguaHefe:
         A6 = [161, 191,   0,   0,   0,   0]
         self.A = np.array([A1, A2, A3, A4, A5, A6])
 
+    def printResults(self, CaCO3, NaHCO3, CaSO4, CaCl2, MgSO4, NaCl, residual):
+
+        print("Grams per {:} gallon(s)".format(gallons))
+        print()
+        print("Chalk CaC03:             {:0.3}".format(CaCO3 * gallons))
+        print("Baking Soda NaHCO3:      {:0.3}".format(NaHCO3 * gallons))
+        print("Gypsum CaSO4:            {:0.3}".format(CaSO4 * gallons))
+        print("Calcium Chloride CaCl2:  {:0.3}".format(CaCl2 * gallons))
+        print("Epsom Salt MgSO4:        {:0.3}".format(MgSO4 * gallons))
+        print("Canning Salt NaCl:       {:0.3}".format(NaCl * gallons))
+        print()
+        print("residual: ", residual)
+
     def calculateSalts(self, target_Ca, target_Mg, target_SO4, target_Na, target_Cl, target_HCO3):
         # setup our targets
         B = np.array([target_Ca, target_Mg, target_SO4, target_Na, target_Cl, target_HCO3])
@@ -33,23 +46,9 @@ class aguaHefe:
         answer_array, residual = nnls(self.A, B)
         # get individual salts from the returned array
         CaCO3, NaHCO3, CaSO4, CaCl2, MgSO4, NaCl = answer_array
-        # print("answer array: ", answer_array)
-        # print("residual: ", residual)
+        self.printResults(CaCO3, NaHCO3, CaSO4, CaCl2, MgSO4, NaCl, residual)
 
         return CaCO3, NaHCO3, CaSO4, CaCl2, MgSO4, NaCl, residual
-
-    def printResults(CaCO3, NaHCO3, CaSO4, CaCl2, MgSO4, NaCl, residual):
-
-        print("Grams per {:} gallon(s)".format(gallons))
-        print()
-        print("Chalk CaC03:             {:0.3}".format(CaCO3 * gallons))
-        print("Baking Soda NaHCO3:      {:0.3}".format(NaHCO3 * gallons))
-        print("Gypsum CaSO4:            {:0.3}".format(CaSO4 * gallons))
-        print("Calcium Chloride CaCl2:  {:0.3}".format(CaCl2 * gallons))
-        print("Epsom Salt MgSO4:        {:0.3}".format(MgSO4 * gallons))
-        print("Canning Salt NaCl:       {:0.3}".format(NaCl * gallons))
-        print()
-        print("residual: ", residual)
 
 
 if __name__ == "__main__":
