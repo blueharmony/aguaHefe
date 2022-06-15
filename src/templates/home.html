@@ -96,7 +96,7 @@ Home
 		</tr>
         <tr>
             <td class="ionname" value=""><h3>Target Profile</h3></td>
-            <td colspan="3"><input type="text" id="selectedProfile" name="selectedProfile" value="" style="width: 200px" /></td>
+            <td colspan="3"><input type="text" id="selectedProfile" name="selectedProfile" value="{{ form_data.selectedProfile }}" style="width: 200px" /></td>
         </tr>
 		<tr>
 			<td>&nbsp;</td>
@@ -131,12 +131,12 @@ Home
         -->
 		<tr>
 			<th>Target Minerals:</th>
-			<td><input type="text" step="any" min="0" id="targetCa" name="targetCa" value="0" maxlength="4" style="width: 50px" onChange="javascript: updateAll();" /></td>
-			<td><input type="text" step="any" min="0" id="targetMg" name="targetMg" value="0" maxlength="4" style="width: 50px" onChange="javascript: updateAll();" /></td>
-			<td><input type="text" step="any" min="0" id="targetSO4" name="targetSO4" value="0" maxlength="4" style="width: 50px" onChange="javascript: updateAll();" /></td>
-			<td><input type="text" step="any" min="0" id="targetNa" name="targetNa" value="0" maxlength="4" style="width: 50px" onChange="javascript: updateAll();" /></td>
-			<td><input type="text" step="any" min="0" id="targetCl" name="targetCl" value="0" maxlength="4" style="width: 50px" onChange="javascript: updateAll();" /></td>
-			<td><input type="text" step="any" min="0" id="targetHCO3" name="targetHCO3" value="0" maxlength="4" style="width: 50px" onChange="javascript: updateAll();" /></td>
+			<td><input type="text" step="any" min="0" id="targetCa" name="targetCa" value="{{ form_data.targetCa }}" maxlength="4" style="width: 50px" onChange="javascript: updateAll();" /></td>
+			<td><input type="text" step="any" min="0" id="targetMg" name="targetMg" value="{{ form_data.targetMg }}" maxlength="4" style="width: 50px" onChange="javascript: updateAll();" /></td>
+			<td><input type="text" step="any" min="0" id="targetSO4" name="targetSO4" value="{{ form_data.targetSO4 }}" maxlength="4" style="width: 50px" onChange="javascript: updateAll();" /></td>
+			<td><input type="text" step="any" min="0" id="targetNa" name="targetNa" value="{{ form_data.targetNa }}" maxlength="4" style="width: 50px" onChange="javascript: updateAll();" /></td>
+			<td><input type="text" step="any" min="0" id="targetCl" name="targetCl" value="{{ form_data.targetCl }}" maxlength="4" style="width: 50px" onChange="javascript: updateAll();" /></td>
+			<td><input type="text" step="any" min="0" id="targetHCO3" name="targetHCO3" value="{{ form_data.targetHCO3 }}" maxlength="4" style="width: 50px" onChange="javascript: updateAll();" /></td>
 		</tr>
 		<tr>
 			<th>Adjustments From Salts:</th>
