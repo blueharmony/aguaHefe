@@ -1,5 +1,15 @@
 [
   {
+    "Style": "-- Choose a Style --",
+    "Ca": 0,
+    "Mg": 0,
+    "SO4": 0,
+    "Na": 0,
+    "Cl": 0,
+    "HCO3": 0,
+    "Ak": 0
+  },
+  {
     "Style": "Altbier (BF)",
     "Ca": 90,
     "Mg": 12,
