@@ -66,12 +66,15 @@ def home():
                                 form_data['targetCl'],
                                 form_data['targetHCO3'])
 
-        calc_results = {'txtCaCO3': txtCaCO3 * int(form_data['txtmashvolume']),
-                        'txtNaHCO3': txtNaHCO3 * int(form_data['txtmashvolume']),
-                        'txtCaSO4': txtCaSO4 * int(form_data['txtmashvolume']),
-                        'txtCaCl2': txtCaCl2 * int(form_data['txtmashvolume']),
-                        'txtMgSO4': txtMgSO4 * int(form_data['txtmashvolume']),
-                        'txtNaCl': txtNaCl * int(form_data['txtmashvolume']),
+        # convert to selected volume units
+        gallons_to_units = ah.gallons2units(int(form_data['txtmashvolume']), form_data['units'])
+       
+        calc_results = {'txtCaCO3': txtCaCO3 * gallons_to_units,
+                        'txtNaHCO3': txtNaHCO3 * gallons_to_units,
+                        'txtCaSO4': txtCaSO4 * gallons_to_units,
+                        'txtCaCl2': txtCaCl2 * gallons_to_units,
+                        'txtMgSO4': txtMgSO4 * gallons_to_units,
+                        'txtNaCl': txtNaCl * gallons_to_units,
                         'residual': residual}           
         
         return render_template('home.html', form_data=form_data, styles=styles_data, calc_results=calc_results)

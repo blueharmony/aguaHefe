@@ -50,6 +50,20 @@ class aguaHefe:
 
         return CaCO3, NaHCO3, CaSO4, CaCl2, MgSO4, NaCl, residual
 
+    def gallons2units(self, mashvolume, units):
+        # volume unit conversions, per gallon
+        to_gallons = 1
+        to_quarts = to_gallons / 4
+        to_liters = to_gallons / 3.785
+
+        gallons_to_units = to_gallons  # default
+        if (units == 'quarts'):
+            gallons_to_units = to_quarts
+        if (units == 'liters'):
+            gallons_to_units = to_liters
+
+        return mashvolume * gallons_to_units
+
 
 if __name__ == "__main__":
     ah = aguaHefe()
