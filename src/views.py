@@ -20,8 +20,16 @@ except FileNotFoundError:
     except FileNotFoundError:
         print("Error: could not find .../data/styles.json!")
 
+# instatiate the aguaHefe class
+ah = aguaHefe.aguaHefe()
+
 
 def default_calc_results():
+    """ Set default calculation results to zeros
+
+    Returns:
+        dict: zeroed dict values
+    """
     calc_results = {'txtCaCO3': 0,
                     'txtNaHCO3': 0,
                     'txtCaSO4': 0,
@@ -33,29 +41,24 @@ def default_calc_results():
     return calc_results
 
 
-ah = aguaHefe.aguaHefe()
-
-'''
-@app.route("/")
-def home():
-    return render_template('home.html', styles=styles_data)
-'''
-
-
 @app.route("/", methods=('GET', 'POST'))
 def home():
     form_data = {}
+    salts = {}
 
+    # initialize the home form
     if request.method == 'GET':
         return render_template('home.html',
                                 form_data=form_data,
                                 styles=styles_data,
                                 calc_results=default_calc_results(),
-                                salts={})
+                                salts=salts)
 
+    # update with values from the form and calculations
     if request.method == 'POST':
         form_data = request.form
 
+        # best guess at salts needed for water adjustments
         txtCaCO3, \
             txtNaHCO3, \
             txtCaSO4, \
@@ -70,9 +73,10 @@ def home():
                                 form_data['targetCl'],
                                 form_data['targetHCO3'])
 
-        # convert to selected volume units
+        # get the gallons2units conversion multiplier
         gallons_to_units = ah.gallons2units(int(form_data['txtmashvolume']), form_data['units'])
-       
+
+        # convert salts amounts to selected volume units       
         calc_results = {'txtCaCO3': txtCaCO3 * gallons_to_units,
                         'txtNaHCO3': txtNaHCO3 * gallons_to_units,
                         'txtCaSO4': txtCaSO4 * gallons_to_units,
@@ -81,6 +85,9 @@ def home():
                         'txtNaCl': txtNaCl * gallons_to_units,
                         'residual': residual}           
         
+        # determine how the calculated results will affect the
+        # water after adjustments from the salts.
+        # also, append the difference between target and calculated
         adjustments_from_salts = \
             ah.adjustments_from_salts(  txtCaCO3,
                                         txtNaHCO3,
@@ -91,6 +98,7 @@ def home():
         print(adjustments_from_salts)
         
         # convert the list into a dictionary
+        # the first six are the salts, the second six are the differences
         salts_names = ['saltsCa', 'saltsMg', 'saltsSO4', 'saltsNa', 'saltsCl', 'saltsHCO3',
                        'diffCa', 'diffMg', 'diffSO4', 'diffNa', 'diffCl', 'diffHCO3']
         salts = dict(zip(salts_names, adjustments_from_salts))
