@@ -21,9 +21,9 @@ class aguaHefe:
 
     def __init__(self):
         self.A = np.array([self.A1, self.A2, self.A3, self.A4, self.A5, self.A6])
+        self.B = np.array([])
 
     def printResults(self, CaCO3, NaHCO3, CaSO4, CaCl2, MgSO4, NaCl, residual):
-
         print("Grams per {:} gallon(s)".format(gallons))
         print()
         print("Chalk CaC03:             {:0.3}".format(CaCO3 * gallons))
@@ -36,15 +36,29 @@ class aguaHefe:
         print("residual: ", residual)
 
     def calculateSalts(self, target_Ca, target_Mg, target_SO4, target_Na, target_Cl, target_HCO3):
-        # setup our targets
-        B = np.array([target_Ca, target_Mg, target_SO4, target_Na, target_Cl, target_HCO3])
+        """_summary_
+
+        Args:
+            target_Ca (_type_): _description_
+            target_Mg (_type_): _description_
+            target_SO4 (_type_): _description_
+            target_Na (_type_): _description_
+            target_Cl (_type_): _description_
+            target_HCO3 (_type_): _description_
+
+        Returns:
+            _type_: _description_
+        """
+        # setup our targets, ensure they are integers
+
+        self.B = np.array([int(target_Ca), int(target_Mg), int(target_SO4), int(target_Na), int(target_Cl), int(target_HCO3)])
         print()
         print("-------------------")    
         print("Targets: Ca, Mg, SO4, Na, Cl, HCO3")
         print("        ", target_Ca, target_Mg, target_SO4, target_Na, target_Cl, target_HCO3)
 
         # only positive values from a non-linear approximation
-        answer_array, residual = nnls(self.A, B)
+        answer_array, residual = nnls(self.A, self.B)
         # get individual salts from the returned array
         CaCO3, NaHCO3, CaSO4, CaCl2, MgSO4, NaCl = answer_array
         self.printResults(CaCO3, NaHCO3, CaSO4, CaCl2, MgSO4, NaCl, residual)
@@ -52,29 +66,63 @@ class aguaHefe:
         return CaCO3, NaHCO3, CaSO4, CaCl2, MgSO4, NaCl, residual
 
     def adjustments_from_salts(self, CaCO3, NaHCO3, CaSO4, CaCl2, MgSO4, NaCl):
+        """_summary_
+
+        Args:
+            CaCO3 (_type_): _description_
+            NaHCO3 (_type_): _description_
+            CaSO4 (_type_): _description_
+            CaCl2 (_type_): _description_
+            MgSO4 (_type_): _description_
+            NaCl (_type_): _description_
+
+        Returns:
+            _type_: _description_
+        """
         salts_amounts = [CaCO3, NaHCO3, CaSO4, CaCl2, MgSO4, NaCl]
 
+        # transpose the A matrix to treat rows as columns,
+        # it's easier to iterate over items in rows
         AT = np.transpose(self.A)
-        AT_updated = []
 
+        # create a copy of the transposed matrix,
+        # with the salts adjustments applied
+        AT_updated = []
         for this_salt, this_array in zip(salts_amounts, AT):
             updated_array = []
             for this_value in this_array:
                 updated_array.append(this_salt * this_value)
             AT_updated.append(updated_array)   
 
+        # transpose the updated matrix back to it's original order,
+        # because it's easier to add up a row (array) than a column
         A_updated = np.transpose(AT_updated)
-        totals = []
 
+        # total up each row (each salt), appending it to a totals list
+        totals = []
         for this_array in A_updated:
             total = 0
             for this_value in this_array:
                 total += this_value
-            totals.append(round(total)) 
+            totals.append(round(total))
+
+        # calculate diff values between target and actual
+        for actual_value, target_value in zip(totals, self.B):
+            # append to the same totals
+            totals.append(actual_value - target_value)
 
         return totals
 
     def gallons2units(self, mashvolume, units):
+        """_summary_
+
+        Args:
+            mashvolume (_type_): _description_
+            units (_type_): _description_
+
+        Returns:
+            _type_: _description_
+        """
         # volume unit conversions, per gallon
         to_gallons = 1
         to_quarts = to_gallons / 4

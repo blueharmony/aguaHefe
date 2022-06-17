@@ -89,7 +89,10 @@ def home():
                                         txtMgSO4,
                                         txtNaCl)
         print(adjustments_from_salts)
-        salts_names = ['saltsCa', 'saltsMg', 'saltsSO4', 'saltsNa', 'saltsCl', 'saltsHCO3']
+        
+        # convert the list into a dictionary
+        salts_names = ['saltsCa', 'saltsMg', 'saltsSO4', 'saltsNa', 'saltsCl', 'saltsHCO3',
+                       'diffCa', 'diffMg', 'diffSO4', 'diffNa', 'diffCl', 'diffHCO3']
         salts = dict(zip(salts_names, adjustments_from_salts))
 
         return render_template('home.html',
