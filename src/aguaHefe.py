@@ -11,15 +11,16 @@ gallons = 10
 
 class aguaHefe:
 
+    # the effects on 1 gram of each salt
+    A1 = [53,    0,  62,  72,   0,   0]
+    A2 = [0,     0,   0,   0,  26,   0]
+    A3 = [0,     0, 147,   0, 103,   0]
+    A4 = [0,    75,   0,   0,   0, 104]
+    A5 = [0,     0,   0, 127,   0, 160]
+    A6 = [161, 191,   0,   0,   0,   0]
+
     def __init__(self):
-        # the effects on 1 gram of each salt
-        A1 = [53,    0,  62,  72,   0,   0]
-        A2 = [0,     0,   0,   0,  26,   0]
-        A3 = [0,     0, 147,   0, 103,   0]
-        A4 = [0,    75,   0,   0,   0, 104]
-        A5 = [0,     0,   0, 127,   0, 160]
-        A6 = [161, 191,   0,   0,   0,   0]
-        self.A = np.array([A1, A2, A3, A4, A5, A6])
+        self.A = np.array([self.A1, self.A2, self.A3, self.A4, self.A5, self.A6])
 
     def printResults(self, CaCO3, NaHCO3, CaSO4, CaCl2, MgSO4, NaCl, residual):
 
@@ -49,6 +50,29 @@ class aguaHefe:
         self.printResults(CaCO3, NaHCO3, CaSO4, CaCl2, MgSO4, NaCl, residual)
 
         return CaCO3, NaHCO3, CaSO4, CaCl2, MgSO4, NaCl, residual
+
+    def adjustments_from_salts(self, CaCO3, NaHCO3, CaSO4, CaCl2, MgSO4, NaCl):
+        salts_amounts = [CaCO3, NaHCO3, CaSO4, CaCl2, MgSO4, NaCl]
+
+        AT = np.transpose(self.A)
+        AT_updated = []
+
+        for this_salt, this_array in zip(salts_amounts, AT):
+            updated_array = []
+            for this_value in this_array:
+                updated_array.append(this_salt * this_value)
+            AT_updated.append(updated_array)   
+
+        A_updated = np.transpose(AT_updated)
+        totals = []
+
+        for this_array in A_updated:
+            total = 0
+            for this_value in this_array:
+                total += this_value
+            totals.append(round(total)) 
+
+        return totals
 
     def gallons2units(self, mashvolume, units):
         # volume unit conversions, per gallon

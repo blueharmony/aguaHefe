@@ -47,7 +47,11 @@ def home():
     form_data = {}
 
     if request.method == 'GET':
-        return render_template('home.html', form_data=form_data, styles=styles_data, calc_results=default_calc_results())
+        return render_template('home.html',
+                                form_data=form_data,
+                                styles=styles_data,
+                                calc_results=default_calc_results(),
+                                salts={})
 
     if request.method == 'POST':
         form_data = request.form
@@ -77,9 +81,24 @@ def home():
                         'txtNaCl': txtNaCl * gallons_to_units,
                         'residual': residual}           
         
-        return render_template('home.html', form_data=form_data, styles=styles_data, calc_results=calc_results)
- 
- 
+        adjustments_from_salts = \
+            ah.adjustments_from_salts(  txtCaCO3,
+                                        txtNaHCO3,
+                                        txtCaSO4,
+                                        txtCaCl2,
+                                        txtMgSO4,
+                                        txtNaCl)
+        print(adjustments_from_salts)
+        salts_names = ['saltsCa', 'saltsMg', 'saltsSO4', 'saltsNa', 'saltsCl', 'saltsHCO3']
+        salts = dict(zip(salts_names, adjustments_from_salts))
+
+        return render_template('home.html',
+                                form_data=form_data,    
+                                styles=styles_data,
+                                calc_results=calc_results,
+                                salts=salts)
+
+
 @app.route("/about/")
 def about():
     return render_template("about.html")
