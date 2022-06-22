@@ -110,6 +110,11 @@ def home():
                                 salts=salts)
 
 
+@app.route("/bf/")
+def bf():
+    return render_template("water-chemistry.html")
+
+
 @app.route("/about/")
 def about():
     return render_template("about.html")

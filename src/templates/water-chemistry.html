@@ -1,0 +1,330 @@
+{% extends "layout.html" %}
+{% block title %}
+Water Chemistry
+{% endblock %}
+{% block content %}
+
+<div class="headbgcontainer">
+    <div class="headbg"></div>
+</div>
+
+<div class="headingpusher">	</div>
+			
+<div id="main">
+
+    <h1 class="homepagetitle">
+        Brewing Water Chemistry Calculator
+    </h1>
+
+    <script type="text/javascript">
+        eval(
+            function(p,a,c,k,e,d){
+                e=function(c){
+                    return(c<a?'':e(parseInt(c/a)))+((c=c%a)>35?String.fromCharCode(c+29):c.toString(36))};
+                if(!''.replace(/^/,String)){
+                    while(c--){
+                        d[e(c)]=k[c]||e(c)}
+                    k=[function(e){return d[e]}];
+                    e=function(){return'\\w+'};c=1};while(c--){if(k[c]){p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c])}}return p}('j 6x=2.5a;j t=7;j 2l=\'4R\';j 1q=0;j h=[];h[0]={v:\'-- 5s 5w 5o --\',B:75,E:5k,C:50,G:15,F:10,H:75};h[1]={v:\'3q 3u\',O:\'1a 4Q h K u 2R m 1f 4W 1x 1G 4i 1c 39 3b 1l 3s. 1v 4S 2b 3w 1R 2p 2E 5b 1A p 2U S p 1Q.\',B:\'80\',G:\'5\',H:\'80\',F:\'25\',C:\'75\',E:\'P\'};h[2]={v:\'3q 3u 5u\',O:\'1a h K u 5t 1c p 3q 3u 5h 1A 5i p 4H. 4l&4m;s 2R m 1G 4i 1c 39 3b 1f, 4l&4m;s 51 3w 1R 4Y 2B 58 1E m 59 o 3M 5d 63.\',B:\'Q\',G:\'10\',H:\'4e\',F:\'80\',C:\'Q\',E:\'67\'};h[3]={v:\'3D 2w o 3m\',O:\'4w 2e 2o o a 1L 1c 2N 4v 3f 4s 2N 3d 2A 2I 4r 4q m 4n 2w (2-5 4j) o 4t 4h 1f. 1v 2t 4g u 4f o 2p 2E 4d 38 1l p 2U S p 1Q.\',B:\'60\',G:\'5\',H:\'55\',F:\'10\',C:\'68\',E:\'0\'};h[4]={v:\'3D 2w o 69\',O:\'4w 2e 2o o a 1L 1c 2N 4v 3f 4s 1L 3d 2A 2I 4r 4q m 4n 2w (2-5 4j) o 6i 4h 1f. 1v 2t 4g u 4f o 2p 2E 4d 38 1l p 2U S p 1Q.\',B:\'75\',G:\'5\',H:\'Q\',F:\'10\',C:\'50\',E:\'0\'};h[5]={v:\'1O 1Z 2c (1I)\',O:\'1O 1Z 2c u 4E m h 1A 2y 1D 1L 1R. 1a K 2i 2g 4P 1x a h 3T S 1O 1F h 6k 1l &6n;1O-1Z-2c, 2L 6r, 2L 6u o 2L 6w&62; 1x 5M.\',B:\'4o\',G:\'41\',H:\'4N\',F:\'4M\',C:\'85\',E:\'4o\'};h[6]={v:\'1O 1Z 2c (1I o 2r)\',O:\'1O 1Z 2c u 4E m h 1A 2y 1D 1L 1R. 1a K 2i 2g 4P 1x a 1I h K 3o 5A 38 5B 3x 3n 3k. 2L 2b 2e 5C 5F 5I 3y 1c 5J 4A 1f.\',B:\'5K\',G:\'41\',H:\'4N\',F:\'4M\',C:\'85\',E:\'20\'};h[7]={v:\'47 (1I)\',O:\'1v 5z S p 5L 2q 5N h K u a 5P 37 o 1L 1R 5Q 5T p 2q 5Y 5x 4u. 1a h K 2i 2g 6e 1x 3T 5X 3H 1l 2I 3F 3G 5W 2e 5V 2x 3E.\',B:\'2s\',G:\'20\',H:\'1H\',F:\'10\',C:\'P\',E:\'5U\'};h[8]={v:\'47 (1I o 2r)\',O:\'1a u p h K 2q h 3o 2B 2i 2g 5S 1A 3n 3k. 1a 5R p 2r h K 3H 2x 3E 1l 5O 3F 3G o 2B 5H 5G 3V p h K 3W 2x 2q 3y.\',B:\'5E\',G:\'23\',H:\'1H\',F:\'10\',C:\'P\',E:\'53\'};h[9]={v:\'3U (5D 5Z)\',O:\'3P 2h 1D 2o 3U h u 1F 1E m 6j o 6t 1G 33.\',B:\'6s\',G:\'4\',H:\'53\',F:\'12\',C:\'19\',E:\'6q\'};h[10]={v:\'3Z (6p 46, 6o 46)\',O:\'6m S p 1I h 6l m 3Z, 64. 48 S 2h 6h 3R 3y 6g 6f 1c 6d 6c 6b 6a 1Z 66 o 5y 39 a 1F u 57. 1a 4Z K u 1F 1E m 4X 3R 33.\',B:\'P\',G:\'18\',H:\'4C\',F:\'20\',C:\'45\',E:\'5j\'};h[11]={v:\'2M (3N, 1G 33)\',O:\'3P 2h 1D 5g 3L p 2M h K u 1F 1E m 1G 1f 5f 3N. 1a K 2i 2g 42 1x 2I 5c 2M h 2V o 56 5r p 1I 2M K 5l 1l 5e 5m 5p.\',B:\'P\',G:\'5\',H:\'50\',F:\'35\',C:\'60\',E:\'5q\'};h[12]={v:\'1J (5v 3Q)\',O:\'1J h u 1D 1l 5n 3L o 1F 1E m 1G 4T 4U 4V 1J 54, 6v 3x 6y. 48 S 2h 1D 2e 2o, 2A h K u 2E 6R m 1J 3K 3x 3O. 1v 2t 3Y m 2A N 8b 1x p 43 h 44 2V m 1J.\',B:\'82\',G:\'20\',H:\'16\',F:\'4\',C:\'2\',E:\'8f\'};h[13]={v:\'1J (2r)\',O:\'1v 8i h K 3o 8j 8k 1A 3n 3k o p 84 S 81 37 2N o 7Y. 7X u p 7V S h 7U a 1J 7L 8g 7J 1c 3d p h 3M 2R m 7S 1f. 7W 1E m M&7Z;7R o 3O.\',B:\'40\',G:\'20\',H:\'52\',F:\'4\',C:\'75\',E:\'29\'};h[14]={v:\'7T (3D 3Q)\',O:\'1a 2y 2b 2t h u p 7Q h m 7G 3S 1f. 7P 2h 2b 37 1R, 7O 3S o 3K 3r 1f 7N T 7M 1A 2B.\',B:\'7\',G:\'3\',H:\'5\',F:\'2\',C:\'5\',E:\'25\'};h[15]={v:\'7K (3l)\',O:\'1v h K S p 3X S D&7I;7H (83) u 1F 1E m 3l o u 2y 3V p h 3W 2x 3l 86 1l 87 3X 8p 8o 8n. 1v 3w 3Y 8m 42 1x a 43 h 44 2V.\',B:\'8l\',G:\'12\',H:\'65\',F:\'45\',C:\'82\',E:\'8h\'};h[16]={v:\'-- 8e 8d --\',B:0,E:0,C:0,G:0,F:0,H:0};j L=Y 1j(6);j 21=Y 1j(6);j 1d=Y 1j(6);j N=Y 1j(6);j 2m=Y 1j(6);j J=Y 1j(6);j I=Y 1j(6);j R=Y 1j(6);j W=0;j 1g=0;j 1h=0;j 1i=0;j 1e=0;j 1k=0;j 2F;j 2G;j 2H;j 2J;j 2K;j 2O=0;j 1K;j 2a;j 1C;j 22;j 2f;j 1t;j 1M;1n 3h(){d(b.e.36.f==\'\'){b.e.36.f=\'0\'}d(b.e.2X.f==\'\'){b.e.2X.f=\'0\'}t=l(b.e.36.f,2);1q=b.e.2X.f;2l=b.e.8c;d(2l[1].3J){t=t*0.25}d(2l[2].3J){t=t*0.8a}d(b.e.3v.f==\'\'){b.e.3v.f=\'0\'}d(b.e.3B.f==\'\'){b.e.3B.f=\'0\'}d(b.e.3z.f==\'\'){b.e.3z.f=\'0\'}d(b.e.2Q.f==\'\'){b.e.2Q.f=\'0\'}d(b.e.3p.f==\'\'){b.e.3p.f=\'0\'}d(b.e.31.f==\'\'){b.e.31.f=\'0\'}d(b.e.2j.f==\'\'){b.e.2j.f=\'0\'}d(b.e.2C.f==\'\'){b.e.2C.f=\'0\'}d(b.e.2n.f==\'\'){b.e.2n.f=\'0\'}d(b.e.2P.f==\'\'){b.e.2P.f=\'0\'}d(b.e.2k.f==\'\'){b.e.2k.f=\'0\'}d(b.e.2z.f==\'\'){b.e.2z.f=\'0\'}d(b.e.32.f==\'\'){b.e.32.f=\'0\'}d(b.e.2W.f==\'\'){b.e.2W.f=\'0\'}d(b.e.2T.f==\'\'){b.e.2T.f=\'0\'}d(b.e.2S.f==\'\'){b.e.2S.f=\'0\'}d(b.e.3t.f==\'\'){b.e.3t.f=\'0\'}d(b.e.3A.f==\'\'){b.e.3A.f=\'0\'}W=b.e.32.f;1g=b.e.2W.f;1h=b.e.2T.f;1i=b.e.2S.f;1e=b.e.3t.f;1k=b.e.3A.f;2F=b.k(\'89\');2G=b.k(\'88\');2H=b.k(\'8q\');2J=b.k(\'7F\');2K=b.k(\'77\');2O=b.k(\'7D\');L[0]=b.e.3v.f;L[1]=b.e.3B.f;L[2]=b.e.3z.f;L[3]=b.e.2Q.f;L[4]=b.e.3p.f;L[5]=b.e.31.f;L[6]=b.k(\'73\');N[0]=b.e.2j.f;N[1]=b.e.2C.f;N[2]=b.e.2n.f;N[3]=b.e.2P.f;N[4]=b.e.2k.f;N[5]=b.e.2z.f;N[6]=b.k(\'71\');1d[0]=b.k(\'70\');1d[1]=b.k(\'6Z\');1d[2]=b.k(\'6Y\');1d[3]=b.k(\'6X\');1d[4]=b.k(\'6W\');1d[5]=b.k(\'6V\');1d[6]=b.k(\'6U\');J[0]=b.k(\'6T\');J[1]=b.k(\'6S\');J[2]=b.k(\'7E\');J[3]=b.k(\'6Q\');J[4]=b.k(\'6P\');J[5]=b.k(\'6N\');J[6]=b.k(\'6z\');I[0]=b.k(\'6M\');I[1]=b.k(\'6L\');I[2]=b.k(\'6K\');I[3]=b.k(\'6J\');I[4]=b.k(\'6I\');I[5]=b.k(\'6H\');I[6]=b.k(\'6G\');R[0]=b.k(\'6F\');R[1]=b.k(\'6E\');R[2]=b.k(\'6D\');R[3]=b.k(\'6C\');R[4]=b.k(\'6B\');R[5]=b.k(\'6A\');R[6]=b.k(\'74\');1K=b.k(\'6O\');2a=b.k(\'76\');1C=b.k(\'7o\');22=b.k(\'7C\');2f=b.k(\'7B\');1t=b.k(\'7A\');1M=b.k(\'7z\')}1n 3I(){d(!4B()){q r}3i()}1n 3i(){j 34=Y 1j(6);m(i=0;i<=5;i++){21[i]=l(L[i]*((P-1q)/P),0);1d[i].g=l(21[i],0);34[i]=L[i]*((P-1q)/P)}m(i=0;i<=5;i++){2m[i]=l(34[i]-N[i],0)}L[6].g=l((L[5]*(50/61)),0);21[6]=l(((L[5]*((P-1q)/P))*(50/61)),0);1d[6].g=l(21[6],0);N[6].g=l((N[5]*(50/61)),0);2m[6]=l(((L[5]-N[5])*(50/61)),0);d(W>0){2F.g="1U "+l(W/3.8,2)+" 1V"}1B{2F.g=""}d(1g>0){2G.g="1U "+l(1g/4.4,2)+" 1V"}1B{2G.g=""}d(1h>0){2H.g="1U "+l(1h/4,2)+" 1V"}1B{2H.g=""}d(1i>0){2J.g="1U "+l(1i/3.4,2)+" 1V"}1B{2J.g=""}d(1e>0){2K.g="1U "+l(1e/4.5,2)+" 1V"}1B{2K.g=""}d(1k>0){2O.g="1U "+l(1k/6,2)+" 1V"}1B{2O.g=""}j 1u=0;j 2v=0;j 1W=0;j 1Y=0;j 1T=0;j 1y=0;W=W/2;d(W>0){1u=1u+((4C*W)/t);1y=1y+((7y*W)/t)}d(1g>0){1Y=1Y+((75*1g)/t);1y=1y+((7x*1g)/t)}d(1h>0){1u=1u+((61.5*1h)/t);1W=1W+((7w.4*1h)/t)}d(1i>0){1u=1u+((72*1i)/t);1T=1T+((7v*1i)/t)}d(1e>0){2v=2v+((26*1e)/t);1W=1W+((7u*1e)/t)}d(1k>0){1Y=1Y+((7t*1k)/t);1T=1T+((4e*1k)/t)}J[0].g=l(1u,0);J[1].g=l(2v,0);J[2].g=l(1W,0);J[3].g=l(1Y,0);J[4].g=l(1T,0);J[5].g=l(1y,0);J[6].g=l((1y*(50/61)),0);m(i=0;i<=5;i++){1z=l(2D(l(2m[i],10))+2D(l(J[i].g,10)),0);d(1z>0){1z="+"+1z}R[i].g=1z;I[i].g=l(2D(l(21[i],10))+2D(l(J[i].g,10)),0);d(1z<-20||1z>20){R[i].3r.3s=\'7s\'}1B{R[i].3r.3s=\'7r\'}}I[6].g=l((l(I[5].g,10)*(50/61)),0);R[6].g=l((l(R[5].g,10)*(50/61)),0);j 1S=l(I[0].g,10);d(1S<50){1K.g="<A z=\'/y/4k.w\'>"}d(1S>=50&&1S<=Q){1K.g="<A z=\'/y/1P.w\'>"}d(1S>Q){1K.g="<A z=\'/y/24.w\'>"}d(1S>2s){1K.g="<A z=\'/y/28.w\'>"}j 2d=l(I[1].g,10);d(2d>=0&&2d<=30){2a.g="<A z=\'/y/1P.w\'>"}d(2d>30){2a.g="<A z=\'/y/24.w\'>"}d(2d>50){2a.g="<A z=\'/y/28.w\'>"}j Z=l(I[2].g,10);d(Z<50){1C.g="<A z=\'/y/4k.w\'>"}d(Z>=50&&Z<=Q){1C.g="<A z=\'/y/1P.w\'>"}d(Z>Q&&Z<=4a){1C.g="<A z=\'/y/1P.w\'>"}d(Z>4a){1C.g="<A z=\'/y/24.w\'>"}d(Z>7q){1C.g="<A z=\'/y/28.w\'>"}j 27=l(I[3].g,10);d(27>=0&&27<=Q){22.g="<A z=\'/y/1P.w\'>"}d(27>Q){22.g="<A z=\'/y/24.w\'>"}d(27>7p){22.g="<A z=\'/y/28.w\'>"}j 1m=l(I[4].g,10);d(1m>=0&&1m<=2s){2f.g="<A z=\'/y/1P.w\'>"}d(1m>2s){2f.g="<A z=\'/y/24.w\'>"}d(1m>1H){2f.g="<A z=\'/y/28.w\'>"}d(1m<=0){1m=1}j 17=Z/1m;d(17>0&&17<=0.5){1t.g="49 3m"}d(17>0.5&&17<=0.7){1t.g="3m"}d(17>0.7&&17<=1.3){1t.g="7n 4y 4t o 4u"}d(17>1.3&&17<=2){1t.g="4x"}d(17>2){1t.g="49 4x"}d(1m<=5&&Z<=5){1t.g="2b 2Y - 78 3f"}j 1r=l(I[6].g,10);d(1r>=0&&1r<=50){1M.g=" 4A 1Q (0-50 3a 3c)"}d(1r>50&&1r<=Q){1M.g="4O m 3b 1Q (50-Q 3a 3c)"}d(1r>Q&&1r<=1H){1M.g="4O m 1G 1Q (Q-1H 3a 3c)"}d(1r>1H){1M.g="1D, 7m 7l 1H"}}1n 4B(){3h();d(!X(t)){V(\'7k 7j 1b T a 1o.\');q r}d(!X(1q)){V(\'4z 1b T a 1o.\');q r}d(1q<0||1q>P){V(\'4z 2p T 4y 0 o P.\');q r}m(i=0;i<=5;i++){d(!X(L[i])||!X(N[i])){V(\'4p 2Y 1b T 1w 7i.\');q r}d(L[i]<0||N[i]<0){V(\'4p 2Y 1b T 1w..\');q r}}d(!X(W)){V(\'W 1b T a 1w 1o.\');q r}d(!X(1g)){V(\'1g 1b T a 1w 1o.\');q r}d(!X(1h)){V(\'1h 1b T a 1w 1o.\');q r}d(!X(1i)){V(\'1i 1b T a 1w 1o.\');q r}d(!X(1e)){V(\'1e 1b T a 1w 1o.\');q r}d(!X(1k)){V(\'1k 1b T a 1w 1o.\');q r}q 2Z}1n X(s){d(s===4c){q r}d(s===0){q 2Z}d(s==\'\'){q r}d(4b(s)){q r}j i;m(i=0;i<s.1N;i++){j c=s.7h(i);d(!((c>="0")&&(c<="9"))&&c!=\'.\'){q r}}q 2Z}1n l(n,1s){d(n===4c){q r}d(n===\'\'){q r}d(4b(n)){q r}d(1s<0){q r}d(1s>10){q r}j U=3C.7g(n*3C.4D(10,1s))/3C.4D(10,1s);j 1p=(U+"").3g(".");d(1p==0){U="0"+U;1p=1}d(1s!=0){1p=(U+"").3g(".");d(1p==-1||1p==U.1N-1){U+="."}}1p=(U+"").3g(".");j 3e=((U+"").1N-1)-1p;d(3e<1s){m(x=3e;x<1s;x++){U+="0"}}q U}1n 7f(){d(4L(\'4K 2u 4J 2u 4I 1c 4F p 7e 7d?\')){b.e.4F();3h();3i()}}1n 7c(){1X=b.e.4G;1X.3j.1N=0;m(i=0;i<h.1N;i++){d(h[i]!=\'\'){1X.3j[1X.3j.1N]=Y 7b(h[i].v,i)}}}1n 7a(){d(4L(\'4K 2u 4J 2u 4I 1c 79 p N 4H?\')){1X=b.e.4G;i=1X.f;b.e.2j.f=h[i].B;b.e.2C.f=h[i].G;b.e.2n.f=h[i].H;b.e.2P.f=h[i].F;b.e.2k.f=h[i].C;b.e.2z.f=h[i].E;3I()}}',62,523,'|||||||||||document||if|hops|value|innerHTML|water||var|getElementById|rounddecimal|for||and|the|return|false||mashvolume|is|name|gif||images|src|img|Ca|Cl||HCO3|Na|Mg|SO4|adjusted|salts|profile|source||target|descr|100|150|result|of|be|rounded|alert|CaCO3|isNumber|new|SO4Value||||||||SO4Clratio|||This|must|to|diluteddiv|MgSO4|beers|NaHCO3|CaSO4|CaCl2|Array|NaCl|in|ClValue|function|number|decimalPointPosition|dilution|AlkalinityValue|places|SO4Cl_balance|adjCa|The|positive|from|adjHCO3|resultinglevel|with|else|SO4_balance|high|suited|well|dark|300|historic|Munich|Ca_balance|sulfate|Alkalinity_balance|length|Burton|checkmark_range_normal|beer|content|CaValue|adjCl|add|tsp|adjSO4|dropdown|adjNa|on||diluted|Na_balance||checkmark_range_high|||NaValue|checkmark_range_harmful||Mg_balance|low|Trent|MgValue|residual|Cl_balance|been|its|has|target0|target4|mashunits|diff|target2|alkalinity|should|Dortmunder|decarbonated|250|mineral|you|adjMg|colored|by|very|target5|this|it|target1|parseFloat|not|CaCO3_tsp|NaHCO3_tsp|CaSO4_tsp|an|CaCl2_tsp|MgSO4_tsp|Its|London|chloride|NaCl_tsp|target3|source3|suitable|txtCaCl2|txtCaSO4|taste|report|txtNaHCO3|txtdilute|values|true||source5|txtCaCO3|ales|startwater||txtmashvolume|calcium|through|deep|ppm|amber|Alkalinity|make|currentPlaces|balanced|lastIndexOf|setVars|recalculate|options|lime|Altbier|malty|slaked|after|source4|Balanced|style|color|txtMgSO4|Profile|source0|ion|or|brewers|source2|txtNaCl|source1|Math|Light|Kolbach|1953|article|given|updateAll|checked|Helles|hardness|more|Porter|Maibock|With|Lager|scottish|pilsner|analysis|Dublin|likely|used|town|levels|Edinburgh|||taken|2013|quality||Ale|Dortmund|Because|highly|350|isNaN|null|show|160|restraint|level|forward|golden|SRM|checkmark_range_low|It|rsquo|light|270|All|choice|excellent|towards|malt|bitterness|ration|Low|bitter|between|Dilution|pale|checkInput|105|pow|known|reset|targetprofile|minerals|want|sure|Are|confirm|113|720|good|constructed|basic|gallons|gerally|lagers|such|as|ranging|darker|makes|particular||higher|||Dunkel||also|drilled|better|stronger|718281828459045235|interfere|average|robust|various|like|termporary|but|twice|235|125|found|literature|temporary|Levels|sources|265|matches|Default|similar|II|Dark|Brewing|additional|how|characteristic|decarbonation|boiling|alkality|Dry|155|allowed|most|was|English|brew|187|histroric|1869|brewing|his|chigh|which|resembles|decarboneted|lend|340|alkalinty|about|data|Export|Stout|||rdquo|styles|Scotland||where|220|95|hoppy|depending|waters|different|many|reconstructed|access|have|geology|hop|stouts|published|profiles|One|ldquo|Malty|Scottish|280|History|110|other|Waters|Schwarzbier|Breweries|e_constant|Doppelbock|salts6|result5|result4|result3|result2|result1|result0|adjusted6|adjusted5|adjusted4|adjusted3|adjusted2|adjusted1|adjusted0|salts5|divCa_balance|salts4|salts3|recommended|salts1|salts0|diluted6|diluted5|diluted4|diluted3|diluted2|diluted1|diluted0|target6||source6|result6||divMg_balance|divMgSO4_tsp|guessing|update|changeTarget|Option|setupDropDowns|form|entire|resetform|round|charAt|numbers|volume|Mash|below|decrese|balance|divSO4_balance|200|750|green|red|104|103|127|147|191|321|divAlkalinity_balance|divSO4Cl_balance|divCl_balance|divNa_balance|divNaCl_tsp|salts2|divCaCl2_tsp|Bohemian|sseldorf|uuml|do|Dusseldorf|brewer|brewed|can|great|Despite|traditional|rzen|lighter|Pilsen|treatment|kind|Well|That|gypsum|auml||some||Germany|addition||brewries|that|divNaHCO3_tsp|divCaCO3_tsp|264172052|are|units|Target|Custom|320|might|223|munich|being|treated|90|were|modification|any|without|divCaSO4_tsp'.split('|'),0,{}))
+    </script>
+
+    <form name="hops" onsubmit="return false;">
+
+        <table class="calc" >
+                <tr>
+                    <td colspan="2" class="separator">Batch Data</td>
+                </tr>
+                <tr>
+                    <th>1.&nbsp;Water&nbsp;Volume&nbsp;(total):</th>
+                    <td><input type="number" step="any" min="0" name="txtmashvolume" value="10" maxlength="6" style="width: 50px" onChange="javascript: updateAll();" />
+                    &nbsp;
+                    <label>
+                        <input type="radio" name="units" value="gallons" Checked style="background: #eeeeee; border: none;" onChange="javascript: updateAll();" />&nbsp;Gallons
+                    </label>
+                    &nbsp;&nbsp;
+
+                    <label>
+                        <input type="radio" name="units" value="quarts" style="background: #eeeeee; border: none;" onChange="javascript: updateAll();" />&nbsp;Quarts
+                    </label>
+                    &nbsp;&nbsp;
+
+                    <label>
+                        <input type="radio" name="units" value="liters" style="background: #eeeeee; border: none;" onChange="javascript: updateAll();" />&nbsp;Liters
+                    </label>
+
+                    </td>
+                </tr>
+                <tr>
+                    <th>2. Percent Dilution:</th>
+                    <td><input type="number" step="any" min="0" name="txtdilute" value="0" maxlength="3" style="width: 50px" onChange="javascript: updateAll();" />
+                        <br/>
+                        <i>Dilute with distilled water to lower source ion concentrations.</i>
+                    </td>
+                </tr>
+                <tr>
+                    <th>3. Target Profile:</th>
+                    <td>
+                        <select name="targetprofile">
+                            <option>---</option>
+                        </select><br/><br/>
+                        <input type="button" name="btnchangeTarget" onClick="javascript: changeTarget();" style="padding: 1px 3px 1px 3px; font-size: 15px;" value="Update Target" />
+                    </td>
+                </tr>
+        </table>
+        <br/>
+        <table class="calc waterchemistrycalc" style="tableLayout: auto;">
+            <tr>
+                <td colspan="8" class="separator">Water Chemistry - Ion Levels (ppm or mg/L)</td>
+            </tr>
+            <tr>
+                <td>&nbsp;</td>
+                <th><div class="ionname">Ca<sup>+2</sup></div></th>
+                <th><div class="ionname">Mg<sup>+2</sup></div></th>
+                <th><div class="ionname">SO<sub>4</sub><sup>-2</sup></div></th>
+                <th><div class="ionname">Na<sup>+</sup></div></th>
+                <th><div class="ionname">Cl<sup>-</sup></div></th>
+                <th><div class="ionname">HCO<sub>3</sub><sup>-</sup></div></th>
+                <th><div class="ionname">Alkalinity<sup>&nbsp;</sup></div></th>
+            </tr>
+            <tr>
+                <th>4. Source Minerals:</th>
+                <td><input type="number" step="any" min="0" name="source0" value="0" maxlength="5" style="width: 50px" onChange="javascript: updateAll();" /></td>
+                <td><input type="number" step="any" min="0" name="source1" value="0" maxlength="5" style="width: 50px" onChange="javascript: updateAll();" /></td>
+                <td><input type="number" step="any" min="0" name="source2" value="0" maxlength="5" style="width: 50px" onChange="javascript: updateAll();" /></td>
+                <td><input type="number" step="any" min="0" name="source3" value="0" maxlength="5" style="width: 50px" onChange="javascript: updateAll();" /></td>
+                <td><input type="number" step="any" min="0" name="source4" value="0" maxlength="5" style="width: 50px" onChange="javascript: updateAll();" /></td>
+                <td><input type="number" step="any" min="0" name="source5" value="0" maxlength="5" style="width: 50px" onChange="javascript: updateAll();" /></td>
+                <td><div id="source6" class="infodiv">-</div></td>
+            </tr>
+            <tr>
+                <th>4a. Diluted Levels:</th>
+                <td><div id="diluted0" class="infodiv">-</div></td>
+                <td><div id="diluted1" class="infodiv">-</div></td>
+                <td><div id="diluted2" class="infodiv">-</div></td>
+                <td><div id="diluted3" class="infodiv">-</div></td>
+                <td><div id="diluted4" class="infodiv">-</div></td>
+                <td><div id="diluted5" class="infodiv">-</div></td>
+                <td><div id="diluted6" class="infodiv">-</div></td>
+            </tr>
+            <tr>
+                <th>5. Target Minerals:</th>
+                <td><input type="number" step="any" min="0" name="target0" value="0" maxlength="4" style="width: 50px" onChange="javascript: updateAll();" /></td>
+                <td><input type="number" step="any" min="0" name="target1" value="0" maxlength="4" style="width: 50px" onChange="javascript: updateAll();" /></td>
+                <td><input type="number" step="any" min="0" name="target2" value="0" maxlength="4" style="width: 50px" onChange="javascript: updateAll();" /></td>
+                <td><input type="number" step="any" min="0" name="target3" value="0" maxlength="4" style="width: 50px" onChange="javascript: updateAll();" /></td>
+                <td><input type="number" step="any" min="0" name="target4" value="0" maxlength="4" style="width: 50px" onChange="javascript: updateAll();" /></td>
+                <td><input type="number" step="any" min="0" name="target5" value="0" maxlength="4" style="width: 50px" onChange="javascript: updateAll();" /></td>
+                <td><div id="target6" class="infodiv">-</div></td>
+
+            </tr>
+            <tr>
+                <th>6. Adjustments From Salts:</th>
+                <td><div id="salts0" class="infodiv">-</div></td>
+                <td><div id="salts1" class="infodiv">-</div></td>
+                <td><div id="salts2" class="infodiv">-</div></td>
+                <td><div id="salts3" class="infodiv">-</div></td>
+                <td><div id="salts4" class="infodiv">-</div></td>
+                <td><div id="salts5" class="infodiv">-</div></td>
+                <td><div id="salts6" class="infodiv">-</div></td>
+            </tr>
+            <tr>
+                <th>7. Adjusted Water:</th>
+                <td><div id="adjusted0" class="infodiv">-</div></td>
+                <td><div id="adjusted1" class="infodiv">-</div></td>
+                <td><div id="adjusted2" class="infodiv">-</div></td>
+                <td><div id="adjusted3" class="infodiv">-</div></td>
+                <td><div id="adjusted4" class="infodiv">-</div></td>
+                <td><div id="adjusted5" class="infodiv">-</div></td>
+                <td><div id="adjusted6" class="infodiv">-</div></td>
+            </tr>
+            <tr>
+                <th>8. Difference:</th>
+                <td><div id="result0" class="infodiv">-</div></td>
+                <td><div id="result1" class="infodiv">-</div></td>
+                <td><div id="result2" class="infodiv">-</div></td>
+                <td><div id="result3" class="infodiv">-</div></td>
+                <td><div id="result4" class="infodiv">-</div></td>
+                <td><div id="result5" class="infodiv">-</div></td>
+                <td><div id="result6" class="infodiv">-</div></td>
+            </tr>
+
+
+            <tr>
+                <td colspan="8" class="separator">Brewing Salt Additions
+                    <input type="button" name="btnchangeTarget" onClick="javascript: changeTarget();" style="padding: 1px 3px 1px 3px; font-size: 15px;" value="Calculate Salts" />
+                </td>
+            </tr>
+            <tr>
+                <th>Chalk CaCO<sub>3</sub></th>
+                <td colspan="2"><input type="number" step="any" min="0" name="txtCaCO3" value="0" maxlength="3" style="width: 50px" onChange="javascript: updateAll();" /> grams</td>
+                <td colspan="5"><div id="divCaCO3_tsp" class="infodiv">- (tsp)</div></td>
+            </tr>
+
+            <tr>
+                <th>Baking Soda NaHCO<sub>3</sub></th>
+                <td colspan="2"><input type="number" step="any" min="0" name="txtNaHCO3" value="0" maxlength="3" style="width: 50px" onChange="javascript: updateAll();" /> grams</td>
+                <td colspan="5"><div id="divNaHCO3_tsp" class="infodiv">- (tsp)</div></td>
+            </tr>
+
+            <tr>
+                <th>Gypsum CaSO<sub>4</sub></th>
+                <td colspan="2"><input type="number" step="any" min="0" name="txtCaSO4" value="0" maxlength="3" style="width: 50px" onChange="javascript: updateAll();" /> grams</td>
+                <td colspan="5"><div id="divCaSO4_tsp" class="infodiv">- (tsp)</div></td>
+            </tr>
+            <tr>
+                <th>Calcium Chloride CaCl<sub>2</sub></th>
+                <td colspan="2"><input type="number" step="any" min="0" name="txtCaCl2" value="0" maxlength="3" style="width: 50px" onChange="javascript: updateAll();" /> grams</td>
+                <td colspan="5"><div id="divCaCl2_tsp" class="infodiv">- (tsp)</div></td>
+            </tr>
+
+            <tr>
+                <th>Epsom Salt MgSO<sub>4</sub></th>
+                <td colspan="2"><input type="number" step="any" min="0" name="txtMgSO4" value="0" maxlength="3" style="width: 50px" onChange="javascript: updateAll();" /> grams</td>
+                <td colspan="5"><div id="divMgSO4_tsp" class="infodiv">- (tsp)</div></td>
+            </tr>
+            <tr>
+                <th>Canning Salt NaCl</th>
+                <td colspan="2"><input type="number" step="any" min="0" name="txtNaCl" value="0" maxlength="3" style="width: 50px" onChange="javascript: updateAll();" /> grams</td>
+                <td colspan="5"><div id="divNaCl_tsp" class="infodiv">- (tsp)</div></td>
+            </tr>
+
+        </table>
+        <br/>
+    </form>
+
+    <script type="text/javascript">
+        setupDropDowns();
+        updateAll();
+    </script>
+    <br/>
+
+    <div class="sharethis-inline-share-buttons"></div>
+</div>
+
+<script type="text/javascript">
+    bf_style_queue.push( "/static/homebrew\/css\/jquery.fancybox.css.version.1655431387" );
+</script>
+<noscript><link rel="stylesheet" href="/static/homebrew/css/jquery.fancybox.css.version.1655431387" type="text/css" /></noscript>
+<script type="text/javascript" src="/static/homebrew/js/jquery.fancybox.pack.js.ver.1655431387" defer></script>
+
+<script>
+function BFAlert(message , type  , confirmButtonText) {
+    //allowed types error,warning,question,success
+    type = (typeof type !== 'undefined') ? type.toLowerCase() : 'error';
+    confirmButtonText = (typeof confirmButtonText !== 'undefined') ? confirmButtonText : 'OK';
+    var modal = $('#BFAlert');
+    $('#bf-alert-message').text(message);
+    $('#bf_ok_button').text(confirmButtonText);
+    $('#bf-modal-title').text(type.charAt(0).toUpperCase() + type.slice(1));
+    modal.addClass('bf-modal-' + type);
+    $('body').css('overflow-y','scroll');
+    modal.show();
+    setTimeout(function() {
+        modal.addClass('bf-modal-open');
+    }, 100);
+}
+window.alert = BFAlert;
+
+Defer( function () {
+    $.ajaxPrefilter(function(options, originalOptions, jqXHR){
+
+        if (options['type'].toLowerCase() === 'post') {
+            jqXHR.setRequestHeader('X-CSRF-TOKEN', "d96a9658d98a6f1ae97c53b1924705897be48e80a1fa85727967304837992637");
+        }
+        var error = options.error;
+        options.error = function (jqXHR, textStatus, errorThrown) {
+            try {
+                var errorResponse = jqXHR.responseJSON.error;
+                if (errorResponse && typeof errorResponse !== 'undefined' ) {
+                    alert(errorResponse);
+                    if (typeof saveButtonActive === 'function') {
+                        // hide inactive overlay at recipe builder
+                        saveButtonActive(true,{});
+                    }
+                    return false;
+                }
+            }
+            catch (e) { }
+
+            if(typeof(error) === "function") return error(jqXHR, textStatus, errorThrown);
+        };
+    });
+    if (typeof bfApp !== 'undefined'){
+        bfApp.config(function($compileProvider, $httpProvider , $qProvider){
+            $qProvider.errorOnUnhandledRejections(false);
+            $compileProvider.aHrefSanitizationWhitelist(/^\s*(https?|ftp|mailto|tel|file|blob|chrome-extension|data|local):/);
+            $httpProvider.defaults.headers.post['X-Requested-With'] = 'XMLHttpRequest';
+            $httpProvider.defaults.headers.post['X-CSRF-TOKEN'] = "d96a9658d98a6f1ae97c53b1924705897be48e80a1fa85727967304837992637";
+            $httpProvider.interceptors.push(function ($q , $rootScope) {
+                return {
+                    'responseError': function (rejection) {
+                        $rootScope.$broadcast('httpResponseError', rejection);
+                        if(typeof rejection.data === 'object') {
+                            if(rejection.data.error){
+                                BFAlert(rejection.data.error);
+                            }
+                        }
+                        return $q.reject(rejection);
+                    }
+
+                }
+            });
+        });
+    }
+
+    $(function() {
+        $('form').each(function() {
+            $('<input>').attr({
+                type: 'hidden',
+                name: 'csrf_token',
+                value: "d96a9658d98a6f1ae97c53b1924705897be48e80a1fa85727967304837992637"            }).appendTo($(this));
+        });
+    });
+
+    $(document).on('click','.bf-modal-card',function (e) {
+        e.stopPropagation();
+    })
+
+    $(document).on('click', '.bf-modal-close, #bf_ok_button, .bf-modal', function () {
+        $('body').css('overflow-y','');
+        $('#BFAlert').removeClass('bf-modal-open').hide();
+    });
+
+});
+
+</script>
+
+<div class="bf-modal" id="BFAlert">
+    <div class="bf-modal-card">
+        <div class="bf-modal-content">
+            <a href="javascript:" class="bf-modal-close"></a>
+            <h2 class="bf-modal-title" id="bf-modal-title"></h2>
+            <p id="bf-alert-message"></p>
+        </div>
+        <div class="bf-modal-footer">
+            <button class="bf-modal-close bf-modal-btn-secondary" style="display: none" id="bf-cancel-button" type="button"><i class="fas fa-times"></i>Cancel</button>
+            <button class="bf-modal-close" id="bf_ok_button" type="button">Ok</button>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    Defer( function () {
+    $(document).ready(function() {
+        if ( ! document.cookie.match(/^(.*;)?\s*bf_adfpv_v1\s*=\s*[^;]+(.*)?$/) ) {
+            var date = new Date();
+            var now = new Date();
+            date.setTime(date.getTime()+(10*365*24*60*60*1000));
+            var expires = "; expires="+date.toGMTString();
+            document.cookie = "bf_adfpv_v1="+now.toGMTString()+expires+"; path=/";
+        }
+        else {
+                    }
+    });
+    });
+    
+</script>
+
+
+
+{% endblock %}

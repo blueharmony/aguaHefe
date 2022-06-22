@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1300" height="700" viewBox="0 0 1300 700">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #a7916d;
+      }
+
+      .cls-2 {
+        opacity: 0.15;
+        mix-blend-mode: screen;
+        fill: url(#linear-gradient);
+      }
+    </style>
+    <linearGradient id="linear-gradient" x1="650" x2="650" y2="700" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fff"/>
+      <stop offset="1" stop-color="#fff" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect class="cls-1" width="1300" height="700"/>
+  <ellipse class="cls-2" cx="650" cy="945.5" rx="976" ry="557.5"/>
+</svg>
