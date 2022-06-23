@@ -1,3 +1,4 @@
+from posixpath import split
 from flask import Flask, render_template, request
 from datetime import datetime
 import json
@@ -113,6 +114,20 @@ def home():
 @app.route("/bf/")
 def bf():
     return render_template("water-chemistry.html")
+
+
+# background process happening without any refreshing
+@app.route('/calc_salts')
+def calc_salts():
+    args = request.args.get('salts')
+    targetCa, targetMg, targetSO4, targetNa, targetCl, targetHCO3 = args.split(',')
+    
+    txtCaCO3, txtNaHCO3, txtCaSO4, txtCaCl2, txtMgSO4, txtNaCl, residual = \
+        ah.calculateSalts(targetCa, targetMg, targetSO4, targetNa, targetCl, targetHCO3)
+        
+    salts_list = [txtCaCO3, txtNaHCO3, txtCaSO4, txtCaCl2, txtMgSO4, txtNaCl, residual]
+
+    return (json.dumps(salts_list))
 
 
 @app.route("/about/")
