@@ -37,15 +37,33 @@ Water Chemistry
             let targetNa = document.getElementById("target3").value;
             let targetCl = document.getElementById("target4").value;
             let targetHCO3 = document.getElementById("target5").value;
-            let target_salts = [targetCa, targetMg, targetSO4, targetNa, targetCl, targetHCO3]
+            let textMashVolume = document.getElementById("txtmashvolume").value;
+            let textUnits = document.querySelector('input[name=units]:checked').value;
+            //let textUnits = getModernCheckedByName('units').value;
+
+            let target_salts = [targetCa, targetMg, targetSO4, targetNa, targetCl, targetHCO3, textMashVolume, textUnits]
+
             let calc_salts_url = "/calc_salts?salts=".concat(target_salts.toString())
             $.getJSON(calc_salts_url,
                         function(data) {
-                            //do nothing
+                            document.getElementById("txtCaCO3").value = data[0];
+                            document.getElementById("txtNaHCO3").value = data[1];
+                            document.getElementById("txtCaSO4").value = data[2];
+                            document.getElementById("txtCaCl2").value = data[3];
+                            document.getElementById("txtMgSO4").value = data[4];
+                            document.getElementById("txtNaCl").value = data[5];
                         }
                     );
             return false;
         }
+    </script>
+
+    <script type="text/javascript">
+        function getModernCheckedByName(name){
+            return  Array.prototype.slice.call(document.getElementsByName(name)).filter(function(e){
+                return e.checked;
+            });
+        }   
     </script>
 
     <form name="hops" onsubmit="return false;">
@@ -55,11 +73,11 @@ Water Chemistry
                     <td colspan="2" class="separator"><h2>Batch Data</h2></td>
                 </tr>
                 <tr>
-                    <th>1.&nbsp;Water&nbsp;Volume&nbsp;(total):</th>
-                    <td><input type="number" step="any" min="0" name="txtmashvolume" value="10" maxlength="6" style="width: 50px" onChange="javascript: updateAll();" />
+                    <th>1. Water Volume (total):</th>
+                    <td><input type="number" step="any" min="0" id="txtmashvolume" name="txtmashvolume" value="10" maxlength="6" style="width: 50px" onChange="javascript: updateAll();" />
                     &nbsp;
                     <label>
-                        <input type="radio" name="units" value="gallons" Checked style="background: #eeeeee; border: none;" onChange="javascript: updateAll();" />&nbsp;Gallons
+                        <input type="radio" name="units" value="gallons" Checked checked="checked" style="background: #eeeeee; border: none;" onChange="javascript: updateAll();" />&nbsp;Gallons
                     </label>
                     &nbsp;&nbsp;
 
@@ -182,35 +200,35 @@ Water Chemistry
             </tr>
             <tr>
                 <th>Chalk CaCO<sub>3</sub></th>
-                <td colspan="2"><input type="number" step="any" min="0" name="txtCaCO3" value="0" maxlength="3" style="width: 50px" onChange="javascript: updateAll();" /> grams</td>
+                <td colspan="2"><input type="number" step="any" min="0" id="txtCaCO3" name="txtCaCO3" value="0" maxlength="3" style="width: 50px" onChange="javascript: updateAll();" /> grams</td>
                 <td colspan="5"><div id="divCaCO3_tsp" class="infodiv">- (tsp)</div></td>
             </tr>
 
             <tr>
                 <th>Baking Soda NaHCO<sub>3</sub></th>
-                <td colspan="2"><input type="number" step="any" min="0" name="txtNaHCO3" value="0" maxlength="3" style="width: 50px" onChange="javascript: updateAll();" /> grams</td>
+                <td colspan="2"><input type="number" step="any" min="0" id="txtNaHCO3" name="txtNaHCO3" value="0" maxlength="3" style="width: 50px" onChange="javascript: updateAll();" /> grams</td>
                 <td colspan="5"><div id="divNaHCO3_tsp" class="infodiv">- (tsp)</div></td>
             </tr>
 
             <tr>
                 <th>Gypsum CaSO<sub>4</sub></th>
-                <td colspan="2"><input type="number" step="any" min="0" name="txtCaSO4" value="0" maxlength="3" style="width: 50px" onChange="javascript: updateAll();" /> grams</td>
+                <td colspan="2"><input type="number" step="any" min="0" id="txtCaSO4" name="txtCaSO4" value="0" maxlength="3" style="width: 50px" onChange="javascript: updateAll();" /> grams</td>
                 <td colspan="5"><div id="divCaSO4_tsp" class="infodiv">- (tsp)</div></td>
             </tr>
             <tr>
                 <th>Calcium Chloride CaCl<sub>2</sub></th>
-                <td colspan="2"><input type="number" step="any" min="0" name="txtCaCl2" value="0" maxlength="3" style="width: 50px" onChange="javascript: updateAll();" /> grams</td>
+                <td colspan="2"><input type="number" step="any" min="0" id="txtCaCl2" name="txtCaCl2" value="0" maxlength="3" style="width: 50px" onChange="javascript: updateAll();" /> grams</td>
                 <td colspan="5"><div id="divCaCl2_tsp" class="infodiv">- (tsp)</div></td>
             </tr>
 
             <tr>
                 <th>Epsom Salt MgSO<sub>4</sub></th>
-                <td colspan="2"><input type="number" step="any" min="0" name="txtMgSO4" value="0" maxlength="3" style="width: 50px" onChange="javascript: updateAll();" /> grams</td>
+                <td colspan="2"><input type="number" step="any" min="0" id="txtMgSO4" name="txtMgSO4" value="0" maxlength="3" style="width: 50px" onChange="javascript: updateAll();" /> grams</td>
                 <td colspan="5"><div id="divMgSO4_tsp" class="infodiv">- (tsp)</div></td>
             </tr>
             <tr>
                 <th>Canning Salt NaCl</th>
-                <td colspan="2"><input type="number" step="any" min="0" name="txtNaCl" value="0" maxlength="3" style="width: 50px" onChange="javascript: updateAll();" /> grams</td>
+                <td colspan="2"><input type="number" step="any" min="0" id="txtNaCl" name="txtNaCl" value="0" maxlength="3" style="width: 50px" onChange="javascript: updateAll();" /> grams</td>
                 <td colspan="5"><div id="divNaCl_tsp" class="infodiv">- (tsp)</div></td>
             </tr>
 

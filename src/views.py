@@ -120,12 +120,22 @@ def bf():
 @app.route('/calc_salts')
 def calc_salts():
     args = request.args.get('salts')
-    targetCa, targetMg, targetSO4, targetNa, targetCl, targetHCO3 = args.split(',')
-    
+    targetCa, targetMg, targetSO4, targetNa, targetCl, targetHCO3, txtMashVolume, txtUnits = args.split(',')
+
+    # best guess at salts needed for water adjustments
     txtCaCO3, txtNaHCO3, txtCaSO4, txtCaCl2, txtMgSO4, txtNaCl, residual = \
         ah.calculateSalts(targetCa, targetMg, targetSO4, targetNa, targetCl, targetHCO3)
-        
-    salts_list = [txtCaCO3, txtNaHCO3, txtCaSO4, txtCaCl2, txtMgSO4, txtNaCl, residual]
+
+    # get the gallons2units conversion multiplier
+    gallons_to_units = ah.gallons2units(int(txtMashVolume), txtUnits)
+
+    salts_list = [  txtCaCO3 * gallons_to_units, 
+                    txtNaHCO3 * gallons_to_units, 
+                    txtCaSO4 * gallons_to_units, 
+                    txtCaCl2 * gallons_to_units, 
+                    txtMgSO4 * gallons_to_units, 
+                    txtNaCl * gallons_to_units,
+                    residual]
 
     return (json.dumps(salts_list))
 
