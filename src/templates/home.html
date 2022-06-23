@@ -174,7 +174,13 @@ Home
     <table class="tableLayout">
 
 		<tr>
-			<td colspan="8" class="separator"><h2>Brewing Salt Additions</h2></td>
+			<td class="separator"><h2>Brewing Salt Additions&nbsp;&nbsp;&nbsp;</h2></td>
+            <td>
+                <a href="#" id="btnCalcSalts">
+                    <input type = "submit" value = "Calculate Salts" 
+                    style="padding: 1px 3px 1px 3px; font-size: 15px;" />
+                </a>
+            </td>
 		</tr>
 		<tr>
 			<th>Chalk CaCO<sub>3</sub></th>
@@ -204,8 +210,6 @@ Home
 			<td colspan="2"><input type="number" step="any" min="0" name="txtNaCl" value="{{ calc_results.txtNaCl }}" maxlength="3" style="width: 50px" onChange="javascript: updateAll();" /> grams</td>
 		</tr>
 	</table>
-
-    <p>&nbsp;&nbsp;&nbsp;<input type = "submit" value = "Calculate" /></p>
 </form>
 
 {% endblock %}

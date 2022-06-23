@@ -42,6 +42,11 @@ def default_calc_results():
     return calc_results
 
 
+def roundNumber(theNumber, multiplier):
+    answer = theNumber * multiplier
+    return "{:.3f}".format(answer)
+
+
 @app.route("/", methods=('GET', 'POST'))
 def home():
     form_data = {}
@@ -129,13 +134,13 @@ def calc_salts():
     # get the gallons2units conversion multiplier
     gallons_to_units = ah.gallons2units(int(txtMashVolume), txtUnits)
 
-    salts_list = [  txtCaCO3 * gallons_to_units, 
-                    txtNaHCO3 * gallons_to_units, 
-                    txtCaSO4 * gallons_to_units, 
-                    txtCaCl2 * gallons_to_units, 
-                    txtMgSO4 * gallons_to_units, 
-                    txtNaCl * gallons_to_units,
-                    residual]
+    salts_list = [  roundNumber(txtCaCO3, gallons_to_units), 
+                    roundNumber(txtNaHCO3, gallons_to_units), 
+                    roundNumber(txtCaSO4, gallons_to_units), 
+                    roundNumber(txtCaCl2, gallons_to_units), 
+                    roundNumber(txtMgSO4, gallons_to_units), 
+                    roundNumber(txtNaCl, gallons_to_units),
+                    roundNumber(residual, gallons_to_units)]
 
     return (json.dumps(salts_list))
 
