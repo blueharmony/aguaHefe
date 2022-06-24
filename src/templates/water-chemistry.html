@@ -54,9 +54,11 @@ Water Chemistry
                         }
                     );
             // trigger the onChange event to update all page values
-            const e = new Event("change");
-            const element = document.querySelector('#txtCaCO3')
+            var element = document.getElementById('target0');
+            var e = new Event("change", { bubbles: true });
             element.dispatchEvent(e);
+            // neither of these work (currently)!
+            updateAll(); 
 
             return false;
         }
