@@ -41,6 +41,38 @@ Home
     }
 </script>
 
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript">
+    function calc_salts() {
+        let targetCa = document.getElementById("target0").value;
+        let targetMg = document.getElementById("target1").value;
+        let targetSO4 = document.getElementById("target2").value;
+        let targetNa = document.getElementById("target3").value;
+        let targetCl = document.getElementById("target4").value;
+        let targetHCO3 = document.getElementById("target5").value;
+        let textMashVolume = document.getElementById("txtmashvolume").value;
+        let textUnits = document.querySelector('input[name=units]:checked').value;
+        // these have to line up to match the Python calc_salts method
+        let target_salts = [targetCa, targetMg, targetSO4, targetNa, targetCl, targetHCO3, textMashVolume, textUnits]
+
+        let calc_salts_url = "/calc_salts?salts=".concat(target_salts.toString())
+        $.getJSON(calc_salts_url,
+                    function(data) {
+                        document.getElementById("txtCaCO3").value = data[0];
+                        document.getElementById("txtNaHCO3").value = data[1];
+                        document.getElementById("txtCaSO4").value = data[2];
+                        document.getElementById("txtCaCl2").value = data[3];
+                        document.getElementById("txtMgSO4").value = data[4];
+                        document.getElementById("txtNaCl").value = data[5];
+                    }
+                );
+        // trigger the onChange event to update all page values
+        updateAll(); 
+
+        return false;
+    }
+</script>
+
 <form action="/" method = "POST">
 	<table class="calc">
 			<tr>
@@ -82,10 +114,17 @@ Home
                         {% for style in styles %}
                             <!-- <option value="{{ style.Style }} {{ style.Ca }} {{ style.Mg }} {{ style.SO4 }} {{ style.Na }} {{ style.Cl }} {{ style.HCO3 }}">{{ style.Style }}</option> -->
                             <option value="{{ style }}">{{ style.Style }}</option>
-                            {% endfor %}
+                        {% endfor %}
 					</select><br/><br/>
-					<input type="button" name="btnchangeTarget" onClick="javascript: changeTarget(targetprofile.value);" style="padding: 1px 3px 1px 3px; font-size: 15px;" value="Update Target" />
-				</td>
+					
+                    <input type="button" name="btnchangeTarget" onClick="javascript: changeTarget(targetprofile.value);" style="padding: 1px 3px 1px 3px; font-size: 15px;" value="Update Target" />
+                    <a href="#" id="btnCalcSalts">
+                        <button class='btn btn-default' name="btnCalcSalts" 
+                        onClick="javascript: calc_salts();" style="padding: 1px 3px 1px 3px; font-size: 15px;">
+                            Calculate Salts
+                        </button>
+                    </a>
+                </td>
 			</tr>
 	</table>
 	<br/>
@@ -175,12 +214,6 @@ Home
 
 		<tr>
 			<td class="separator"><h2>Brewing Salt Additions&nbsp;&nbsp;&nbsp;</h2></td>
-            <td>
-                <a href="#" id="btnCalcSalts">
-                    <input type = "submit" value = "Calculate Salts" 
-                    style="padding: 1px 3px 1px 3px; font-size: 15px;" />
-                </a>
-            </td>
 		</tr>
 		<tr>
 			<th>Chalk CaCO<sub>3</sub></th>

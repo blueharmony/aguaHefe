@@ -83,13 +83,13 @@ def home():
         gallons_to_units = ah.gallons2units(int(form_data['txtmashvolume']), form_data['units'])
 
         # convert salts amounts to selected volume units       
-        calc_results = {'txtCaCO3': txtCaCO3 * gallons_to_units,
-                        'txtNaHCO3': txtNaHCO3 * gallons_to_units,
-                        'txtCaSO4': txtCaSO4 * gallons_to_units,
-                        'txtCaCl2': txtCaCl2 * gallons_to_units,
-                        'txtMgSO4': txtMgSO4 * gallons_to_units,
-                        'txtNaCl': txtNaCl * gallons_to_units,
-                        'residual': residual}           
+        calc_results = {'txtCaCO3': roundNumber(txtCaCO3, gallons_to_units),
+                        'txtNaHCO3': roundNumber(txtNaHCO3, gallons_to_units),
+                        'txtCaSO4': roundNumber(txtCaSO4, gallons_to_units),
+                        'txtCaCl2': roundNumber(txtCaCl2, gallons_to_units),
+                        'txtMgSO4': roundNumber(txtMgSO4, gallons_to_units),
+                        'txtNaCl': roundNumber(txtNaCl, gallons_to_units),
+                        'residual': roundNumber(residual, gallons_to_units)}           
         
         # determine how the calculated results will affect the
         # water after adjustments from the salts.
