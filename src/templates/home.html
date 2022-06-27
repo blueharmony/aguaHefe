@@ -6,6 +6,9 @@ Home
 
 <script>
     function changeTarget(target) {
+        console.log("changeTarget:");
+        console.log(target);
+
         // convert single quotes to JSON double quotes
         target = target.replaceAll("'", "\"")
         // convert string to JSON
@@ -220,7 +223,7 @@ Home
     <table class="tableLayout">
 
 		<tr>
-			<td class="separator"><h2>Brewing Salt Additions&nbsp;&nbsp;&nbsp;</h2></td>
+			<td colspan="8" class="separator"><h2>Brewing Salt Additions&nbsp;&nbsp;&nbsp;</h2></td>
 		</tr>
 		<tr>
 			<th>Chalk CaCO<sub>3</sub></th>
