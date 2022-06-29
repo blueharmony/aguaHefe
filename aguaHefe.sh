@@ -1,6 +1,11 @@
 ### setup the python environment
 # python -m venv .venv
-source .venv/scripts/activate
+if test -f ".venv/scripts/activate"; then
+    source .venv/scripts/activate
+else
+    chmod .venv/bin/activate
+    source .venv/bin/activate
+fi
 
 set -x
 pip install -r requirements.txt
