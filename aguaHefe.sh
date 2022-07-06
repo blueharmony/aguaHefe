@@ -1,6 +1,13 @@
 ### setup the python environment
-# python -m venv .venv
-if test -f ".venv/scripts/activate"; then
+
+if [ -d ".venv" ]; then
+    echo "venv environment exists"
+else
+    python -m venv .venv
+fi
+
+# Winders versus Linux
+if [ -e ".venv/scripts/activate" ]; then
     source .venv/scripts/activate
 else
     chmod .venv/bin/activate
