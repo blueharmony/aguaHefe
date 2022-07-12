@@ -109,7 +109,7 @@ class aguaHefe:
         # calculate diff values between target and actual
         for actual_value, target_value in zip(totals, self.B):
             # append to the same totals
-            totals.append(actual_value - target_value)
+            totals.append(int(actual_value - target_value))
 
         return totals
 

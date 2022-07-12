@@ -80,14 +80,8 @@ def home():
 
     # initialize the home form
     if request.method == 'GET':
-        form_dict = {'form_data': form_data, 'styles': styles_data, 'calc_results': default_calc_results(), 'salts': salts}
-        # ah_data = json.dumps(form_dict)
-        return render_template('home.html',
-#                                form_data=form_data,
-#                                styles=styles_data,
-#                                calc_results=default_calc_results(),
-#                                salts=salts,
-                                ah_data=form_dict)
+        ah_data = {'form_data': form_data, 'styles': styles_data, 'calc_results': default_calc_results(), 'salts': salts}
+        return render_template('home.html', ah_data=ah_data)
 
     # update with values from the form and calculations
     if request.method == 'POST':
@@ -123,29 +117,18 @@ def home():
         # determine how the calculated results will affect the
         # water after adjustments from the salts.
         # also, append the difference between target and calculated
-        adjustments_from_salts = \
-            ah.adjustments_from_salts(  txtCaCO3,
-                                        txtNaHCO3,
-                                        txtCaSO4,
-                                        txtCaCl2,
-                                        txtMgSO4,
-                                        txtNaCl)
-        print(adjustments_from_salts)
-        
-        # convert the list into a dictionary
-        # the first six are the salts, the second six are the differences
-        salts_names = ['saltsCa', 'saltsMg', 'saltsSO4', 'saltsNa', 'saltsCl', 'saltsHCO3',
-                       'diffCa', 'diffMg', 'diffSO4', 'diffNa', 'diffCl', 'diffHCO3']
-        salts = dict(zip(salts_names, adjustments_from_salts))
+        salts = \
+            adjustments_from_salts( txtCaCO3,
+                                    txtNaHCO3,
+                                    txtCaSO4,
+                                    txtCaCl2,
+                                    txtMgSO4,
+                                    txtNaCl)
+        print(salts)
 
-        form_dict = {'form_data': form_data, 'styles': styles_data, 'calc_results': calc_results, 'salts': salts}
+        ah_data = {'form_data': form_data, 'styles': styles_data, 'calc_results': calc_results, 'salts': salts}
 
-        return render_template('home.html',
-#                                form_data=form_data,    
-#                                styles=styles_data,
-#                                calc_results=calc_results,
-#                                salts=salts,
-                                ah_data=form_dict)
+        return render_template('home.html', ah_data=ah_data)
 
 
 @app.route("/bf/")
@@ -182,6 +165,31 @@ def calc_salts():
 
     return (json.dumps(salts_list))
 
+@app.route('/adjustments_from_salts')
+def adjustments_from_salts( txtCaCO3,
+                            txtNaHCO3,
+                            txtCaSO4,
+                            txtCaCl2,
+                            txtMgSO4,
+                            txtNaCl):
+
+    adjustments_from_salts = \
+    ah.adjustments_from_salts(  txtCaCO3,
+                                txtNaHCO3,
+                                txtCaSO4,
+                                txtCaCl2,
+                                txtMgSO4,
+                                txtNaCl)
+
+    print(adjustments_from_salts)
+        
+    # convert the list into a dictionary
+    # the first six are the salts, the second six are the differences
+    salts_names = ['saltsCa', 'saltsMg', 'saltsSO4', 'saltsNa', 'saltsCl', 'saltsHCO3',
+                    'diffCa', 'diffMg', 'diffSO4', 'diffNa', 'diffCl', 'diffHCO3']
+    salts = dict(zip(salts_names, adjustments_from_salts))
+
+    return salts
 
 @app.route("/about/")
 def about():

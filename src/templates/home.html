@@ -25,6 +25,18 @@ Home
 </script>
 
 <script>
+    function updateDiffs() {
+        console.log("updateDiffs:");
+        document.getElementById("diffCa").value = document.getElementById("saltsCa").value - document.getElementById("targetCa").value;
+        document.getElementById("diffMg").value = document.getElementById("saltsMg").value - document.getElementById("targetMg").value;
+        document.getElementById("diffSO4").value = document.getElementById("saltsSO4").value - document.getElementById("targetSO4").valu;
+        document.getElementById("diffNa").value = document.getElementById("saltsNa").value - document.getElementById("targetNa").valu;
+        document.getElementById("diffCl").value = document.getElementById("saltsCl").value - document.getElementById("targetCl").value;
+        document.getElementById("diffHCO3").value = document.getElementById("saltsHCO3").value - document.getElementById("targetHCO3").value;
+    }
+</script>
+
+<script>
     function updateAll() {
         console.log("updateAll:");
         console.log(ah_data.form_data);
@@ -36,18 +48,6 @@ Home
         document.getElementById("targetHCO3").value = ah_data.form_data.targetHCO3;
         
         updateDiffs();
-    }
-</script>
-
-<script>
-    function updateDiffs() {
-        console.log("updateDiffs:");
-        document.getElementById("diffCa").value = document.getElementById("saltsCa").value - document.getElementById("targetCa").value;
-        document.getElementById("diffMg").value = document.getElementById("saltsMg").value - document.getElementById("targetMg").value;
-        document.getElementById("diffSO4").value = document.getElementById("saltsSO4").value - document.getElementById("targetSO4").valu;
-        document.getElementById("diffNa").value = document.getElementById("saltsNa").value - document.getElementById("targetNa").valu;
-        document.getElementById("diffCl").value = document.getElementById("saltsCl").value - document.getElementById("targetCl").value;
-        document.getElementById("diffHCO3").value = document.getElementById("saltsHCO3").value - document.getElementById("targetHCO3").value;
     }
 </script>
 
@@ -127,7 +127,9 @@ Home
                         {% endfor %}
 					</select><br/><br/>
 					
-                    <input type="button" name="btnchangeTarget" onClick="javascript: changeTarget(targetprofile.value);" style="padding: 1px 3px 1px 3px; font-size: 15px;" value="Update Target" />
+                    <input type="button" name="btnchangeTarget" onClick="javascript: changeTarget(targetprofile.value);" 
+						style="padding: 1px 3px 1px 3px; font-size: 15px;" value="Update Target" />
+						
                     <a href="#" id="btnCalcSalts">
                         <button class='btn btn-default' name="btnCalcSalts" 
                         onClick="javascript: calc_salts();" style="padding: 1px 3px 1px 3px; font-size: 15px;">
