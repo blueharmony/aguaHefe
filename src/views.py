@@ -1,25 +1,40 @@
 from posixpath import split
 from flask import Flask, render_template, request
-from datetime import datetime
+# from datetime import datetime
 import json
-import os
+# import os
 from . import aguaHefe
 from . import app
 
 # app = Flask(__name__)
 
-# load the beer styles into memory
-# cwd = os.getcwd()
-styles_data = ""
-try:
-    with open("./src/data/styles.json", "r") as f:
-        styles_data = json.load(f)
-except FileNotFoundError:
+
+def load_beer_styles(styles_json: str = "styles.json"):
+    """ Load the beer styles into memory
+
+    Args:
+        styles_json (str, optional): _description_. Defaults to "styles.json".
+
+    Returns:
+        JSON: styles data
+    """
+    # cwd = os.getcwd()
+    
     try:
-        with open("./data/styles.json", "r") as f:
+        with open("./src/data/" + styles_json, "r") as f:
             styles_data = json.load(f)
     except FileNotFoundError:
-        print("Error: could not find .../data/styles.json!")
+        try:
+            with open("./data/styles.json", "r") as f:
+                styles_data = json.load(f)
+        except FileNotFoundError:
+            print("Error: could not find ./src/data/" + styles_json)
+
+    return styles_data
+
+
+# load the default beer styles
+styles_data = load_beer_styles()
 
 # instatiate the aguaHefe class
 ah = aguaHefe.aguaHefe()
@@ -43,22 +58,36 @@ def default_calc_results():
 
 
 def roundNumber(theNumber, multiplier):
+    """ Round theNumber * multiplier to a float
+
+    Args:
+        theNumber: the base number
+        multiplier: transformation multiplier
+
+    Returns:
+        float: formatted number
+    """
     answer = theNumber * multiplier
     return "{:.3f}".format(answer)
 
 
 @app.route("/", methods=('GET', 'POST'))
 def home():
+    """ The default home page
+    """
     form_data = {}
     salts = {}
 
     # initialize the home form
     if request.method == 'GET':
+        form_dict = {'form_data': form_data, 'styles': styles_data, 'calc_results': default_calc_results(), 'salts': salts}
+        # ah_data = json.dumps(form_dict)
         return render_template('home.html',
-                                form_data=form_data,
-                                styles=styles_data,
-                                calc_results=default_calc_results(),
-                                salts=salts)
+#                                form_data=form_data,
+#                                styles=styles_data,
+#                                calc_results=default_calc_results(),
+#                                salts=salts,
+                                ah_data=form_dict)
 
     # update with values from the form and calculations
     if request.method == 'POST':
@@ -109,21 +138,30 @@ def home():
                        'diffCa', 'diffMg', 'diffSO4', 'diffNa', 'diffCl', 'diffHCO3']
         salts = dict(zip(salts_names, adjustments_from_salts))
 
+        form_dict = {'form_data': form_data, 'styles': styles_data, 'calc_results': calc_results, 'salts': salts}
+
         return render_template('home.html',
-                                form_data=form_data,    
-                                styles=styles_data,
-                                calc_results=calc_results,
-                                salts=salts)
+#                                form_data=form_data,    
+#                                styles=styles_data,
+#                                calc_results=calc_results,
+#                                salts=salts,
+                                ah_data=form_dict)
 
 
 @app.route("/bf/")
 def bf():
+    """ A modified version of the original Brewers Friend page
+    """
     return render_template("water-chemistry.html")
 
 
-# background process happening without any refreshing
 @app.route('/calc_salts')
 def calc_salts():
+    """ background process happening without any refreshing
+
+    Returns:
+        _type_: _description_
+    """
     args = request.args.get('salts')
     targetCa, targetMg, targetSO4, targetNa, targetCl, targetHCO3, txtMashVolume, txtUnits = args.split(',')
 

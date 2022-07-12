@@ -27,13 +27,13 @@ Home
 <script>
     function updateAll() {
         console.log("updateAll:");
-        console.log(form_data);
-        document.getElementById("targetCa").value = form_data.targetCa;
-        document.getElementById("targetMg").value = form_data.targetMg;
-        document.getElementById("targetSO4").value = form_data.targetSO4;
-        document.getElementById("targetNa").value = form_data.targetNa;
-        document.getElementById("targetCl").value = form_data.targetCl;
-        document.getElementById("targetHCO3").value = form_data.targetHCO3;
+        console.log(ah_data.form_data);
+        document.getElementById("targetCa").value = ah_data.form_data.targetCa;
+        document.getElementById("targetMg").value = ah_data.form_data.targetMg;
+        document.getElementById("targetSO4").value = ah_data.form_data.targetSO4;
+        document.getElementById("targetNa").value = ah_data.form_data.targetNa;
+        document.getElementById("targetCl").value = ah_data.form_data.targetCl;
+        document.getElementById("targetHCO3").value = ah_data.form_data.targetHCO3;
         
         updateDiffs();
     }
@@ -121,7 +121,7 @@ Home
 				<th>Target Profile:</th>
 				<td>
 					<select name="targetprofile">
-                        {% for style in styles %}
+                        {% for style in ah_data.styles %}
                             <!-- <option value="{{ style.Style }} {{ style.Ca }} {{ style.Mg }} {{ style.SO4 }} {{ style.Na }} {{ style.Cl }} {{ style.HCO3 }}">{{ style.Style }}</option> -->
                             <option value="{{ style }}">{{ style.Style }}</option>
                         {% endfor %}
@@ -145,7 +145,7 @@ Home
 		</tr>
         <tr>
             <td class="ionname" value=""><h3>Target Profile</h3></td>
-            <td colspan="3"><input type="text" id="selectedProfile" name="selectedProfile" value="{{ form_data.selectedProfile }}" style="width: 200px" /></td>
+            <td colspan="3"><input type="text" id="selectedProfile" name="selectedProfile" value="{{ ah_data.form_data.selectedProfile }}" style="width: 200px" /></td>
         </tr>
 		<tr>
 			<td>&nbsp;</td>
@@ -180,21 +180,21 @@ Home
         -->
 		<tr>
 			<th>Target Minerals:</th>
-			<td><input type="text" step="any" min="0" id="targetCa" name="targetCa" value="{{ form_data.targetCa }}" maxlength="4" style="width: 50px" onChange="javascript: updateDiffs();" /></td>
-			<td><input type="text" step="any" min="0" id="targetMg" name="targetMg" value="{{ form_data.targetMg }}" maxlength="4" style="width: 50px" onChange="javascript: updateDiffs();" /></td>
-			<td><input type="text" step="any" min="0" id="targetSO4" name="targetSO4" value="{{ form_data.targetSO4 }}" maxlength="4" style="width: 50px" onChange="javascript: updateDiffs();" /></td>
-			<td><input type="text" step="any" min="0" id="targetNa" name="targetNa" value="{{ form_data.targetNa }}" maxlength="4" style="width: 50px" onChange="javascript: updateDiffs();" /></td>
-			<td><input type="text" step="any" min="0" id="targetCl" name="targetCl" value="{{ form_data.targetCl }}" maxlength="4" style="width: 50px" onChange="javascript: updateDiffs();" /></td>
-			<td><input type="text" step="any" min="0" id="targetHCO3" name="targetHCO3" value="{{ form_data.targetHCO3 }}" maxlength="4" style="width: 50px" onChange="javascript: updateDiffs();" /></td>
+			<td><input type="text" step="any" min="0" id="targetCa" name="targetCa" value="{{ ah_data.form_data.targetCa }}" maxlength="4" style="width: 50px" onChange="javascript: updateDiffs();" /></td>
+			<td><input type="text" step="any" min="0" id="targetMg" name="targetMg" value="{{ ah_data.form_data.targetMg }}" maxlength="4" style="width: 50px" onChange="javascript: updateDiffs();" /></td>
+			<td><input type="text" step="any" min="0" id="targetSO4" name="targetSO4" value="{{ ah_data.form_data.targetSO4 }}" maxlength="4" style="width: 50px" onChange="javascript: updateDiffs();" /></td>
+			<td><input type="text" step="any" min="0" id="targetNa" name="targetNa" value="{{ ah_data.form_data.targetNa }}" maxlength="4" style="width: 50px" onChange="javascript: updateDiffs();" /></td>
+			<td><input type="text" step="any" min="0" id="targetCl" name="targetCl" value="{{ ah_data.form_data.targetCl }}" maxlength="4" style="width: 50px" onChange="javascript: updateDiffs();" /></td>
+			<td><input type="text" step="any" min="0" id="targetHCO3" name="targetHCO3" value="{{ ah_data.form_data.targetHCO3 }}" maxlength="4" style="width: 50px" onChange="javascript: updateDiffs();" /></td>
 		</tr>
 		<tr>
 			<th>Adjustments From Salts:</th>
-			<td><div id="saltsCa" class="infodiv">{{ salts.saltsCa }}</div></td>
-			<td><div id="saltsMg" class="infodiv">{{ salts.saltsMg }}</div></td>
-			<td><div id="saltsSO4" class="infodiv">{{ salts.saltsSO4 }}</div></td>
-			<td><div id="saltsNa" class="infodiv">{{ salts.saltsNa }}</div></td>
-			<td><div id="saltsCl" class="infodiv">{{ salts.saltsCl }}</div></td>
-			<td><div id="saltsHCO3" class="infodiv">{{ salts.saltsHCO3 }}</div></td>
+			<td><div id="saltsCa" class="infodiv">{{ ah_data.salts.saltsCa }}</div></td>
+			<td><div id="saltsMg" class="infodiv">{{ ah_data.salts.saltsMg }}</div></td>
+			<td><div id="saltsSO4" class="infodiv">{{ ah_data.salts.saltsSO4 }}</div></td>
+			<td><div id="saltsNa" class="infodiv">{{ ah_data.salts.saltsNa }}</div></td>
+			<td><div id="saltsCl" class="infodiv">{{ ah_data.salts.saltsCl }}</div></td>
+			<td><div id="saltsHCO3" class="infodiv">{{ ah_data.salts.saltsHCO3 }}</div></td>
 		</tr>
         <!--
 		<tr>
@@ -210,12 +210,12 @@ Home
         -->
 		<tr>
 			<th>Difference:</th>
-			<td><div id="diffCa" class="infodiv">{{ salts.diffCa }}</div></td>
-			<td><div id="diffMg" class="infodiv">{{ salts.diffMg }}</div></td>
-			<td><div id="diffSO4" class="infodiv">{{ salts.diffSO4 }}</div></td>
-			<td><div id="diffNa" class="infodiv">{{ salts.diffNa }}</div></td>
-			<td><div id="diffCl" class="infodiv">{{ salts.diffCl }}</div></td>
-			<td><div id="diffHCO3" class="infodiv">{{ salts.diffHCO3 }}</div></td>
+			<td><div id="diffCa" class="infodiv">{{ ah_data.salts.diffCa }}</div></td>
+			<td><div id="diffMg" class="infodiv">{{ ah_data.salts.diffMg }}</div></td>
+			<td><div id="diffSO4" class="infodiv">{{ ah_data.salts.diffSO4 }}</div></td>
+			<td><div id="diffNa" class="infodiv">{{ ah_data.salts.diffNa }}</div></td>
+			<td><div id="diffCl" class="infodiv">{{ ah_data.salts.diffCl }}</div></td>
+			<td><div id="diffHCO3" class="infodiv">{{ ah_data.salts.diffHCO3 }}</div></td>
 		</tr>
     </table>
     <br/>
@@ -227,30 +227,30 @@ Home
 		</tr>
 		<tr>
 			<th>Chalk CaCO<sub>3</sub></th>
-			<td colspan="2"><input type="number" step="any" min="0" name="txtCaCO3" value="{{ calc_results.txtCaCO3 }}" maxlength="3" style="width: 50px" onChange="javascript: updateAll();" /> grams</td>
+			<td colspan="2"><input type="number" step="any" min="0" name="txtCaCO3" value="{{ ah_data.calc_results.txtCaCO3 }}" maxlength="5" style="width: 100px" onChange="javascript: updateAll();" /> grams</td>
 		</tr>
 
 		<tr>
 			<th>Baking Soda NaHCO<sub>3</sub></th>
-			<td colspan="2"><input type="number" step="any" min="0" name="txtNaHCO3" value="{{ calc_results.txtNaHCO3 }}" maxlength="3" style="width: 50px" onChange="javascript: updateAll();" /> grams</td>
+			<td colspan="2"><input type="number" step="any" min="0" name="txtNaHCO3" value="{{ ah_data.calc_results.txtNaHCO3 }}" maxlength="5" style="width: 100px" onChange="javascript: updateAll();" /> grams</td>
 		</tr>
 
 		<tr>
 			<th>Gypsum CaSO<sub>4</sub></th>
-			<td colspan="2"><input type="number" step="any" min="0" name="txtCaSO4" value="{{ calc_results.txtCaSO4 }}" maxlength="3" style="width: 50px" onChange="javascript: updateAll();" /> grams</td>
+			<td colspan="2"><input type="number" step="any" min="0" name="txtCaSO4" value="{{ ah_data.calc_results.txtCaSO4 }}" maxlength="5" style="width: 100px" onChange="javascript: updateAll();" /> grams</td>
 		</tr>
 		<tr>
 			<th>Calcium Chloride CaCl<sub>2</sub></th>
-			<td colspan="2"><input type="number" step="any" min="0" name="txtCaCl2" value="{{ calc_results.txtCaCl2 }}" maxlength="3" style="width: 50px" onChange="javascript: updateAll();" /> grams</td>
+			<td colspan="2"><input type="number" step="any" min="0" name="txtCaCl2" value="{{ ah_data.calc_results.txtCaCl2 }}" maxlength="5" style="width: 100px" onChange="javascript: updateAll();" /> grams</td>
 		</tr>
 
 		<tr>
 			<th>Epsom Salt MgSO<sub>4</sub></th>
-			<td colspan="2"><input type="number" step="any" min="0" name="txtMgSO4" value="{{ calc_results.txtMgSO4 }}" maxlength="3" style="width: 50px" onChange="javascript: updateAll();" /> grams</td>
+			<td colspan="2"><input type="number" step="any" min="0" name="txtMgSO4" value="{{ ah_data.calc_results.txtMgSO4 }}" maxlength="5" style="width: 100px" onChange="javascript: updateAll();" /> grams</td>
 		</tr>
 		<tr>
 			<th>Canning Salt NaCl</th>
-			<td colspan="2"><input type="number" step="any" min="0" name="txtNaCl" value="{{ calc_results.txtNaCl }}" maxlength="3" style="width: 50px" onChange="javascript: updateAll();" /> grams</td>
+			<td colspan="2"><input type="number" step="any" min="0" name="txtNaCl" value="{{ ah_data.calc_results.txtNaCl }}" maxlength="5" style="width: 100px" onChange="javascript: updateAll();" /> grams</td>
 		</tr>
 	</table>
 </form>
