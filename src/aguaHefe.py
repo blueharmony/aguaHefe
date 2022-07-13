@@ -79,7 +79,7 @@ class aguaHefe:
         Returns:
             _type_: _description_
         """
-        salts_amounts = [CaCO3, NaHCO3, CaSO4, CaCl2, MgSO4, NaCl]
+        salts_amounts = [float(CaCO3), float(NaHCO3), float(CaSO4), float(CaCl2), float(MgSO4), float(NaCl)]
 
         # transpose the A matrix to treat rows as columns,
         # it's easier to iterate over items in rows
@@ -103,7 +103,7 @@ class aguaHefe:
         for this_array in A_updated:
             total = 0
             for this_value in this_array:
-                total += this_value
+                total += float(this_value)
             totals.append(round(total))
 
         # calculate diff values between target and actual

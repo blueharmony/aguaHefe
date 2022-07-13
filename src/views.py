@@ -80,11 +80,13 @@ def home():
 
     # initialize the home form
     if request.method == 'GET':
+        print("aguaHefe: GET enter")
         ah_data = {'form_data': form_data, 'styles': styles_data, 'calc_results': default_calc_results(), 'salts': salts}
         return render_template('home.html', ah_data=ah_data)
 
     # update with values from the form and calculations
     if request.method == 'POST':
+        print("aguaHefe: POST enter")
         form_data = request.form
 
         # best guess at salts needed for water adjustments
@@ -162,16 +164,28 @@ def calc_salts():
                     roundNumber(txtMgSO4, gallons_to_units), 
                     roundNumber(txtNaCl, gallons_to_units),
                     roundNumber(residual, gallons_to_units)]
-
     return (json.dumps(salts_list))
 
-@app.route('/adjustments_from_salts')
+
 def adjustments_from_salts( txtCaCO3,
                             txtNaHCO3,
                             txtCaSO4,
                             txtCaCl2,
                             txtMgSO4,
                             txtNaCl):
+    """ Calculate how the salts affect the water
+
+    Args:
+        txtCaCO3 (_type_): _description_
+        txtNaHCO3 (_type_): _description_
+        txtCaSO4 (_type_): _description_
+        txtCaCl2 (_type_): _description_
+        txtMgSO4 (_type_): _description_
+        txtNaCl (_type_): _description_
+
+    Returns:
+        salts: dict of salts by salt name
+    """
 
     adjustments_from_salts = \
     ah.adjustments_from_salts(  txtCaCO3,
@@ -190,6 +204,24 @@ def adjustments_from_salts( txtCaCO3,
     salts = dict(zip(salts_names, adjustments_from_salts))
 
     return salts
+
+
+@app.route('/adjustments_from_salts')
+def adjustments():
+    """ Same as above, but returns a JSON string
+    """
+    args = request.args.get('salts')
+    txtCaCO3, txtNaHCO3, txtCaSO4, txtCaCl2, txtMgSO4, txtNaCl = args.split(',')
+
+    salts = \
+        ah.adjustments_from_salts(  txtCaCO3,
+                                    txtNaHCO3,
+                                    txtCaSO4,
+                                    txtCaCl2,
+                                    txtMgSO4,
+                                    txtNaCl)
+    return json.dumps(salts)
+
 
 @app.route("/about/")
 def about():
