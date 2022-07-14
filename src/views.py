@@ -223,6 +223,18 @@ def adjustments():
     return json.dumps(salts)
 
 
+@app.route('/gallons2units')
+def gallons2units():
+    """ 
+    """
+    mashvolume = request.args.get('mashvolume')
+    units = request.args.get('units')
+
+    multiplier = ah.gallons2units(mashvolume, units)
+
+    return json.dumps(multiplier)
+
+
 @app.route("/about/")
 def about():
     return render_template("about.html")

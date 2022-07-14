@@ -23,6 +23,7 @@ Agua Hefe
         document.getElementById("targetNa").value = targetjson.Na;
         document.getElementById("targetCl").value = targetjson.Cl;
         document.getElementById("targetHCO3").value = targetjson.HCO3;
+		return false;
     }
 </script>
 
@@ -36,6 +37,7 @@ Agua Hefe
         document.getElementById("diffNa").value = document.getElementById("saltsNa").value - document.getElementById("targetNa").valu;
         document.getElementById("diffCl").value = document.getElementById("saltsCl").value - document.getElementById("targetCl").value;
         document.getElementById("diffHCO3").value = document.getElementById("saltsHCO3").value - document.getElementById("targetHCO3").value;
+		return false;
     }
 </script>
 
@@ -52,6 +54,7 @@ Agua Hefe
         document.getElementById("targetHCO3").value = ah_data.form_data.targetHCO3;
         
         updateDiffs();
+		return false;
     }
 </script>
 
@@ -79,9 +82,10 @@ Agua Hefe
                         document.getElementById("txtCaCl2").value = data[3];
                         document.getElementById("txtMgSO4").value = data[4];
                         document.getElementById("txtNaCl").value = data[5];
+
+						adjustments();
                     }
                 );
-		adjustments();
 		
         return false;
     }
@@ -99,44 +103,49 @@ Agua Hefe
         let txtMgSO4 = document.getElementById("txtMgSO4").value;
         let txtNaCl = document.getElementById("txtNaCl").value;
 
-/* 		# get the gallons2units conversion multiplier
-// make galllons2units callable from html!
-        gallons_to_units = ah.gallons2units(int(form_data['txtmashvolume']), form_data['units'])
+ 		// get the gallons2units conversion multiplier
+        let mashvolume = document.getElementById("txtmashvolume").value;
+        let units = document.querySelector('input[name=units]:checked').value;
+		let gallons_to_units = 0.0
 
-        # convert salts amounts to selected volume units       
-        calc_results = {'txtCaCO3': roundNumber(txtCaCO3, gallons_to_units),
-                        'txtNaHCO3': roundNumber(txtNaHCO3, gallons_to_units),
-                        'txtCaSO4': roundNumber(txtCaSO4, gallons_to_units),
-                        'txtCaCl2': roundNumber(txtCaCl2, gallons_to_units),
-                        'txtMgSO4': roundNumber(txtMgSO4, gallons_to_units),
-                        'txtNaCl': roundNumber(txtNaCl, gallons_to_units),
-                        'residual': roundNumber(residual, gallons_to_units)}   */
+        let units_url = "/gallons2units?mashvolume=".concat(mashvolume).concat("&units=".concat(units));
+        $.getJSON(units_url,
+			function(gallons_to_units) {
 
-        // these have to line up to match the Python adjustments_from_salts method
-		// TODO: multiply each value by (1/gallons_to_units)
-        let target_salts = [txtCaCO3, txtNaHCO3, txtCaSO4, txtCaCl2, txtMgSO4, txtNaCl]
+				// "un-convert" the values to make the math consistent
+				let multiplier = 1 / gallons_to_units;
+				function unconvert(text) {
+					let text_as_float = parseFloat(text);
+					return text_as_float * multiplier;
+				}
 
-        let adjustments_url = "/adjustments_from_salts?salts=".concat(target_salts.toString())
-        $.getJSON(adjustments_url,
-			function(data) {
-				document.getElementById("saltsCa").value = data[0];
-				console.log(data[0]);
-				console.log(document.getElementById("saltsCa").value);
+				let target_salts = [unconvert(txtCaCO3), unconvert(txtNaHCO3), unconvert(txtCaSO4),
+										unconvert(txtCaCl2), unconvert(txtMgSO4), unconvert(txtNaCl)]
 
-				document.getElementById("saltsMg").value = data[1];
+				let adjustments_url = "/adjustments_from_salts?salts=".concat(target_salts.toString())
+				$.getJSON(adjustments_url,
+					function(data) {
+						document.getElementById("saltsCa").value = data[0];
+						console.log(data[0]);
+						console.log(document.getElementById("saltsCa").value);
 
-				document.getElementById("saltsSO4").value = data[2];
+						document.getElementById("saltsMg").value = data[1];
 
-				document.getElementById("saltsNa").value = data[3];
+						document.getElementById("saltsSO4").value = data[2];
 
-				document.getElementById("saltsCl").value = data[4];
+						document.getElementById("saltsNa").value = data[3];
 
-				document.getElementById("saltsHCO3").value = data[5];
+						document.getElementById("saltsCl").value = data[4];
+
+						document.getElementById("saltsHCO3").value = data[5];
+
+						// trigger the onChange event to update all page values
+						// updateDiffs(); 						
+					}
+				);
 			}
 		);
 
-        // trigger the onChange event to update all page values
-        // updateDiffs(); 
 
         return false;
     }

@@ -134,7 +134,7 @@ class aguaHefe:
         if (units == 'liters'):
             gallons_to_units = to_liters
 
-        return mashvolume * gallons_to_units
+        return int(mashvolume) * gallons_to_units
 
 
 if __name__ == "__main__":
