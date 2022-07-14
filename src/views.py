@@ -29,7 +29,6 @@ def load_beer_styles(styles_json: str = "styles.json"):
                 styles_data = json.load(f)
         except FileNotFoundError:
             print("Error: could not find ./src/data/" + styles_json)
-
     return styles_data
 
 
@@ -38,23 +37,6 @@ styles_data = load_beer_styles()
 
 # instatiate the aguaHefe class
 ah = aguaHefe.aguaHefe()
-
-
-def default_calc_results():
-    """ Set default calculation results to zeros
-
-    Returns:
-        dict: zeroed dict values
-    """
-    calc_results = {'txtCaCO3': 0,
-                    'txtNaHCO3': 0,
-                    'txtCaSO4': 0,
-                    'txtCaCl2': 0,
-                    'txtMgSO4': 0,
-                    'txtNaCl': 0,
-                    'residual': 0} 
-
-    return calc_results
 
 
 def roundNumber(theNumber, multiplier):
@@ -71,19 +53,19 @@ def roundNumber(theNumber, multiplier):
     return "{:.3f}".format(answer)
 
 
-@app.route("/", methods=('GET', 'POST'))
+@app.route("/", methods=(["GET"]))
 def home():
     """ The default home page
     """
-    form_data = {}
     salts = {}
 
     # initialize the home form
     if request.method == 'GET':
         print("aguaHefe: GET enter")
-        ah_data = {'form_data': form_data, 'styles': styles_data, 'calc_results': default_calc_results(), 'salts': salts}
+        ah_data = {'styles': styles_data}
         return render_template('home.html', ah_data=ah_data)
 
+""" No longer allow POST requests
     # update with values from the form and calculations
     if request.method == 'POST':
         print("aguaHefe: POST enter")
@@ -131,6 +113,7 @@ def home():
         ah_data = {'form_data': form_data, 'styles': styles_data, 'calc_results': calc_results, 'salts': salts}
 
         return render_template('home.html', ah_data=ah_data)
+ """
 
 
 @app.route("/bf/")
