@@ -31,10 +31,11 @@
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.btn-update {
-    background-color: yellow;
+.button {
+    border-radius: 15px;
     color: black;
+    font-weight: bold;
     padding: 1px 3px 1px 3px;
     font-size: 15px;
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;    
 }

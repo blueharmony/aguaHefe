@@ -27,34 +27,45 @@ Agua Hefe
 </script>
 
 <script>
-    function setDiffColor(elementId) {
-		// if the diff is off by at least 5, set to red
-        console.log("setDiffColor:");
-		let diffValue = document.getElementById(elementId).value;
-		if (Math.abs(diffValue) > 5) {
+    function updateThisDiff(elementId, saltId, targetId) {
+        console.log("updateThisDiff:");
+
+		function percentDiff(a, b) {
+			if (a == b) {
+				return 100;	// trigger green
+			} else
+			if (a == 0 || b == 0) {
+				return 200; // trigger red
+			}
+ 			return  100 * Math.abs(a / b);
+		}
+
+		let saltValue = document.getElementById(saltId).value;
+		let targetValue = document.getElementById(targetId).value;
+		let diff = saltValue - targetValue;
+		let diffPercent = percentDiff(saltValue, targetValue);
+		// set the diff value
+        document.getElementById(elementId).value = diff;
+		
+		// if the diff is off by at least 95%, set to red
+		if (diffPercent < 95 || diffPercent > 105) {
 			document.getElementById(elementId).style.color = "red";
 		} else {
 			document.getElementById(elementId).style.color = "green";
 		}
 		return false;
-    }
+	}
 </script>
 
 <script>
     function updateDiffs() {
         console.log("updateDiffs:");
-        document.getElementById("diffCa").value = document.getElementById("saltsCa").value - document.getElementById("targetCa").value;
-		setDiffColor("diffCa");
-        document.getElementById("diffMg").value = document.getElementById("saltsMg").value - document.getElementById("targetMg").value;
-		setDiffColor("diffMg");
-		document.getElementById("diffSO4").value = document.getElementById("saltsSO4").value - document.getElementById("targetSO4").value;
-		setDiffColor("diffSO4");
-		document.getElementById("diffNa").value = document.getElementById("saltsNa").value - document.getElementById("targetNa").value;
-		setDiffColor("diffNa");
-		document.getElementById("diffCl").value = document.getElementById("saltsCl").value - document.getElementById("targetCl").value;
-		setDiffColor("diffCl");
-		document.getElementById("diffHCO3").value = document.getElementById("saltsHCO3").value - document.getElementById("targetHCO3").value;
-		setDiffColor("diffHCO3");
+		updateThisDiff("diffCa", "saltsCa", "targetCa");
+		updateThisDiff("diffMg", "saltsMg", "targetMg");
+		updateThisDiff("diffSO4", "saltsSO4", "targetSO4");
+		updateThisDiff("diffNa", "saltsNa", "targetNa");
+		updateThisDiff("diffCl", "saltsCl", "targetCl");
+		updateThisDiff("diffHCO3", "saltsHCO3", "targetHCO3");
 		return false;
     }
 </script>
@@ -197,11 +208,11 @@ Agua Hefe
                         {% endfor %}
 					</select><br/><br/>
 					
-                    <input type="button" class="btn-update" name="btnchangeTarget" onClick="javascript: changeTarget(targetprofile.value);" 
+                    <input type="button" class="button" style="background-color: yellow;" name="btnchangeTarget" onClick="javascript: changeTarget(targetprofile.value);" 
 						value="Update Target" />
 
-                    <input type="button" id="btnCalcSalts" name="btnCalcSalts" onClick="javascript: calc_salts();" 
-						style="padding: 1px 3px 1px 3px; font-size: 15px; background-color: cyan;" value="Calculate Salts"/>
+                    <input type="button" class="button" style="background-color: cyan;" id="btnCalcSalts" name="btnCalcSalts" onClick="javascript: calc_salts();" 
+						value="Calculate Salts"/>
                 </td>
 			</tr>
 	</table>
@@ -280,6 +291,10 @@ Agua Hefe
 			<td><input type="text" step="any" min="0" id="diffNa" name="diffNa" value="0" maxlength="4" style="width: 50px; border:0em" readonly /></td>
 			<td><input type="text" step="any" min="0" id="diffCl" name="diffCl" value="0" maxlength="4" style="width: 50px; border:0em" readonly /></td>
 			<td><input type="text" step="any" min="0" id="diffHCO3" name="diffHCO3" value="0" maxlength="4" style="width: 50px; border:0em" readonly /></td>
+		</tr>
+		<tr>
+			<th>&nbsp;</th>
+			<td colspan="8" style="font-size: small;" class="message">&nbsp;&nbsp;&nbsp;(differences greater than +/- 5% show in red)</td>
 		</tr>
     </table>
     <br/>
