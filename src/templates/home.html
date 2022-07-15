@@ -170,18 +170,17 @@ Agua Hefe
 			<tr>
 				<th>Target Profile:</th>
 				<td>
-					<select name="targetprofile">
+					<select style="border-color: blue; color: blue;" name="targetprofile">
                         {% for style in ah_data.styles %}
-                            <!-- <option value="{{ style.Style }} {{ style.Ca }} {{ style.Mg }} {{ style.SO4 }} {{ style.Na }} {{ style.Cl }} {{ style.HCO3 }}">{{ style.Style }}</option> -->
-                            <option value="{{ style }}">{{ style.Style }}</option>
+                            <option style="color: blue;" value="{{ style }}">{{ style.Style }}</option>
                         {% endfor %}
 					</select><br/><br/>
 					
-                    <input type="button" name="btnchangeTarget" onClick="javascript: changeTarget(targetprofile.value);" 
-						style="padding: 1px 3px 1px 3px; font-size: 15px;" value="Update Target" />
+                    <input type="button" class="btn-update" name="btnchangeTarget" onClick="javascript: changeTarget(targetprofile.value);" 
+						value="Update Target" />
 
                     <input type="button" id="btnCalcSalts" name="btnCalcSalts" onClick="javascript: calc_salts();" 
-						style="padding: 1px 3px 1px 3px; font-size: 15px;" value="Calculate Salts"/>
+						style="padding: 1px 3px 1px 3px; font-size: 15px; background-color: cyan;" value="Calculate Salts"/>
                 </td>
 			</tr>
 	</table>
@@ -222,7 +221,7 @@ Agua Hefe
 			<td><div id="diluted6" class="infodiv">-</div></td>
 		</tr>
         -->
-		<tr>
+		<tr style="background-color: yellow;">
 			<th>Target Minerals:</th>
 			<td><input type="text" step="any" min="0" id="targetCa" name="targetCa" value="0" maxlength="4" style="width: 50px" onChange="javascript: updateDiffs();" /></td>
 			<td><input type="text" step="any" min="0" id="targetMg" name="targetMg" value="0" maxlength="4" style="width: 50px" onChange="javascript: updateDiffs();" /></td>
@@ -267,34 +266,34 @@ Agua Hefe
     <table class="tableLayout">
 
 		<tr>
-			<td colspan="8" class="separator"><h2>Brewing Salt Additions&nbsp;&nbsp;&nbsp;</h2></td>
+			<td colspan="7" class="separator"><h2>Brewing Salt Additions&nbsp;&nbsp;&nbsp;</h2></td>
 		</tr>
 		<tr>
 			<th>Chalk CaCO<sub>3</sub></th>
-			<td colspan="2"><input type="number" step="any" min="0" id="txtCaCO3" name="txtCaCO3" value="0" maxlength="5" style="width: 100px" onChange="javascript: adjustments();" /> grams</td>
+			<td colspan="2"><input type="number" step="any" min="0" id="txtCaCO3" name="txtCaCO3" value="0" maxlength="5" style="width: 100px; background-color: cyan;" onChange="javascript: adjustments();" /> grams</td>
 		</tr>
 
 		<tr>
 			<th>Baking Soda NaHCO<sub>3</sub></th>
-			<td colspan="2"><input type="number" step="any" min="0" id="txtNaHCO3" name="txtNaHCO3" value="0" maxlength="5" style="width: 100px" onChange="javascript: adjustments();" /> grams</td>
+			<td colspan="2"><input type="number" step="any" min="0" id="txtNaHCO3" name="txtNaHCO3" value="0" maxlength="5" style="width: 100px; background-color: cyan;" onChange="javascript: adjustments();" /> grams</td>
 		</tr>
 
 		<tr>
 			<th>Gypsum CaSO<sub>4</sub></th>
-			<td colspan="2"><input type="number" step="any" min="0" id="txtCaSO4" name="txtCaSO4" value="0" maxlength="5" style="width: 100px" onChange="javascript: adjustments();" /> grams</td>
+			<td colspan="2"><input type="number" step="any" min="0" id="txtCaSO4" name="txtCaSO4" value="0" maxlength="5" style="width: 100px; background-color: cyan;" onChange="javascript: adjustments();" /> grams</td>
 		</tr>
 		<tr>
 			<th>Calcium Chloride CaCl<sub>2</sub></th>
-			<td colspan="2"><input type="number" step="any" min="0" id="txtCaCl2" name="txtCaCl2" value="0" maxlength="5" style="width: 100px" onChange="javascript: adjustments();" /> grams</td>
+			<td colspan="2"><input type="number" step="any" min="0" id="txtCaCl2" name="txtCaCl2" value="0" maxlength="5" style="width: 100px; background-color: cyan;" onChange="javascript: adjustments();" /> grams</td>
 		</tr>
 
 		<tr>
 			<th>Epsom Salt MgSO<sub>4</sub></th>
-			<td colspan="2"><input type="number" step="any" min="0" id="txtMgSO4" name="txtMgSO4" value="0" maxlength="5" style="width: 100px" onChange="javascript: adjustments();" /> grams</td>
+			<td colspan="2"><input type="number" step="any" min="0" id="txtMgSO4" name="txtMgSO4" value="0" maxlength="5" style="width: 100px; background-color: cyan;" onChange="javascript: adjustments();" /> grams</td>
 		</tr>
 		<tr>
 			<th>Canning Salt NaCl</th>
-			<td colspan="2"><input type="number" step="any" min="0" id="txtNaCl" name="txtNaCl" value="0" maxlength="5" style="width: 100px" onChange="javascript: adjustments();" /> grams</td>
+			<td colspan="2"><input type="number" step="any" min="0" id="txtNaCl" name="txtNaCl" value="0" maxlength="5" style="width: 100px; background-color: cyan;" onChange="javascript: adjustments();" /> grams</td>
 		</tr>
 	</table>
 </form>
