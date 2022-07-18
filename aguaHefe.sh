@@ -1,9 +1,15 @@
 ### setup the python environment
+#set -x
+#which python
+#which python3
+
+echo ""
+echo "Patience, setting up the Python environment..."
 
 if [ -d ".venv" ]; then
     echo "venv environment exists"
 else
-    python -m venv .venv
+    python3 -m venv .venv
 fi
 
 # Winders versus Linux
@@ -15,7 +21,7 @@ else
 fi
 
 set -x
-pip install -r requirements.txt
+pip3 install -r requirements.txt
 
 export FLASK_APP="src.webapp"
 export FLASK_ENV="development"
