@@ -14,9 +14,9 @@ fi
 
 # Winders versus Linux
 if [ -e ".venv/scripts/activate" ]; then
-    source .venv/scripts/activate
+    source .venv/Scripts/activate
 else
-    chmod .venv/bin/activate
+    chmod +x .venv/bin/activate
     source .venv/bin/activate
 fi
 
