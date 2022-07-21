@@ -1,0 +1,604 @@
+# -*- coding: utf-8 -*-
+
+# Form implementation generated from reading ui file 'MainWindow.ui'
+#
+# Created by: PyQt5 UI code generator 5.9.2
+#
+# WARNING! All changes made in this file will be lost!
+
+from PyQt5 import QtCore, QtGui, QtWidgets
+
+class Ui_MainWindow(object):
+    def setupUi(self, MainWindow):
+        MainWindow.setObjectName("MainWindow")
+        MainWindow.resize(930, 875)
+        self.centralwidget = QtWidgets.QWidget(MainWindow)
+        self.centralwidget.setObjectName("centralwidget")
+        self.line = QtWidgets.QFrame(self.centralwidget)
+        self.line.setGeometry(QtCore.QRect(30, 200, 621, 21))
+        self.line.setFrameShape(QtWidgets.QFrame.HLine)
+        self.line.setFrameShadow(QtWidgets.QFrame.Sunken)
+        self.line.setObjectName("line")
+        self.line_2 = QtWidgets.QFrame(self.centralwidget)
+        self.line_2.setGeometry(QtCore.QRect(30, 440, 621, 21))
+        self.line_2.setFrameShape(QtWidgets.QFrame.HLine)
+        self.line_2.setFrameShadow(QtWidgets.QFrame.Sunken)
+        self.line_2.setObjectName("line_2")
+        self.line_3 = QtWidgets.QFrame(self.centralwidget)
+        self.line_3.setGeometry(QtCore.QRect(30, 730, 621, 21))
+        self.line_3.setFrameShape(QtWidgets.QFrame.HLine)
+        self.line_3.setFrameShadow(QtWidgets.QFrame.Sunken)
+        self.line_3.setObjectName("line_3")
+        self.groupBox_3 = QtWidgets.QGroupBox(self.centralwidget)
+        self.groupBox_3.setGeometry(QtCore.QRect(30, 10, 621, 191))
+        font = QtGui.QFont()
+        font.setPointSize(14)
+        font.setBold(True)
+        font.setWeight(75)
+        self.groupBox_3.setFont(font)
+        self.groupBox_3.setStyleSheet("background-color: rgb(170, 255, 127);\n"
+"background-color: rgb(219, 255, 196);")
+        self.groupBox_3.setObjectName("groupBox_3")
+        self.pushButton_2 = QtWidgets.QPushButton(self.groupBox_3)
+        self.pushButton_2.setGeometry(QtCore.QRect(430, 140, 141, 31))
+        palette = QtGui.QPalette()
+        brush = QtGui.QBrush(QtGui.QColor(85, 255, 255))
+        brush.setStyle(QtCore.Qt.SolidPattern)
+        palette.setBrush(QtGui.QPalette.Active, QtGui.QPalette.Button, brush)
+        brush = QtGui.QBrush(QtGui.QColor(85, 255, 255))
+        brush.setStyle(QtCore.Qt.SolidPattern)
+        palette.setBrush(QtGui.QPalette.Active, QtGui.QPalette.Base, brush)
+        brush = QtGui.QBrush(QtGui.QColor(85, 255, 255))
+        brush.setStyle(QtCore.Qt.SolidPattern)
+        palette.setBrush(QtGui.QPalette.Active, QtGui.QPalette.Window, brush)
+        brush = QtGui.QBrush(QtGui.QColor(85, 255, 255))
+        brush.setStyle(QtCore.Qt.SolidPattern)
+        palette.setBrush(QtGui.QPalette.Inactive, QtGui.QPalette.Button, brush)
+        brush = QtGui.QBrush(QtGui.QColor(85, 255, 255))
+        brush.setStyle(QtCore.Qt.SolidPattern)
+        palette.setBrush(QtGui.QPalette.Inactive, QtGui.QPalette.Base, brush)
+        brush = QtGui.QBrush(QtGui.QColor(85, 255, 255))
+        brush.setStyle(QtCore.Qt.SolidPattern)
+        palette.setBrush(QtGui.QPalette.Inactive, QtGui.QPalette.Window, brush)
+        brush = QtGui.QBrush(QtGui.QColor(85, 255, 255))
+        brush.setStyle(QtCore.Qt.SolidPattern)
+        palette.setBrush(QtGui.QPalette.Disabled, QtGui.QPalette.Button, brush)
+        brush = QtGui.QBrush(QtGui.QColor(85, 255, 255))
+        brush.setStyle(QtCore.Qt.SolidPattern)
+        palette.setBrush(QtGui.QPalette.Disabled, QtGui.QPalette.Base, brush)
+        brush = QtGui.QBrush(QtGui.QColor(85, 255, 255))
+        brush.setStyle(QtCore.Qt.SolidPattern)
+        palette.setBrush(QtGui.QPalette.Disabled, QtGui.QPalette.Window, brush)
+        self.pushButton_2.setPalette(palette)
+        font = QtGui.QFont()
+        font.setPointSize(10)
+        font.setBold(True)
+        font.setWeight(75)
+        self.pushButton_2.setFont(font)
+        self.pushButton_2.setAutoFillBackground(False)
+        self.pushButton_2.setStyleSheet("background-color: rgb(85, 255, 255);")
+        self.pushButton_2.setObjectName("pushButton_2")
+        self.comboBox = QtWidgets.QComboBox(self.groupBox_3)
+        self.comboBox.setGeometry(QtCore.QRect(190, 110, 211, 22))
+        font = QtGui.QFont()
+        font.setPointSize(10)
+        self.comboBox.setFont(font)
+        self.comboBox.setStyleSheet("background-color: rgb(255, 255, 255);\n"
+"selection-color: rgb(0, 0, 255);")
+        self.comboBox.setObjectName("comboBox")
+        self.comboBox.addItem("")
+        self.comboBox.addItem("")
+        self.comboBox.addItem("")
+        self.comboBox.addItem("")
+        self.pushButton = QtWidgets.QPushButton(self.groupBox_3)
+        self.pushButton.setGeometry(QtCore.QRect(190, 140, 211, 31))
+        font = QtGui.QFont()
+        font.setPointSize(10)
+        font.setBold(True)
+        font.setWeight(75)
+        self.pushButton.setFont(font)
+        self.pushButton.setStyleSheet("background-color: rgb(255, 255, 255);\n"
+"background-color: rgb(255, 255, 127);")
+        self.pushButton.setObjectName("pushButton")
+        self.groupBox_2 = QtWidgets.QGroupBox(self.groupBox_3)
+        self.groupBox_2.setGeometry(QtCore.QRect(20, 30, 171, 61))
+        font = QtGui.QFont()
+        font.setPointSize(10)
+        font.setBold(True)
+        font.setWeight(75)
+        self.groupBox_2.setFont(font)
+        self.groupBox_2.setObjectName("groupBox_2")
+        self.lineEdit = QtWidgets.QLineEdit(self.groupBox_2)
+        self.lineEdit.setGeometry(QtCore.QRect(60, 30, 51, 22))
+        font = QtGui.QFont()
+        font.setPointSize(10)
+        font.setBold(True)
+        font.setWeight(75)
+        self.lineEdit.setFont(font)
+        self.lineEdit.setStyleSheet("background-color: rgb(255, 255, 255);")
+        self.lineEdit.setAlignment(QtCore.Qt.AlignCenter)
+        self.lineEdit.setObjectName("lineEdit")
+        self.groupBox = QtWidgets.QGroupBox(self.groupBox_3)
+        self.groupBox.setGeometry(QtCore.QRect(200, 30, 391, 61))
+        font = QtGui.QFont()
+        font.setPointSize(10)
+        font.setBold(True)
+        font.setWeight(75)
+        self.groupBox.setFont(font)
+        self.groupBox.setObjectName("groupBox")
+        self.layoutWidget = QtWidgets.QWidget(self.groupBox)
+        self.layoutWidget.setGeometry(QtCore.QRect(20, 30, 353, 22))
+        self.layoutWidget.setObjectName("layoutWidget")
+        self.horizontalLayout = QtWidgets.QHBoxLayout(self.layoutWidget)
+        self.horizontalLayout.setContentsMargins(0, 0, 0, 0)
+        self.horizontalLayout.setObjectName("horizontalLayout")
+        self.radioButton = QtWidgets.QRadioButton(self.layoutWidget)
+        self.radioButton.setChecked(True)
+        self.radioButton.setObjectName("radioButton")
+        self.buttonGroup = QtWidgets.QButtonGroup(MainWindow)
+        self.buttonGroup.setObjectName("buttonGroup")
+        self.buttonGroup.addButton(self.radioButton)
+        self.horizontalLayout.addWidget(self.radioButton)
+        self.radioButton_2 = QtWidgets.QRadioButton(self.layoutWidget)
+        self.radioButton_2.setObjectName("radioButton_2")
+        self.buttonGroup.addButton(self.radioButton_2)
+        self.horizontalLayout.addWidget(self.radioButton_2)
+        self.radioButton_3 = QtWidgets.QRadioButton(self.layoutWidget)
+        self.radioButton_3.setObjectName("radioButton_3")
+        self.buttonGroup.addButton(self.radioButton_3)
+        self.horizontalLayout.addWidget(self.radioButton_3)
+        self.label = QtWidgets.QLabel(self.groupBox_3)
+        self.label.setGeometry(QtCore.QRect(10, 100, 171, 31))
+        font = QtGui.QFont()
+        font.setPointSize(14)
+        font.setBold(True)
+        font.setUnderline(True)
+        font.setWeight(75)
+        self.label.setFont(font)
+        self.label.setObjectName("label")
+        self.groupBox_4 = QtWidgets.QGroupBox(self.centralwidget)
+        self.groupBox_4.setGeometry(QtCore.QRect(30, 220, 621, 221))
+        font = QtGui.QFont()
+        font.setPointSize(14)
+        font.setBold(True)
+        font.setWeight(75)
+        self.groupBox_4.setFont(font)
+        self.groupBox_4.setStyleSheet("background-color: rgb(255, 220, 254);")
+        self.groupBox_4.setObjectName("groupBox_4")
+        self.line_4 = QtWidgets.QFrame(self.groupBox_4)
+        self.line_4.setGeometry(QtCore.QRect(20, 100, 591, 21))
+        self.line_4.setFrameShape(QtWidgets.QFrame.HLine)
+        self.line_4.setFrameShadow(QtWidgets.QFrame.Sunken)
+        self.line_4.setObjectName("line_4")
+        self.textEdit_29 = QtWidgets.QTextEdit(self.groupBox_4)
+        self.textEdit_29.setGeometry(QtCore.QRect(270, 180, 61, 31))
+        self.textEdit_29.setStyleSheet("background-color: transparent;")
+        self.textEdit_29.setReadOnly(True)
+        self.textEdit_29.setObjectName("textEdit_29")
+        self.textEdit_20 = QtWidgets.QTextEdit(self.groupBox_4)
+        self.textEdit_20.setGeometry(QtCore.QRect(550, 120, 61, 31))
+        self.textEdit_20.setStyleSheet("background-color: transparent;")
+        self.textEdit_20.setReadOnly(True)
+        self.textEdit_20.setObjectName("textEdit_20")
+        self.textEdit_22 = QtWidgets.QTextEdit(self.groupBox_4)
+        self.textEdit_22.setGeometry(QtCore.QRect(410, 120, 61, 31))
+        self.textEdit_22.setStyleSheet("background-color: transparent;")
+        self.textEdit_22.setReadOnly(True)
+        self.textEdit_22.setObjectName("textEdit_22")
+        self.textEdit_7 = QtWidgets.QTextEdit(self.groupBox_4)
+        self.textEdit_7.setGeometry(QtCore.QRect(410, 30, 61, 31))
+        self.textEdit_7.setStyleSheet("background-color: rgb(255, 255, 255);")
+        self.textEdit_7.setObjectName("textEdit_7")
+        self.textEdit_16 = QtWidgets.QTextEdit(self.groupBox_4)
+        self.textEdit_16.setGeometry(QtCore.QRect(410, 70, 61, 31))
+        self.textEdit_16.setStyleSheet("background-color: rgb(255, 255, 127);")
+        self.textEdit_16.setObjectName("textEdit_16")
+        self.textEdit_8 = QtWidgets.QTextEdit(self.groupBox_4)
+        self.textEdit_8.setGeometry(QtCore.QRect(480, 30, 61, 31))
+        self.textEdit_8.setStyleSheet("background-color: rgb(255, 255, 255);")
+        self.textEdit_8.setObjectName("textEdit_8")
+        self.textEdit_10 = QtWidgets.QTextEdit(self.groupBox_4)
+        self.textEdit_10.setGeometry(QtCore.QRect(20, 120, 171, 31))
+        self.textEdit_10.setFrameShape(QtWidgets.QFrame.NoFrame)
+        self.textEdit_10.setObjectName("textEdit_10")
+        self.textEdit_21 = QtWidgets.QTextEdit(self.groupBox_4)
+        self.textEdit_21.setGeometry(QtCore.QRect(480, 120, 61, 31))
+        self.textEdit_21.setStyleSheet("background-color: transparent;")
+        self.textEdit_21.setReadOnly(True)
+        self.textEdit_21.setObjectName("textEdit_21")
+        self.textEdit_5 = QtWidgets.QTextEdit(self.groupBox_4)
+        self.textEdit_5.setGeometry(QtCore.QRect(270, 30, 61, 31))
+        self.textEdit_5.setStyleSheet("background-color: rgb(255, 255, 255);")
+        self.textEdit_5.setObjectName("textEdit_5")
+        self.textEdit_17 = QtWidgets.QTextEdit(self.groupBox_4)
+        self.textEdit_17.setGeometry(QtCore.QRect(340, 70, 61, 31))
+        self.textEdit_17.setStyleSheet("background-color: rgb(255, 255, 127);")
+        self.textEdit_17.setObjectName("textEdit_17")
+        self.textEdit_28 = QtWidgets.QTextEdit(self.groupBox_4)
+        self.textEdit_28.setGeometry(QtCore.QRect(340, 180, 61, 31))
+        self.textEdit_28.setStyleSheet("background-color: transparent;")
+        self.textEdit_28.setReadOnly(True)
+        self.textEdit_28.setObjectName("textEdit_28")
+        self.textEdit_15 = QtWidgets.QTextEdit(self.groupBox_4)
+        self.textEdit_15.setGeometry(QtCore.QRect(480, 70, 61, 31))
+        self.textEdit_15.setStyleSheet("background-color: rgb(255, 255, 127);")
+        self.textEdit_15.setObjectName("textEdit_15")
+        self.textEdit_12 = QtWidgets.QTextEdit(self.groupBox_4)
+        self.textEdit_12.setGeometry(QtCore.QRect(20, 180, 171, 31))
+        self.textEdit_12.setAcceptDrops(False)
+        self.textEdit_12.setFrameShape(QtWidgets.QFrame.NoFrame)
+        self.textEdit_12.setLineWidth(1)
+        self.textEdit_12.setObjectName("textEdit_12")
+        self.textEdit_30 = QtWidgets.QTextEdit(self.groupBox_4)
+        self.textEdit_30.setGeometry(QtCore.QRect(200, 180, 61, 31))
+        self.textEdit_30.setStyleSheet("background-color: transparent;")
+        self.textEdit_30.setReadOnly(True)
+        self.textEdit_30.setObjectName("textEdit_30")
+        self.textEdit_23 = QtWidgets.QTextEdit(self.groupBox_4)
+        self.textEdit_23.setGeometry(QtCore.QRect(340, 120, 61, 31))
+        self.textEdit_23.setStyleSheet("background-color: transparent;")
+        self.textEdit_23.setReadOnly(True)
+        self.textEdit_23.setObjectName("textEdit_23")
+        self.textEdit_25 = QtWidgets.QTextEdit(self.groupBox_4)
+        self.textEdit_25.setGeometry(QtCore.QRect(550, 180, 61, 31))
+        self.textEdit_25.setStyleSheet("background-color: transparent;")
+        self.textEdit_25.setReadOnly(True)
+        self.textEdit_25.setObjectName("textEdit_25")
+        self.textEdit_18 = QtWidgets.QTextEdit(self.groupBox_4)
+        self.textEdit_18.setGeometry(QtCore.QRect(270, 70, 61, 31))
+        self.textEdit_18.setStyleSheet("background-color: rgb(255, 255, 127);")
+        self.textEdit_18.setObjectName("textEdit_18")
+        self.textEdit_19 = QtWidgets.QTextEdit(self.groupBox_4)
+        self.textEdit_19.setGeometry(QtCore.QRect(200, 120, 61, 31))
+        self.textEdit_19.setStyleSheet("background-color: transparent;")
+        self.textEdit_19.setReadOnly(True)
+        self.textEdit_19.setObjectName("textEdit_19")
+        self.textEdit_14 = QtWidgets.QTextEdit(self.groupBox_4)
+        self.textEdit_14.setGeometry(QtCore.QRect(550, 70, 61, 31))
+        self.textEdit_14.setStyleSheet("background-color: rgb(255, 255, 127);")
+        self.textEdit_14.setObjectName("textEdit_14")
+        self.textEdit_4 = QtWidgets.QTextEdit(self.groupBox_4)
+        self.textEdit_4.setGeometry(QtCore.QRect(200, 30, 61, 31))
+        self.textEdit_4.setStyleSheet("background-color: rgb(255, 255, 255);")
+        self.textEdit_4.setObjectName("textEdit_4")
+        self.textEdit_26 = QtWidgets.QTextEdit(self.groupBox_4)
+        self.textEdit_26.setGeometry(QtCore.QRect(480, 180, 61, 31))
+        self.textEdit_26.setStyleSheet("background-color: transparent;")
+        self.textEdit_26.setReadOnly(True)
+        self.textEdit_26.setObjectName("textEdit_26")
+        self.textEdit_11 = QtWidgets.QTextEdit(self.groupBox_4)
+        self.textEdit_11.setGeometry(QtCore.QRect(20, 70, 171, 31))
+        self.textEdit_11.setStyleSheet("background-color: rgb(255, 255, 127);")
+        self.textEdit_11.setFrameShape(QtWidgets.QFrame.NoFrame)
+        self.textEdit_11.setObjectName("textEdit_11")
+        self.textEdit_27 = QtWidgets.QTextEdit(self.groupBox_4)
+        self.textEdit_27.setGeometry(QtCore.QRect(410, 180, 61, 31))
+        self.textEdit_27.setStyleSheet("background-color: transparent;")
+        self.textEdit_27.setReadOnly(True)
+        self.textEdit_27.setObjectName("textEdit_27")
+        self.textEdit_6 = QtWidgets.QTextEdit(self.groupBox_4)
+        self.textEdit_6.setGeometry(QtCore.QRect(340, 30, 61, 31))
+        self.textEdit_6.setStyleSheet("background-color: rgb(255, 255, 255);")
+        self.textEdit_6.setObjectName("textEdit_6")
+        self.textEdit_24 = QtWidgets.QTextEdit(self.groupBox_4)
+        self.textEdit_24.setGeometry(QtCore.QRect(270, 120, 61, 31))
+        self.textEdit_24.setStyleSheet("background-color: transparent;")
+        self.textEdit_24.setReadOnly(True)
+        self.textEdit_24.setObjectName("textEdit_24")
+        self.textEdit_13 = QtWidgets.QTextEdit(self.groupBox_4)
+        self.textEdit_13.setGeometry(QtCore.QRect(200, 70, 61, 31))
+        self.textEdit_13.setStyleSheet("background-color: rgb(255, 255, 127);")
+        self.textEdit_13.setObjectName("textEdit_13")
+        self.textEdit_9 = QtWidgets.QTextEdit(self.groupBox_4)
+        self.textEdit_9.setGeometry(QtCore.QRect(550, 30, 61, 31))
+        self.textEdit_9.setStyleSheet("background-color: rgb(255, 255, 255);")
+        self.textEdit_9.setObjectName("textEdit_9")
+        self.line_5 = QtWidgets.QFrame(self.groupBox_4)
+        self.line_5.setGeometry(QtCore.QRect(20, 160, 591, 20))
+        self.line_5.setFrameShape(QtWidgets.QFrame.HLine)
+        self.line_5.setFrameShadow(QtWidgets.QFrame.Sunken)
+        self.line_5.setObjectName("line_5")
+        self.groupBox_5 = QtWidgets.QGroupBox(self.centralwidget)
+        self.groupBox_5.setGeometry(QtCore.QRect(30, 460, 621, 271))
+        font = QtGui.QFont()
+        font.setPointSize(14)
+        font.setBold(True)
+        font.setWeight(75)
+        self.groupBox_5.setFont(font)
+        self.groupBox_5.setStyleSheet("background-color: rgb(255, 255, 255);")
+        self.groupBox_5.setObjectName("groupBox_5")
+        self.textEdit_43 = QtWidgets.QTextEdit(self.groupBox_5)
+        self.textEdit_43.setGeometry(QtCore.QRect(30, 230, 241, 31))
+        self.textEdit_43.setObjectName("textEdit_43")
+        self.textEdit_40 = QtWidgets.QTextEdit(self.groupBox_5)
+        self.textEdit_40.setGeometry(QtCore.QRect(280, 190, 61, 31))
+        self.textEdit_40.setStyleSheet("background-color: rgb(85, 255, 255);")
+        self.textEdit_40.setReadOnly(False)
+        self.textEdit_40.setObjectName("textEdit_40")
+        self.textEdit_35 = QtWidgets.QTextEdit(self.groupBox_5)
+        self.textEdit_35.setGeometry(QtCore.QRect(30, 110, 241, 31))
+        self.textEdit_35.setObjectName("textEdit_35")
+        self.textEdit_41 = QtWidgets.QTextEdit(self.groupBox_5)
+        self.textEdit_41.setGeometry(QtCore.QRect(30, 190, 241, 31))
+        self.textEdit_41.setObjectName("textEdit_41")
+        self.textEdit_38 = QtWidgets.QTextEdit(self.groupBox_5)
+        self.textEdit_38.setGeometry(QtCore.QRect(280, 150, 61, 31))
+        self.textEdit_38.setStyleSheet("background-color: rgb(85, 255, 255);")
+        self.textEdit_38.setReadOnly(False)
+        self.textEdit_38.setObjectName("textEdit_38")
+        self.textEdit_33 = QtWidgets.QTextEdit(self.groupBox_5)
+        self.textEdit_33.setGeometry(QtCore.QRect(280, 30, 61, 31))
+        self.textEdit_33.setStyleSheet("background-color: rgb(85, 255, 255);")
+        self.textEdit_33.setReadOnly(False)
+        self.textEdit_33.setObjectName("textEdit_33")
+        self.textEdit_34 = QtWidgets.QTextEdit(self.groupBox_5)
+        self.textEdit_34.setGeometry(QtCore.QRect(280, 110, 61, 31))
+        self.textEdit_34.setStyleSheet("background-color: rgb(85, 255, 255);")
+        self.textEdit_34.setReadOnly(False)
+        self.textEdit_34.setObjectName("textEdit_34")
+        self.textEdit_37 = QtWidgets.QTextEdit(self.groupBox_5)
+        self.textEdit_37.setGeometry(QtCore.QRect(30, 70, 241, 31))
+        self.textEdit_37.setObjectName("textEdit_37")
+        self.textEdit_32 = QtWidgets.QTextEdit(self.groupBox_5)
+        self.textEdit_32.setGeometry(QtCore.QRect(30, 30, 241, 31))
+        self.textEdit_32.setObjectName("textEdit_32")
+        self.textEdit_36 = QtWidgets.QTextEdit(self.groupBox_5)
+        self.textEdit_36.setGeometry(QtCore.QRect(280, 70, 61, 31))
+        self.textEdit_36.setStyleSheet("background-color: rgb(85, 255, 255);")
+        self.textEdit_36.setReadOnly(False)
+        self.textEdit_36.setObjectName("textEdit_36")
+        self.textEdit_39 = QtWidgets.QTextEdit(self.groupBox_5)
+        self.textEdit_39.setGeometry(QtCore.QRect(30, 150, 241, 31))
+        self.textEdit_39.setObjectName("textEdit_39")
+        self.textEdit_42 = QtWidgets.QTextEdit(self.groupBox_5)
+        self.textEdit_42.setGeometry(QtCore.QRect(280, 230, 61, 31))
+        self.textEdit_42.setStyleSheet("background-color: rgb(85, 255, 255);")
+        self.textEdit_42.setReadOnly(False)
+        self.textEdit_42.setObjectName("textEdit_42")
+        MainWindow.setCentralWidget(self.centralwidget)
+        self.statusbar = QtWidgets.QStatusBar(MainWindow)
+        self.statusbar.setObjectName("statusbar")
+        MainWindow.setStatusBar(self.statusbar)
+        self.menubar = QtWidgets.QMenuBar(MainWindow)
+        self.menubar.setGeometry(QtCore.QRect(0, 0, 930, 26))
+        self.menubar.setObjectName("menubar")
+        self.menuHome = QtWidgets.QMenu(self.menubar)
+        self.menuHome.setObjectName("menuHome")
+        MainWindow.setMenuBar(self.menubar)
+        self.actionAbout = QtWidgets.QAction(MainWindow)
+        icon = QtGui.QIcon()
+        icon.addPixmap(QtGui.QPixmap("../../../../../../Desktop/materials-qt-designer-python/sample_editor/ui/resources/help-content.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.actionAbout.setIcon(icon)
+        self.actionAbout.setObjectName("actionAbout")
+        self.actionContact = QtWidgets.QAction(MainWindow)
+        icon1 = QtGui.QIcon()
+        icon1.addPixmap(QtGui.QPixmap("../../../../../../Desktop/materials-qt-designer-python/sample_editor/ui/resources/edit-paste.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.actionContact.setIcon(icon1)
+        self.actionContact.setObjectName("actionContact")
+        self.menuHome.addAction(self.actionAbout)
+        self.menuHome.addAction(self.actionContact)
+        self.menubar.addAction(self.menuHome.menuAction())
+
+        self.retranslateUi(MainWindow)
+        QtCore.QMetaObject.connectSlotsByName(MainWindow)
+
+    def retranslateUi(self, MainWindow):
+        _translate = QtCore.QCoreApplication.translate
+        MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
+        self.groupBox_3.setTitle(_translate("MainWindow", "Batch Data:"))
+        self.pushButton_2.setText(_translate("MainWindow", "Calculate Salts"))
+        self.comboBox.setItemText(0, _translate("MainWindow", "Bob"))
+        self.comboBox.setItemText(1, _translate("MainWindow", "Carol"))
+        self.comboBox.setItemText(2, _translate("MainWindow", "Ted"))
+        self.comboBox.setItemText(3, _translate("MainWindow", "Alice"))
+        self.pushButton.setText(_translate("MainWindow", "Update Target Minerals"))
+        self.groupBox_2.setTitle(_translate("MainWindow", "Water Volume (total):"))
+        self.lineEdit.setText(_translate("MainWindow", "10"))
+        self.groupBox.setTitle(_translate("MainWindow", "Units:"))
+        self.radioButton.setText(_translate("MainWindow", "Gallons"))
+        self.radioButton_2.setText(_translate("MainWindow", "Quarts"))
+        self.radioButton_3.setText(_translate("MainWindow", "Liters"))
+        self.label.setText(_translate("MainWindow", "Target Profile:"))
+        self.groupBox_4.setTitle(_translate("MainWindow", "Water Chemistry - Ion Levels (ppm or mg/L):"))
+        self.textEdit_29.setHtml(_translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:7.8pt; font-weight:400; font-style:normal;\">\n"
+"<p align=\"right\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:12pt;\">0</span></p></body></html>"))
+        self.textEdit_20.setHtml(_translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:7.8pt; font-weight:400; font-style:normal;\">\n"
+"<p align=\"right\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:12pt;\">0</span></p></body></html>"))
+        self.textEdit_22.setHtml(_translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:7.8pt; font-weight:400; font-style:normal;\">\n"
+"<p align=\"right\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:12pt;\">0</span></p></body></html>"))
+        self.textEdit_7.setHtml(_translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:7.8pt; font-weight:400; font-style:normal;\">\n"
+"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:10pt; font-weight:600;\">Na</span><span style=\" font-size:10pt; font-weight:600; vertical-align:super;\">+</span></p></body></html>"))
+        self.textEdit_16.setHtml(_translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:7.8pt; font-weight:400; font-style:normal;\">\n"
+"<p align=\"right\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:12pt;\">0</span></p></body></html>"))
+        self.textEdit_8.setHtml(_translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:7.8pt; font-weight:400; font-style:normal;\">\n"
+"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:10pt; font-weight:600;\">Cl</span><span style=\" font-size:10pt; font-weight:600; vertical-align:super;\">-</span></p></body></html>"))
+        self.textEdit_10.setHtml(_translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:7.8pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:8pt; font-weight:600;\">Adjustments From Salts:</span></p></body></html>"))
+        self.textEdit_21.setHtml(_translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:7.8pt; font-weight:400; font-style:normal;\">\n"
+"<p align=\"right\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:12pt;\">0</span></p></body></html>"))
+        self.textEdit_5.setHtml(_translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:7.8pt; font-weight:400; font-style:normal;\">\n"
+"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:10pt; font-weight:600;\">Mg</span><span style=\" font-size:10pt; font-weight:600; vertical-align:super;\">+2</span></p></body></html>"))
+        self.textEdit_17.setHtml(_translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:7.8pt; font-weight:400; font-style:normal;\">\n"
+"<p align=\"right\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:12pt;\">0</span></p></body></html>"))
+        self.textEdit_28.setHtml(_translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:7.8pt; font-weight:400; font-style:normal;\">\n"
+"<p align=\"right\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:12pt;\">0</span></p></body></html>"))
+        self.textEdit_15.setHtml(_translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:7.8pt; font-weight:400; font-style:normal;\">\n"
+"<p align=\"right\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:12pt;\">0</span></p></body></html>"))
+        self.textEdit_12.setHtml(_translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:7.8pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:8pt; font-weight:600;\">Difference:</span></p></body></html>"))
+        self.textEdit_30.setHtml(_translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:7.8pt; font-weight:400; font-style:normal;\">\n"
+"<p align=\"right\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:12pt;\">0</span></p></body></html>"))
+        self.textEdit_23.setHtml(_translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:7.8pt; font-weight:400; font-style:normal;\">\n"
+"<p align=\"right\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:12pt;\">0</span></p></body></html>"))
+        self.textEdit_25.setHtml(_translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:7.8pt; font-weight:400; font-style:normal;\">\n"
+"<p align=\"right\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:12pt;\">0</span></p></body></html>"))
+        self.textEdit_18.setHtml(_translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:7.8pt; font-weight:400; font-style:normal;\">\n"
+"<p align=\"right\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:12pt;\">0</span></p></body></html>"))
+        self.textEdit_19.setHtml(_translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:7.8pt; font-weight:400; font-style:normal;\">\n"
+"<p align=\"right\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:12pt;\">0</span></p></body></html>"))
+        self.textEdit_14.setHtml(_translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:7.8pt; font-weight:400; font-style:normal;\">\n"
+"<p align=\"right\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:12pt;\">0</span></p></body></html>"))
+        self.textEdit_4.setHtml(_translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:7.8pt; font-weight:400; font-style:normal;\">\n"
+"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:10pt; font-weight:600;\">Ca</span><span style=\" font-size:10pt; font-weight:600; vertical-align:super;\">+2</span></p></body></html>"))
+        self.textEdit_26.setHtml(_translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:7.8pt; font-weight:400; font-style:normal;\">\n"
+"<p align=\"right\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:12pt;\">0</span></p></body></html>"))
+        self.textEdit_11.setHtml(_translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:7.8pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:12pt; font-weight:600;\">Target Minerals:</span></p></body></html>"))
+        self.textEdit_27.setHtml(_translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:7.8pt; font-weight:400; font-style:normal;\">\n"
+"<p align=\"right\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:12pt;\">0</span></p></body></html>"))
+        self.textEdit_6.setHtml(_translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:7.8pt; font-weight:400; font-style:normal;\">\n"
+"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:10pt; font-weight:600;\">SO</span><span style=\" font-size:10pt; font-weight:600; vertical-align:sub;\">4</span><span style=\" font-size:10pt; font-weight:600; vertical-align:super;\">-2</span></p></body></html>"))
+        self.textEdit_24.setHtml(_translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:7.8pt; font-weight:400; font-style:normal;\">\n"
+"<p align=\"right\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:12pt;\">0</span></p></body></html>"))
+        self.textEdit_13.setHtml(_translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:7.8pt; font-weight:400; font-style:normal;\">\n"
+"<p align=\"right\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:12pt;\">0</span></p></body></html>"))
+        self.textEdit_9.setHtml(_translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:7.8pt; font-weight:400; font-style:normal;\">\n"
+"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:10pt; font-weight:600;\">HCO</span><span style=\" font-size:10pt; font-weight:600; vertical-align:sub;\">3</span><span style=\" font-size:10pt; font-weight:600; vertical-align:super;\">-</span></p></body></html>"))
+        self.groupBox_5.setTitle(_translate("MainWindow", "Brewing Salts Additions:"))
+        self.textEdit_43.setHtml(_translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:7.8pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:10pt; font-weight:600;\">Canning Salt NaCl</span></p></body></html>"))
+        self.textEdit_40.setHtml(_translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:7.8pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p></body></html>"))
+        self.textEdit_35.setHtml(_translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:7.8pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:10pt; font-weight:600;\">Gypsom CaSO</span><span style=\" font-size:10pt; font-weight:600; vertical-align:sub;\">4</span></p></body></html>"))
+        self.textEdit_41.setHtml(_translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:7.8pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:10pt; font-weight:600;\">Epsom Salt MgSO</span><span style=\" font-size:10pt; font-weight:600; vertical-align:sub;\">4</span></p></body></html>"))
+        self.textEdit_38.setHtml(_translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:7.8pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p></body></html>"))
+        self.textEdit_33.setHtml(_translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:7.8pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p></body></html>"))
+        self.textEdit_34.setHtml(_translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:7.8pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p></body></html>"))
+        self.textEdit_37.setHtml(_translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:7.8pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:10pt; font-weight:600;\">Baking Soda NaHCO</span><span style=\" font-size:10pt; font-weight:600; vertical-align:sub;\">3</span></p></body></html>"))
+        self.textEdit_32.setHtml(_translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:7.8pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:10pt; font-weight:600;\">Chalk CaCO</span><span style=\" font-size:10pt; font-weight:600; vertical-align:sub;\">3</span></p></body></html>"))
+        self.textEdit_36.setHtml(_translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:7.8pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p></body></html>"))
+        self.textEdit_39.setHtml(_translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:7.8pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:10pt; font-weight:600;\">Calcium Chloride CaCl</span><span style=\" font-size:10pt; font-weight:600; vertical-align:sub;\">2</span></p></body></html>"))
+        self.textEdit_42.setHtml(_translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:7.8pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p></body></html>"))
+        self.menuHome.setTitle(_translate("MainWindow", "Home"))
+        self.actionAbout.setText(_translate("MainWindow", "About..."))
+        self.actionAbout.setToolTip(_translate("MainWindow", "About thie application"))
+        self.actionContact.setText(_translate("MainWindow", "Contact..."))
+        self.actionContact.setToolTip(_translate("MainWindow", "Whom to contact with questions/suggestions"))
+
