@@ -1,5 +1,6 @@
 import numpy as np
 from scipy.optimize import nnls
+import json
 
 # https://www.brewersfriend.com/water-chemistry/
 # https://andreask.cs.illinois.edu/cs357-s15/public/demos/06-qr-applications/Solving%20Least-Squares%20Problems.html
@@ -34,6 +35,28 @@ class aguaHefe:
         print("Canning Salt NaCl:       {:0.3}".format(NaCl * gallons))
         print()
         print("residual: ", residual)
+
+    def load_beer_styles(self, styles_json: str = "styles.json"):
+        """ Load the beer styles into memory
+
+        Args:
+            styles_json (str, optional): _description_. Defaults to "styles.json".
+
+        Returns:
+            JSON: styles data
+        """
+        # cwd = os.getcwd()
+        
+        try:
+            with open("./src/data/" + styles_json, "r") as f:
+                styles_data = json.load(f)
+        except FileNotFoundError:
+            try:
+                with open("./data/styles.json", "r") as f:
+                    styles_data = json.load(f)
+            except FileNotFoundError:
+                print("Error: could not find ./src/data/" + styles_json)
+        return styles_data
 
     def calculateSalts(self, target_Ca, target_Mg, target_SO4, target_Na, target_Cl, target_HCO3):
         """_summary_

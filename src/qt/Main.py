@@ -6,7 +6,7 @@ import CallUI
 
 def setUp():
     CallUI.setUpWindow()
-    raw_input()
+    # raw_input()
 
 
 if __name__ == "__main__":

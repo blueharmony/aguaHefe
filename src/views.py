@@ -8,36 +8,11 @@ from . import app
 
 # app = Flask(__name__)
 
-
-def load_beer_styles(styles_json: str = "styles.json"):
-    """ Load the beer styles into memory
-
-    Args:
-        styles_json (str, optional): _description_. Defaults to "styles.json".
-
-    Returns:
-        JSON: styles data
-    """
-    # cwd = os.getcwd()
-    
-    try:
-        with open("./src/data/" + styles_json, "r") as f:
-            styles_data = json.load(f)
-    except FileNotFoundError:
-        try:
-            with open("./data/styles.json", "r") as f:
-                styles_data = json.load(f)
-        except FileNotFoundError:
-            print("Error: could not find ./src/data/" + styles_json)
-    return styles_data
-
-
-# load the default beer styles
-styles_data = load_beer_styles()
-
 # instatiate the aguaHefe class
 ah = aguaHefe.aguaHefe()
 
+# load the default beer styles
+styles_data = ah.load_beer_styles()
 
 def roundNumber(theNumber, multiplier):
     """ Round theNumber * multiplier to a float
