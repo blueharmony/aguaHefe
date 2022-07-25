@@ -1,8 +1,7 @@
 #CallUI.py
 import sys
 from MainWindow import Ui_MainWindow
-from PyQt5 import QtCore, QtGui, QtWidgets
-import os
+from PyQt5 import QtWidgets
 
 # since aguaHefe.py is two folders above, gotta find it
 import sys
@@ -42,6 +41,12 @@ class CallUI(QtWidgets.QMainWindow):
         combo_index = self.ui.comboBox.currentIndex()
         style = self.styles_data[combo_index]
         print(style)
+        self.ui.targetCa.setText(str(style['Ca']))
+        self.ui.targetMg.setText(str(style['Mg']))
+        self.ui.targetSO4.setText(str(style['SO4']))
+        self.ui.targetNa.setText(str(style['Na']))
+        self.ui.targetCl.setText(str(style['Cl']))
+        self.ui.targetHCO3.setText(str(style['HCO3']))
 
 def setUpWindow():
     app = QtWidgets.QApplication(sys.argv)
