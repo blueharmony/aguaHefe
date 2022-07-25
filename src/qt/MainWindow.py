@@ -39,8 +39,8 @@ class Ui_MainWindow(object):
         self.groupBox_3.setStyleSheet("background-color: rgb(170, 255, 127);\n"
 "background-color: rgb(219, 255, 196);")
         self.groupBox_3.setObjectName("groupBox_3")
-        self.pushButton_2 = QtWidgets.QPushButton(self.groupBox_3)
-        self.pushButton_2.setGeometry(QtCore.QRect(430, 140, 141, 31))
+        self.calculateSaltsButton = QtWidgets.QPushButton(self.groupBox_3)
+        self.calculateSaltsButton.setGeometry(QtCore.QRect(430, 140, 141, 31))
         palette = QtGui.QPalette()
         brush = QtGui.QBrush(QtGui.QColor(85, 255, 255))
         brush.setStyle(QtCore.Qt.SolidPattern)
@@ -69,15 +69,15 @@ class Ui_MainWindow(object):
         brush = QtGui.QBrush(QtGui.QColor(85, 255, 255))
         brush.setStyle(QtCore.Qt.SolidPattern)
         palette.setBrush(QtGui.QPalette.Disabled, QtGui.QPalette.Window, brush)
-        self.pushButton_2.setPalette(palette)
+        self.calculateSaltsButton.setPalette(palette)
         font = QtGui.QFont()
         font.setPointSize(10)
         font.setBold(True)
         font.setWeight(75)
-        self.pushButton_2.setFont(font)
-        self.pushButton_2.setAutoFillBackground(False)
-        self.pushButton_2.setStyleSheet("background-color: rgb(85, 255, 255);")
-        self.pushButton_2.setObjectName("pushButton_2")
+        self.calculateSaltsButton.setFont(font)
+        self.calculateSaltsButton.setAutoFillBackground(False)
+        self.calculateSaltsButton.setStyleSheet("background-color: rgb(85, 255, 255);")
+        self.calculateSaltsButton.setObjectName("calculateSaltsButton")
         self.comboBox = QtWidgets.QComboBox(self.groupBox_3)
         self.comboBox.setGeometry(QtCore.QRect(190, 110, 311, 22))
         font = QtGui.QFont()
@@ -90,15 +90,15 @@ class Ui_MainWindow(object):
 "selection-background-color: rgb(255, 255, 255);\n"
 "selection-color: rgb(0, 0, 255);")
         self.comboBox.setObjectName("comboBox")
-        self.pushButton = QtWidgets.QPushButton(self.groupBox_3)
-        self.pushButton.setGeometry(QtCore.QRect(190, 140, 211, 31))
+        self.updateTargetMineralsButton = QtWidgets.QPushButton(self.groupBox_3)
+        self.updateTargetMineralsButton.setGeometry(QtCore.QRect(190, 140, 211, 31))
         font = QtGui.QFont()
         font.setPointSize(10)
         font.setBold(True)
         font.setWeight(75)
-        self.pushButton.setFont(font)
-        self.pushButton.setStyleSheet("background-color: rgb(255, 255, 127);")
-        self.pushButton.setObjectName("pushButton")
+        self.updateTargetMineralsButton.setFont(font)
+        self.updateTargetMineralsButton.setStyleSheet("background-color: rgb(255, 255, 127);")
+        self.updateTargetMineralsButton.setObjectName("updateTargetMineralsButton")
         self.groupBox_2 = QtWidgets.QGroupBox(self.groupBox_3)
         self.groupBox_2.setGeometry(QtCore.QRect(20, 30, 201, 61))
         font = QtGui.QFont()
@@ -107,16 +107,16 @@ class Ui_MainWindow(object):
         font.setWeight(75)
         self.groupBox_2.setFont(font)
         self.groupBox_2.setObjectName("groupBox_2")
-        self.lineEdit = QtWidgets.QLineEdit(self.groupBox_2)
-        self.lineEdit.setGeometry(QtCore.QRect(70, 30, 51, 22))
+        self.textMashVolume = QtWidgets.QLineEdit(self.groupBox_2)
+        self.textMashVolume.setGeometry(QtCore.QRect(70, 30, 51, 22))
         font = QtGui.QFont()
         font.setPointSize(10)
         font.setBold(True)
         font.setWeight(75)
-        self.lineEdit.setFont(font)
-        self.lineEdit.setStyleSheet("background-color: rgb(255, 255, 255);")
-        self.lineEdit.setAlignment(QtCore.Qt.AlignCenter)
-        self.lineEdit.setObjectName("lineEdit")
+        self.textMashVolume.setFont(font)
+        self.textMashVolume.setStyleSheet("background-color: rgb(255, 255, 255);")
+        self.textMashVolume.setAlignment(QtCore.Qt.AlignCenter)
+        self.textMashVolume.setObjectName("textMashVolume")
         self.groupBox = QtWidgets.QGroupBox(self.groupBox_3)
         self.groupBox.setGeometry(QtCore.QRect(250, 30, 341, 61))
         font = QtGui.QFont()
@@ -321,51 +321,51 @@ class Ui_MainWindow(object):
         self.textEdit_43 = QtWidgets.QTextEdit(self.groupBox_5)
         self.textEdit_43.setGeometry(QtCore.QRect(30, 230, 241, 31))
         self.textEdit_43.setObjectName("textEdit_43")
-        self.textEdit_40 = QtWidgets.QTextEdit(self.groupBox_5)
-        self.textEdit_40.setGeometry(QtCore.QRect(280, 190, 61, 31))
-        self.textEdit_40.setStyleSheet("background-color: rgb(85, 255, 255);")
-        self.textEdit_40.setReadOnly(False)
-        self.textEdit_40.setObjectName("textEdit_40")
+        self.txtMgSO4 = QtWidgets.QTextEdit(self.groupBox_5)
+        self.txtMgSO4.setGeometry(QtCore.QRect(280, 190, 61, 31))
+        self.txtMgSO4.setStyleSheet("background-color: rgb(85, 255, 255);")
+        self.txtMgSO4.setReadOnly(False)
+        self.txtMgSO4.setObjectName("txtMgSO4")
         self.textEdit_35 = QtWidgets.QTextEdit(self.groupBox_5)
         self.textEdit_35.setGeometry(QtCore.QRect(30, 110, 241, 31))
         self.textEdit_35.setObjectName("textEdit_35")
         self.textEdit_41 = QtWidgets.QTextEdit(self.groupBox_5)
         self.textEdit_41.setGeometry(QtCore.QRect(30, 190, 241, 31))
         self.textEdit_41.setObjectName("textEdit_41")
-        self.textEdit_38 = QtWidgets.QTextEdit(self.groupBox_5)
-        self.textEdit_38.setGeometry(QtCore.QRect(280, 150, 61, 31))
-        self.textEdit_38.setStyleSheet("background-color: rgb(85, 255, 255);")
-        self.textEdit_38.setReadOnly(False)
-        self.textEdit_38.setObjectName("textEdit_38")
-        self.textEdit_33 = QtWidgets.QTextEdit(self.groupBox_5)
-        self.textEdit_33.setGeometry(QtCore.QRect(280, 30, 61, 31))
-        self.textEdit_33.setStyleSheet("background-color: rgb(85, 255, 255);")
-        self.textEdit_33.setReadOnly(False)
-        self.textEdit_33.setObjectName("textEdit_33")
-        self.textEdit_34 = QtWidgets.QTextEdit(self.groupBox_5)
-        self.textEdit_34.setGeometry(QtCore.QRect(280, 110, 61, 31))
-        self.textEdit_34.setStyleSheet("background-color: rgb(85, 255, 255);")
-        self.textEdit_34.setReadOnly(False)
-        self.textEdit_34.setObjectName("textEdit_34")
+        self.txtCaCl2 = QtWidgets.QTextEdit(self.groupBox_5)
+        self.txtCaCl2.setGeometry(QtCore.QRect(280, 150, 61, 31))
+        self.txtCaCl2.setStyleSheet("background-color: rgb(85, 255, 255);")
+        self.txtCaCl2.setReadOnly(False)
+        self.txtCaCl2.setObjectName("txtCaCl2")
+        self.txtCaCO3 = QtWidgets.QTextEdit(self.groupBox_5)
+        self.txtCaCO3.setGeometry(QtCore.QRect(280, 30, 61, 31))
+        self.txtCaCO3.setStyleSheet("background-color: rgb(85, 255, 255);")
+        self.txtCaCO3.setReadOnly(False)
+        self.txtCaCO3.setObjectName("txtCaCO3")
+        self.txtCaSO4 = QtWidgets.QTextEdit(self.groupBox_5)
+        self.txtCaSO4.setGeometry(QtCore.QRect(280, 110, 61, 31))
+        self.txtCaSO4.setStyleSheet("background-color: rgb(85, 255, 255);")
+        self.txtCaSO4.setReadOnly(False)
+        self.txtCaSO4.setObjectName("txtCaSO4")
         self.textEdit_37 = QtWidgets.QTextEdit(self.groupBox_5)
         self.textEdit_37.setGeometry(QtCore.QRect(30, 70, 241, 31))
         self.textEdit_37.setObjectName("textEdit_37")
         self.textEdit_32 = QtWidgets.QTextEdit(self.groupBox_5)
         self.textEdit_32.setGeometry(QtCore.QRect(30, 30, 241, 31))
         self.textEdit_32.setObjectName("textEdit_32")
-        self.textEdit_36 = QtWidgets.QTextEdit(self.groupBox_5)
-        self.textEdit_36.setGeometry(QtCore.QRect(280, 70, 61, 31))
-        self.textEdit_36.setStyleSheet("background-color: rgb(85, 255, 255);")
-        self.textEdit_36.setReadOnly(False)
-        self.textEdit_36.setObjectName("textEdit_36")
+        self.txtNaHCO3 = QtWidgets.QTextEdit(self.groupBox_5)
+        self.txtNaHCO3.setGeometry(QtCore.QRect(280, 70, 61, 31))
+        self.txtNaHCO3.setStyleSheet("background-color: rgb(85, 255, 255);")
+        self.txtNaHCO3.setReadOnly(False)
+        self.txtNaHCO3.setObjectName("txtNaHCO3")
         self.textEdit_39 = QtWidgets.QTextEdit(self.groupBox_5)
         self.textEdit_39.setGeometry(QtCore.QRect(30, 150, 241, 31))
         self.textEdit_39.setObjectName("textEdit_39")
-        self.textEdit_42 = QtWidgets.QTextEdit(self.groupBox_5)
-        self.textEdit_42.setGeometry(QtCore.QRect(280, 230, 61, 31))
-        self.textEdit_42.setStyleSheet("background-color: rgb(85, 255, 255);")
-        self.textEdit_42.setReadOnly(False)
-        self.textEdit_42.setObjectName("textEdit_42")
+        self.txtNaCl = QtWidgets.QTextEdit(self.groupBox_5)
+        self.txtNaCl.setGeometry(QtCore.QRect(280, 230, 61, 31))
+        self.txtNaCl.setStyleSheet("background-color: rgb(85, 255, 255);")
+        self.txtNaCl.setReadOnly(False)
+        self.txtNaCl.setObjectName("txtNaCl")
         MainWindow.setCentralWidget(self.centralwidget)
         self.statusbar = QtWidgets.QStatusBar(MainWindow)
         self.statusbar.setObjectName("statusbar")
@@ -397,10 +397,10 @@ class Ui_MainWindow(object):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
         self.groupBox_3.setTitle(_translate("MainWindow", "Target Water Data:"))
-        self.pushButton_2.setText(_translate("MainWindow", "Calculate Salts"))
-        self.pushButton.setText(_translate("MainWindow", "Update Target Minerals"))
+        self.calculateSaltsButton.setText(_translate("MainWindow", "Calculate Salts"))
+        self.updateTargetMineralsButton.setText(_translate("MainWindow", "Update Target Minerals"))
         self.groupBox_2.setTitle(_translate("MainWindow", "Water Volume (total):"))
-        self.lineEdit.setText(_translate("MainWindow", "10"))
+        self.textMashVolume.setText(_translate("MainWindow", "10"))
         self.groupBox.setTitle(_translate("MainWindow", "Units:"))
         self.radioButton.setText(_translate("MainWindow", "Gallons"))
         self.radioButton_2.setText(_translate("MainWindow", "Quarts"))
@@ -536,7 +536,7 @@ class Ui_MainWindow(object):
 "p, li { white-space: pre-wrap; }\n"
 "</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:7.8pt; font-weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:10pt; font-weight:600;\">Canning Salt NaCl</span></p></body></html>"))
-        self.textEdit_40.setHtml(_translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+        self.txtMgSO4.setHtml(_translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
 "</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:7.8pt; font-weight:400; font-style:normal;\">\n"
@@ -551,17 +551,17 @@ class Ui_MainWindow(object):
 "p, li { white-space: pre-wrap; }\n"
 "</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:7.8pt; font-weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:10pt; font-weight:600;\">Epsom Salt MgSO</span><span style=\" font-size:10pt; font-weight:600; vertical-align:sub;\">4</span></p></body></html>"))
-        self.textEdit_38.setHtml(_translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+        self.txtCaCl2.setHtml(_translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
 "</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:7.8pt; font-weight:400; font-style:normal;\">\n"
 "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p></body></html>"))
-        self.textEdit_33.setHtml(_translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+        self.txtCaCO3.setHtml(_translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
 "</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:7.8pt; font-weight:400; font-style:normal;\">\n"
 "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p></body></html>"))
-        self.textEdit_34.setHtml(_translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+        self.txtCaSO4.setHtml(_translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
 "</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:7.8pt; font-weight:400; font-style:normal;\">\n"
@@ -576,7 +576,7 @@ class Ui_MainWindow(object):
 "p, li { white-space: pre-wrap; }\n"
 "</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:7.8pt; font-weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:10pt; font-weight:600;\">Chalk CaCO</span><span style=\" font-size:10pt; font-weight:600; vertical-align:sub;\">3</span></p></body></html>"))
-        self.textEdit_36.setHtml(_translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+        self.txtNaHCO3.setHtml(_translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
 "</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:7.8pt; font-weight:400; font-style:normal;\">\n"
@@ -586,7 +586,7 @@ class Ui_MainWindow(object):
 "p, li { white-space: pre-wrap; }\n"
 "</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:7.8pt; font-weight:400; font-style:normal;\">\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:10pt; font-weight:600;\">Calcium Chloride CaCl</span><span style=\" font-size:10pt; font-weight:600; vertical-align:sub;\">2</span></p></body></html>"))
-        self.textEdit_42.setHtml(_translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+        self.txtNaCl.setHtml(_translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
 "</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:7.8pt; font-weight:400; font-style:normal;\">\n"

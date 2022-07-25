@@ -76,7 +76,7 @@ background-color: rgb(219, 255, 196);</string>
     <property name="title">
      <string>Target Water Data:</string>
     </property>
-    <widget class="QPushButton" name="pushButton_2">
+    <widget class="QPushButton" name="calculateSaltsButton">
      <property name="geometry">
       <rect>
        <x>430</x>
@@ -218,7 +218,7 @@ selection-background-color: rgb(255, 255, 255);
 selection-color: rgb(0, 0, 255);</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="pushButton">
+    <widget class="QPushButton" name="updateTargetMineralsButton">
      <property name="geometry">
       <rect>
        <x>190</x>
@@ -260,7 +260,7 @@ selection-color: rgb(0, 0, 255);</string>
      <property name="title">
       <string>Water Volume (total):</string>
      </property>
-     <widget class="QLineEdit" name="lineEdit">
+     <widget class="QLineEdit" name="textMashVolume">
       <property name="geometry">
        <rect>
         <x>70</x>
@@ -1051,7 +1051,7 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:10pt; font-weight:600;&quot;&gt;Canning Salt NaCl&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
      </property>
     </widget>
-    <widget class="QTextEdit" name="textEdit_40">
+    <widget class="QTextEdit" name="txtMgSO4">
      <property name="geometry">
       <rect>
        <x>280</x>
@@ -1108,7 +1108,7 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:10pt; font-weight:600;&quot;&gt;Epsom Salt MgSO&lt;/span&gt;&lt;span style=&quot; font-size:10pt; font-weight:600; vertical-align:sub;&quot;&gt;4&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
      </property>
     </widget>
-    <widget class="QTextEdit" name="textEdit_38">
+    <widget class="QTextEdit" name="txtCaCl2">
      <property name="geometry">
       <rect>
        <x>280</x>
@@ -1131,7 +1131,7 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
      </property>
     </widget>
-    <widget class="QTextEdit" name="textEdit_33">
+    <widget class="QTextEdit" name="txtCaCO3">
      <property name="geometry">
       <rect>
        <x>280</x>
@@ -1154,7 +1154,7 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
      </property>
     </widget>
-    <widget class="QTextEdit" name="textEdit_34">
+    <widget class="QTextEdit" name="txtCaSO4">
      <property name="geometry">
       <rect>
        <x>280</x>
@@ -1211,7 +1211,7 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:10pt; font-weight:600;&quot;&gt;Chalk CaCO&lt;/span&gt;&lt;span style=&quot; font-size:10pt; font-weight:600; vertical-align:sub;&quot;&gt;3&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
      </property>
     </widget>
-    <widget class="QTextEdit" name="textEdit_36">
+    <widget class="QTextEdit" name="txtNaHCO3">
      <property name="geometry">
       <rect>
        <x>280</x>
@@ -1251,7 +1251,7 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:10pt; font-weight:600;&quot;&gt;Calcium Chloride CaCl&lt;/span&gt;&lt;span style=&quot; font-size:10pt; font-weight:600; vertical-align:sub;&quot;&gt;2&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
      </property>
     </widget>
-    <widget class="QTextEdit" name="textEdit_42">
+    <widget class="QTextEdit" name="txtNaCl">
      <property name="geometry">
       <rect>
        <x>280</x>
